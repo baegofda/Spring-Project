@@ -1,0 +1,48 @@
+@import "/css/header.css";
+@import "/css/index.css";
+@import "/css/footer.css";
+
+:root {
+    /* color */
+    --color-black: #3f454d;
+    --color-white: #ffffff;
+    --color-blue: #3b88c3;
+    --color-yellow: #fbbe28;
+    --color-pink: #fd7f84;
+    --color-light-grey: #dfdfdf;
+    --color-footer-text-grey: #495057;
+    --color-border: #f2f2f2;
+    --color-orange: #FFB98B;
+
+
+    /*background-color*/
+    --color-section: #FBF7F2;
+    --color-section3: #E6F3E6;
+    --color-footer: #495057;
+
+    /*box-shadow*/
+    --box-shadow: 0 0 0.5rem 0.001rem rgba(0, 0, 0, 0.12);
+
+    /*border-radius*/
+    --border-radius: 0.5rem;
+}
+
+body {
+    all: unset;
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
