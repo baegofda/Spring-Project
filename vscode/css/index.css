@@ -4,8 +4,7 @@
     left: 8%;
     padding: 1.5rem 2rem;
     border-radius: 1rem 1rem 1rem 0;
-    background-color: var(--color-orange);
-    opacity: 0.7;
+    background-color: var(--color-list-orange);
     box-shadow: var(--box-shadow);
 }
 
@@ -51,17 +50,19 @@
 }
 
 .section-1-image {
-    background-image: url("../img/main/section1.jpg");
+    background-image: url("https://d1unjqcospf8gs.cloudfront.net/assets/home/main/3x/image-top-4eb6b8642f61c5c012136597a25a7b72c705d6c6479a7270f3fb23726fddf585.png");
     width: 804px;
     height: 658px;
     margin-left: 3.8rem;
+    background-size: cover;
 }
 
 .section-2-image {
-    background-image: url("../img/main/section2.jpg");
+    background-image: url("https://d1unjqcospf8gs.cloudfront.net/assets/home/main/3x/image-1-39ac203e8922f615aa3843337871cb654b81269e872494128bf08236157c5f6a.png");
     width: 484px;
     height: 606px;
     margin-right: 5rem;
+    background-size: cover;
 }
 
 .section-2-btn,
@@ -97,7 +98,7 @@
 .section-3-text-list-content-icon {
     margin: 1rem 0;
 }
-.icon-question{
+.icon-question {
     background-image: url("https://d1unjqcospf8gs.cloudfront.net/assets/home/main/icon-story-1-9226479b836cdc960291ffda91ace46c90a632f6cc868aa8983b3624e662a924.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -105,7 +106,7 @@
     height: 3.5rem;
 }
 
-.icon-lost{
+.icon-lost {
     background-image: url("https://d1unjqcospf8gs.cloudfront.net/assets/home/main/icon-story-2-208bb88cad31e335b40bc8ac5b7684dcf8a36d77ac50770a497a9c967a3bfc4f.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -113,7 +114,7 @@
     height: 3.5rem;
 }
 
-.icon-group{
+.icon-group {
     background-image: url("https://d1unjqcospf8gs.cloudfront.net/assets/home/main/icon-story-3-0a14d64c6101a7271655747d8401b9f71506578f8a4c0640608074e977bbc7c0.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -121,14 +122,15 @@
     height: 3.5rem;
 }
 
-.section-3-text-list li{
+.section-3-text-list li {
     margin-right: 3rem;
 }
 
 .section-3-image {
-    background-image: url("../img/main/section3.jpg");
+    background-image: url("https://d1unjqcospf8gs.cloudfront.net/assets/home/main/3x/image-2-f286322ab98acedf914a05bf77e84c67dcb897c8ccb543e66f6afea9d366d06d.png");
     width: 500px;
     height: 666px;
+    background-size: cover;
 }
 
 .section-4 {
@@ -136,10 +138,11 @@
 }
 
 .section-4-image {
-    background-image: url("../img/main/section4.jpg");
+    background-image: url("https://d1unjqcospf8gs.cloudfront.net/assets/home/main/3x/image-3-0c8b631ac2294ac5a3b3e7a3a5580c3e68a3303ad2aded1e84aa57a2e1442786.png");
     width: 528px;
     height: 691px;
     margin-right: 5rem;
+    background-size: cover;
 }
 
 .scroll-btn {
@@ -156,7 +159,6 @@
     background-position: center;
     background-color: var(--color-white);
     box-shadow: var(--box-shadow);
-
 }
 
 .scroll-btn:hover {

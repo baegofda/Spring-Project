@@ -3,7 +3,11 @@
 @import "footer.css";
 
 :root {
-    /* color */
+    /* color
+    ex) color: var(--color-black);
+    */
+
+    --color-personal-orange: #ffb98b;
     --color-black: #3f454d;
     --color-white: #ffffff;
     --color-blue: #3b88c3;
@@ -12,9 +16,11 @@
     --color-light-grey: #dfdfdf;
     --color-footer-text-grey: #495057;
     --color-border: #f2f2f2;
-    --color-orange: #ffb98b;
+    --color-list-orange: rgba(255, 185, 139, 0.7);
 
-    /*background-color*/
+    /*background-color
+    ex) background-color: var(--color-section);
+    */
     --color-section: #fbf7f2;
     --color-section3: #e6f3e6;
     --color-footer: #495057;

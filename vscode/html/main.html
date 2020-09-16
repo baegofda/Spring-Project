@@ -7,6 +7,11 @@
         <link rel="stylesheet" href="../css/common.css" />
         <script src="../javascript/common.js" defer></script>
         <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="https://d1unjqcospf8gs.cloudfront.net/favicon.ico"
+        />
+        <link
             href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
             rel="stylesheet"
         />
@@ -14,10 +19,10 @@
 
     <body>
         <!-- 메뉴 고정바 -->
-        <header class="header__fixed">
+        <header class="header">
             <div class="header__fixed-bar">
                 <section class="header__fixed-bar-logo section-logo">
-                    <a href="https://www.daangn.com/">
+                    <a href="#">
                         <img
                             src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/logo-basic-24b18257ac4ef693c02233bf21e9cb7ecbf43ebd8d5b40c24d99e14094a44c81.svg"
                             alt="당근마켓"
@@ -31,7 +36,8 @@
                             type="text"
                             placeholder="동네 이름, 물품명 등을 검색해보세요!"
                         />
-                        <img
+                        <input
+                            type="image"
                             class="search-icon"
                             src="https://img.icons8.com/ios-glyphs/30/000000/search.png"
                         />
@@ -55,7 +61,7 @@
             </div>
         </header>
         <!-- 메뉴 목록 리스트 -->
-        <div class="fixed__list">
+        <aside class="fixed__list">
             <ul>
                 <li><a href="#">공지사항</a></li>
                 <li><a href="#">블랙리스트</a></li>
@@ -64,7 +70,7 @@
                 <li><a href="#">나눔중 이에요.</a></li>
                 <li><a href="#">구매합니다 ~!</a></li>
             </ul>
-        </div>
+        </aside>
         <!-- 섹션 시작 -->
         <section class="main__section section-1">
             <div class="main__section-container">
