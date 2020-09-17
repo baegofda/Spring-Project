@@ -22,7 +22,7 @@
         <header class="header">
             <div class="header__fixed-bar">
                 <section class="header__fixed-bar-logo section-logo">
-                    <a href="#">
+                    <a href="main.html">
                         <img
                             src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/logo-basic-24b18257ac4ef693c02233bf21e9cb7ecbf43ebd8d5b40c24d99e14094a44c81.svg"
                             alt="당근마켓"
@@ -95,6 +95,7 @@
                                     type="text"
                                     placeholder="example@naver.com"
                                     maxlength="16"
+                                    required
                                 />
                             </td>
                         </tr>
@@ -110,6 +111,7 @@
                                     type="text"
                                     placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합"
                                     maxlength="16"
+                                    required
                                 /><input
                                     class="form__btn"
                                     type="button"
@@ -125,14 +127,18 @@
                             </th>
                             <td>
                                 <input
-                                    class="form__input"
+                                    id="pw__write"
+                                    class="form__input pw__write"
                                     type="password"
                                     placeholder="비밀번호를 입력해주세요"
                                     maxlength="16"
+                                    required
+                                    onkeyup="pwRules(), pwCheck()"
                                 />
+                                <div class="write__message"></div>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="pw-check">
                             <th>
                                 비밀번호확인<span class="form__sub--color-pink"
                                     >*</span
@@ -140,11 +146,15 @@
                             </th>
                             <td>
                                 <input
+                                    id="pw__check"
                                     class="form__input"
                                     type="password"
                                     placeholder="비밀번호를 한번 더 입력해주세요"
                                     maxlength="16"
+                                    required
+                                    onkeyup="pwCheck()"
                                 />
+                                <div class="check__message"></div>
                             </td>
                         </tr>
                         <tr>
@@ -157,10 +167,11 @@
                                     type="text"
                                     placeholder="이름을 입력해주세요"
                                     maxlength="16"
+                                    required
                                 />
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="address">
                             <th>
                                 주소<span class="form__sub--color-pink">*</span>
                             </th>
@@ -170,6 +181,7 @@
                                     type="text"
                                     placeholder="주소를 검색해 주세요"
                                     maxlength="16"
+                                    required
                                 />
                                 <a href="#"
                                     ><span id="form__btn--address">
@@ -180,11 +192,6 @@
                                         주소검색
                                     </span></a
                                 >
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>상세주소</th>
-                            <td>
                                 <input
                                     class="form__input"
                                     type="text"
@@ -203,21 +210,46 @@
                                 <input
                                     class="form__input"
                                     type="text"
-                                    placeholder="번호만입력해주세요"
+                                    placeholder="번호만 입력해주세요"
                                     maxlength="16"
+                                    required
                                 />
                             </td>
                         </tr>
-                        <tr class="reg__agree">
+                        <tr class="form__agree">
                             <th>
                                 이용약관동의<span class="form__sub--color-pink"
                                     >*</span
                                 >
                             </th>
-                            <td></td>
+                            <td>
+                                <!-- <ul>
+                                    <li>
+                                        <label for="agree--all"
+                                            ><input
+                                                id="agree--all"
+                                                type="checkbox"
+                                            />
+                                            <div class="ico"></div>
+                                            전체 동의합니다.</label
+                                        >
+                                    </li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul> -->
+                            </td>
                         </tr>
                     </table>
-                    <div class="form__submit"></div>
+                    <div class="form__submit">
+                        <input
+                            class="submit-btn"
+                            type="button"
+                            value="가입완료"
+                        />
+                    </div>
                 </div>
             </div>
         </section>

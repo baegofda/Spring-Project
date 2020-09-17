@@ -35,7 +35,7 @@
     padding: 1.8rem 0 1.8rem 1.2rem;
     text-align: left;
     margin-right: 1.2rem;
-    vertical-align: middle;
+    vertical-align: baseline;
     width: 18%;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .form td {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -91,6 +91,18 @@
     padding: 0 1.3rem;
 }
 
+.write__message {
+    display: none;
+    margin-top: 0.9rem;
+    width: 100%;
+}
+
+.check__message {
+    display: none;
+    margin-top: 0.9rem;
+    width: 100%;
+}
+
 #form__btn--address {
     align-items: center;
     border-radius: 0.2rem;
@@ -109,12 +121,63 @@
     width: 14px;
 }
 
+.address input:first-child {
+    margin-bottom: 0.9rem;
+}
+
 .form__input:hover,
 .form__btn:hover,
 #form__btn--address:hover {
     box-shadow: var(--box-shadow);
 }
 
-.reg__agree {
+.form__agree {
     border-top: 1px solid var(--color-black);
 }
+
+.form__submit {
+    margin-top: 3rem;
+}
+
+.submit-btn {
+    background-color: var(--color-personal-orange);
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 900;
+    outline: none;
+    padding: 0.5rem 0;
+    width: 40%;
+}
+
+/* .form__agree ul {
+    width: 100%;
+}
+
+.form__agree ul li {
+    position: relative;
+    width: 100%;
+}
+
+.form__agree li label {
+    align-items: center;
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: bold;
+    justify-content: flex-start;
+    width: 100%;
+}
+#agree--all {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.form__agree .ico {
+    background-image: url("https://res.kurly.com/pc/service/common/2006/ico_checkbox.svg");
+    background-size: cover;
+    height: 24px;
+    margin-right: 0.9rem;
+    width: 24px;
+} */
