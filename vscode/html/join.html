@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>당신 근처의 당근나라</title>
+        <title>회원가입 :: 당근나라</title>
         <link rel="stylesheet" href="../css/common.css" />
         <script src="../javascript/common.js" defer></script>
         <link
@@ -72,113 +72,155 @@
             </ul>
         </aside>
         <!-- 섹션 시작 -->
-        <section class="main__section section-1">
-            <div class="main__section-container">
-                <div class="main__section-content section-1-text">
-                    <h1>당신 근처의<br />당근마켓</h1>
-                    <p>
-                        중고 거래부터 동네 정보까지, 이웃과 함께 해요 <br />
-                        가깝고 따뜻한 당신의 근처를 만들어요.
+        <section class="section">
+            <div class="join">
+                <div class="join__head">
+                    <h1 class="join__title">회원가입</h1>
+                    <p class="join__sub">
+                        <span class="join__sub--color-pink">*</span>
+                        필수입력사항
                     </p>
                 </div>
-                <div class="main__section-content section-1-image"></div>
-            </div>
-        </section>
-        <section class="main__section section-2">
-            <div class="main__section-container">
-                <div class="main__section-content section-2-image"></div>
-                <div class="main__section-content section-2-text">
-                    <h1>우리 동네<br />중고 직거래 마켓</h1>
-                    <p>동네 주민들과 가깝고 따뜻한 거래를 지금 경험해보세요.</p>
-                    <div
-                        class="main__section-content section2-button-container"
-                    >
-                        <input
-                            class="section-2-btn"
-                            type="button"
-                            value="인기매물 보기"
-                            onclick='location.href="https://www.daangn.com/hot_articles"'
-                        />
-                        <input
-                            class="section-2-btn"
-                            type="button"
-                            value="믿을 수 있는 중고거래"
-                            onclick='location.href="https://www.daangn.com/trust"'
-                        />
-                    </div>
+                <div class="form">
+                    <table class="form__table">
+                        <tr>
+                            <th>
+                                이메일<span class="form__sub--color-pink"
+                                    >*</span
+                                >
+                            </th>
+                            <td>
+                                <input
+                                    class="form__input"
+                                    type="text"
+                                    placeholder="example@naver.com"
+                                    maxlength="16"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                닉네임<span class="form__sub--color-pink"
+                                    >*</span
+                                >
+                            </th>
+                            <td>
+                                <input
+                                    class="form__input"
+                                    type="text"
+                                    placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합"
+                                    maxlength="16"
+                                /><input
+                                    class="form__btn"
+                                    type="button"
+                                    value="중복확인"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                비밀번호<span class="form__sub--color-pink"
+                                    >*</span
+                                >
+                            </th>
+                            <td>
+                                <input
+                                    class="form__input"
+                                    type="password"
+                                    placeholder="비밀번호를 입력해주세요"
+                                    maxlength="16"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                비밀번호확인<span class="form__sub--color-pink"
+                                    >*</span
+                                >
+                            </th>
+                            <td>
+                                <input
+                                    class="form__input"
+                                    type="password"
+                                    placeholder="비밀번호를 한번 더 입력해주세요"
+                                    maxlength="16"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                이름<span class="form__sub--color-pink">*</span>
+                            </th>
+                            <td>
+                                <input
+                                    class="form__input"
+                                    type="text"
+                                    placeholder="이름을 입력해주세요"
+                                    maxlength="16"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                주소<span class="form__sub--color-pink">*</span>
+                            </th>
+                            <td>
+                                <input
+                                    class="form__input"
+                                    type="text"
+                                    placeholder="주소를 검색해 주세요"
+                                    maxlength="16"
+                                />
+                                <a href="#"
+                                    ><span id="form__btn--address">
+                                        <img
+                                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIKdmlld0JveD0iMCAwIDE3MiAxNzIiCnN0eWxlPSIgZmlsbDojMDAwMDAwOyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PHBhdGggZD0iTTAsMTcydi0xNzJoMTcydjE3MnoiIGZpbGw9Im5vbmUiPjwvcGF0aD48ZyBmaWxsPSIjZmZiOThiIj48cGF0aCBkPSJNNzMuNDU4MzMsMjEuNWMtMjguNjMyMTQsMCAtNTEuOTU4MzMsMjMuMzI2MjEgLTUxLjk1ODMzLDUxLjk1ODMzYzAsMjguNjMyMTIgMjMuMzI2MTksNTEuOTU4MzMgNTEuOTU4MzMsNTEuOTU4MzNjMTIuMzg1MjksMCAyMy43NzA3OSwtNC4zNzUwOSAzMi43MTE5MSwtMTEuNjQ1ODNsMzUuMTU0NDYsMzUuMTU0NDZjMS4zNDgxNSwxLjQwNDEyIDMuMzUwMDUsMS45Njk3MSA1LjIzMzY0LDEuNDc4NjZjMS44ODM1OSwtMC40OTEwNSAzLjM1NDU2LC0xLjk2MjAyIDMuODQ1NjEsLTMuODQ1NjFjMC40OTEwNSwtMS44ODM1OSAtMC4wNzQ1NSwtMy44ODU0OSAtMS40Nzg2NiwtNS4yMzM2NGwtMzUuMTU0NDYsLTM1LjE1NDQ2YzcuMjcwNzQsLTguOTQxMTIgMTEuNjQ1ODMsLTIwLjMyNjYzIDExLjY0NTgzLC0zMi43MTE5MWMwLC0yOC42MzIxMiAtMjMuMzI2MTksLTUxLjk1ODMzIC01MS45NTgzMywtNTEuOTU4MzN6TTczLjQ1ODMzLDMyLjI1YzIyLjgyMjQyLDAgNDEuMjA4MzMsMTguMzg1OTMgNDEuMjA4MzMsNDEuMjA4MzNjMCwxMS4xMTc2OSAtNC4zODUyOSwyMS4xNjIxNSAtMTEuNDk4ODYsMjguNTYxNjljLTAuNDM4NDksMC4zMjIyOSAtMC44MjU1LDAuNzA5MyAtMS4xNDc3OSwxLjE0Nzc5Yy03LjM5OTUzLDcuMTEzNTcgLTE3LjQ0Mzk5LDExLjQ5ODg2IC0yOC41NjE2OSwxMS40OTg4NmMtMjIuODIyNDIsMCAtNDEuMjA4MzMsLTE4LjM4NTkzIC00MS4yMDgzMywtNDEuMjA4MzNjMCwtMjIuODIyNCAxOC4zODU5MSwtNDEuMjA4MzMgNDEuMjA4MzMsLTQxLjIwODMzeiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+"
+                                            alt="주소검색"
+                                        />
+                                        주소검색
+                                    </span></a
+                                >
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>상세주소</th>
+                            <td>
+                                <input
+                                    class="form__input"
+                                    type="text"
+                                    placeholder="상세주소를 입력해 주세요"
+                                    maxlength="16"
+                                />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                휴대폰<span class="form__sub--color-pink"
+                                    >*</span
+                                >
+                            </th>
+                            <td>
+                                <input
+                                    class="form__input"
+                                    type="text"
+                                    placeholder="번호만입력해주세요"
+                                    maxlength="16"
+                                />
+                            </td>
+                        </tr>
+                        <tr class="reg__agree">
+                            <th>
+                                이용약관동의<span class="form__sub--color-pink"
+                                    >*</span
+                                >
+                            </th>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div class="form__submit"></div>
                 </div>
             </div>
         </section>
-        <section class="main__section section-3">
-            <div class="main__section-container">
-                <div class="main__section-content section-3-text">
-                    <h1>이웃과 함께 하는<br />동네 생활</h1>
-                    <p>우리 동네의 다양한 이야기를 이웃과 함께 나누어요.</p>
-                    <ul class="section-3-text-list">
-                        <li class="section-3-text-list-content">
-                            <div
-                                class="section-3-text-list-content-icon icon-question"
-                            ></div>
-                            <div>
-                                <strong>우리동네질문</strong>
-                                <p>
-                                    궁금한 게 있을 땐<br />이웃에게 물어보세요.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="section-3-text-list-content">
-                            <div
-                                class="section-3-text-list-content-icon icon-lost"
-                            ></div>
-                            <div>
-                                <strong>동네분실센터</strong>
-                                <p>
-                                    무언가를 잃어버렸을때,<br />함께 찾을 수
-                                    있어요.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="section-3-text-list-content">
-                            <div
-                                class="section-3-text-list-content-icon icon-group"
-                            ></div>
-                            <div>
-                                <strong>동네모임</strong>
-                                <p>
-                                    관심사가 비슷한 이웃과<br />온오프라인으로
-                                    만나요.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="main__section-content section-3-image"></div>
-            </div>
-        </section>
-        <section class="main__section section-4">
-            <div class="main__section-container">
-                <div class="main__section-content section-4-image"></div>
-                <div class="main__section-content section-4-text">
-                    <h1>내 근처에서 찾는<br />우리 나눔 장터</h1>
-                    <p>
-                        우리 동네 나눔을 찾고 있나요?<br />동네 주민과 함께
-                        나눔을 해보아요.
-                    </p>
-                    <div
-                        class="main__section-content section4-button-container"
-                    >
-                        <input
-                            class="section-4-btn"
-                            type="button"
-                            value="우리동네 나눔글 찾기"
-                            onclick='location.href="https://town.daangn.com/"'
-                        />
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 홈 버튼 -->
-        <div class="scroll-btn"></div>
         <!-- 하단 카피라이트 -->
         <footer class="footer">
             <div class="footer-container">

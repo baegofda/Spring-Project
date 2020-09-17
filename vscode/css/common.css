@@ -1,5 +1,7 @@
 @import "header.css";
+@import "fixed.css";
 @import "index.css";
+@import "join.css";
 @import "footer.css";
 
 :root {
@@ -16,6 +18,7 @@
     --color-light-grey: #dfdfdf;
     --color-footer-text-grey: #495057;
     --color-border: #f2f2f2;
+    --color-input-color: #cccccc;
     --color-list-orange: rgba(255, 185, 139, 0.7);
 
     /*background-color

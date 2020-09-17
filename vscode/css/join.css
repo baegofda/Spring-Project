@@ -1,0 +1,120 @@
+.join {
+    padding: 10rem 33%;
+    text-align: center;
+}
+
+.join__title {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+.join__sub {
+    font-size: 12px;
+    text-align: right;
+    margin: 1.5rem 0 0.6rem 0;
+    padding: 0;
+}
+
+.join__sub--color-pink {
+    color: var(--color-pink);
+}
+
+.form {
+    font-size: 14px;
+    width: 100%;
+}
+
+.form__table {
+    border-top: 1px solid var(--color-black);
+    border-collapse: collapse;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.form th {
+    padding: 1.8rem 0 1.8rem 1.2rem;
+    text-align: left;
+    margin-right: 1.2rem;
+    vertical-align: middle;
+    width: 18%;
+}
+
+.form__sub--color-pink {
+    color: var(--color-pink);
+}
+
+.form td {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 0.9rem;
+    padding: 0.9rem 0;
+    text-align: left;
+}
+
+.form input {
+    height: 44px;
+    box-sizing: border-box;
+    border-radius: 0.2rem;
+}
+
+.form__input {
+    border: 1px solid var(--color-input-color);
+    line-height: 44px;
+    outline: none;
+    padding: 0 14px;
+    width: 70%;
+}
+
+.form__input::placeholder {
+    color: var(--color-input-color);
+}
+
+.form__input:focus {
+    border: 1px solid var(--color-black);
+}
+
+.form__btn,
+#form__btn--address {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-personal-orange);
+    color: var(--color-personal-orange);
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 44px;
+    outline: none;
+}
+
+.form__btn {
+    margin-left: 1rem;
+    padding: 0 1.3rem;
+}
+
+#form__btn--address {
+    align-items: center;
+    border-radius: 0.2rem;
+    display: flex;
+    font-size: 14px;
+    text-align: center;
+    justify-content: center;
+    margin-left: 1rem;
+    padding: 0 1.3rem;
+}
+
+#form__btn--address img {
+    height: 14px;
+    line-height: 14px;
+    margin-right: 0.2rem;
+    width: 14px;
+}
+
+.form__input:hover,
+.form__btn:hover,
+#form__btn--address:hover {
+    box-shadow: var(--box-shadow);
+}
+
+.reg__agree {
+    border-top: 1px solid var(--color-black);
+}
