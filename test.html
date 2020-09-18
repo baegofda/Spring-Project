@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset = "utf-8">
+</head>
+  <input type="checkbox" class="selectAllMembers" 
+         />전체선택<br/>
+    <input type='checkbox' class='memberChk'
+        >이름1<br/>
+    <input type='checkbox' class='memberChk' 
+        >이름2<br/>
+    <input type='checkbox' class='memberChk'
+        >이름3<br/>
+    <input type='checkbox' class='memberChk' 
+       >이름4<br/>
+    <input type='checkbox' class='memberChk'
+        >이름5<br/>
+    <script>
+      var selectAll = document.querySelector(".selectAllMembers");
+      selectAll.addEventListener('click', function(){
+          var objs = document.querySelectorAll(".memberChk");
+          for (var i = 0; i < objs.length; i++) {
+            objs[i].checked = selectAll.checked;
+          };
+      }, false);
+       
+      var objs = document.querySelectorAll(".memberChk");
+      for(var i=0; i<objs.length ; i++){
+        objs[i].addEventListener('click', function(){
+          var selectAll = document.querySelector(".selectAllMembers");
+          for (var j = 0; j < objs.length; j++) {
+            if (objs[j].checked === false) {
+              selectAll.checked = false;
+              return;
+            };
+          };
+          selectAll.checked = true;                                   
+      }, false);
+      } 
+    </script>
+</body>
