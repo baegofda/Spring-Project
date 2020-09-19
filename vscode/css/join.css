@@ -1,5 +1,6 @@
 .join {
-    padding: 10rem 33%;
+    margin : 0 33%;
+    padding: 10rem 0;
     text-align: center;
 }
 
@@ -185,7 +186,7 @@
     font-weight: bold;
 }
 
-.form__agree input[type="checkbox"] {
+.form__agree input[type="checkbox"] + label{
     position: absolute;
     width: 1px;
     height: 1px;
