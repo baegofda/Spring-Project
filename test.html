@@ -1,41 +1,119 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset = "utf-8">
-</head>
-  <input type="checkbox" class="selectAllMembers" 
-         />전체선택<br/>
-    <input type='checkbox' class='memberChk'
-        >이름1<br/>
-    <input type='checkbox' class='memberChk' 
-        >이름2<br/>
-    <input type='checkbox' class='memberChk'
-        >이름3<br/>
-    <input type='checkbox' class='memberChk' 
-       >이름4<br/>
-    <input type='checkbox' class='memberChk'
-        >이름5<br/>
-    <script>
-      var selectAll = document.querySelector(".selectAllMembers");
-      selectAll.addEventListener('click', function(){
-          var objs = document.querySelectorAll(".memberChk");
-          for (var i = 0; i < objs.length; i++) {
-            objs[i].checked = selectAll.checked;
-          };
-      }, false);
-       
-      var objs = document.querySelectorAll(".memberChk");
-      for(var i=0; i<objs.length ; i++){
-        objs[i].addEventListener('click', function(){
-          var selectAll = document.querySelector(".selectAllMembers");
-          for (var j = 0; j < objs.length; j++) {
-            if (objs[j].checked === false) {
-              selectAll.checked = false;
-              return;
-            };
-          };
-          selectAll.checked = true;                                   
-      }, false);
-      } 
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원가입 :: 당근나라</title>
+        <link rel="stylesheet" href="vscode/css/common.css" />
+        <script
+            src="https://kit.fontawesome.com/797af710b1.js"
+            crossorigin="anonymous"
+            defer
+        ></script>
+        <script
+            src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
+            defer
+        ></script>
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="https://d1unjqcospf8gs.cloudfront.net/favicon.ico"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            label {
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="form__agree">
+            <label for="all"
+                ><input id="all" type="checkbox" class="selectAllMembers" />
+                <div id="all--ico" class="ico">
+                    <i class="fas fa-check"></i>
+                </div>
+                전체 동의합니다.
+            </label>
+            <label for="agreement"
+                ><input
+                    id="agreement"
+                    type="checkbox"
+                    class="memberChk"
+                    required
+                />
+                <div id="agreement--ico" class="ico">
+                    <i class="fas fa-check"></i>
+                </div>
+                이용약관 동의<span class="agree-sub">(필수)</span>
+            </label>
+            <label for="private"
+                ><input
+                    id="private"
+                    type="checkbox"
+                    class="memberChk"
+                    required
+                />
+                <div id="private--ico" class="ico">
+                    <i class="fas fa-check"></i>
+                </div>
+                개인정보처리방침 동의<span class="agree-sub">(필수)</span>
+            </label>
+            <label for="location"
+                ><input id="location" type="checkbox" class="memberChk" />
+                <div id="location--ico" class="ico">
+                    <i class="fas fa-check"></i>
+                </div>
+                위치정보 이용약관 동의<span class="agree-sub">(선택)</span>
+            </label>
+            <label for="sms"
+                ><input id="sms" type="checkbox" class="memberChk" />
+                <div id="sms--ico" class="ico">
+                    <i class="fas fa-check"></i>
+                </div>
+                SMS<span class="agree-sub">(선택)</span>
+            </label>
+            <label for="email"
+                ><input id="email" type="checkbox" class="memberChk" />
+                <div id="email--ico" class="ico">
+                    <i class="fas fa-check"></i>
+                </div>
+                이메일<span class="agree-sub">(선택)</span>
+            </label>
+        </div>
+        <script>
+            const selectAll = document.querySelector(".selectAllMembers");
+            const objs = document.querySelectorAll(".memberChk");
+            let i = 0;
+            let j = 0;
+            selectAll.addEventListener(
+                "click",
+                function () {
+                    for (i = 0; i < objs.length; i++) {
+                        objs[i].checked = selectAll.checked;
+                    }
+                },
+                false
+            );
+
+            for (i = 0; i < objs.length; i++) {
+                objs[i].addEventListener(
+                    "click",
+                    function () {
+                        for (j = 0; j < objs.length; j++) {
+                            if (objs[j].checked === false) {
+                                selectAll.checked = false;
+                                return;
+                            }
+                        }
+                        selectAll.checked = true;
+                    },
+                    false
+                );
+            }
+        </script>
+    </body>
+</html>
