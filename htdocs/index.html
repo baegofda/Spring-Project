@@ -1,0 +1,75 @@
+<html lang="ko">
+<head>
+	<title>Test</title>
+	<meta charset="UTF-8"/>
+	<link type="text/css" rel="stylesheet" href="common.css">
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+	<script type="text/javascript" src="common.js"></script>
+<head>
+<body>
+	<div rel="js-blocker" class="window-blocker"></div>
+	<div rel="js-message" class="window-message">
+		<div class="message-title">
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAEK0lEQVRoge2Yz29UVRTHP+fNvPemoGm1GCOGiDGk2FiFjRslREugIv+AGGVRQ6Js/A0qiRhX/lyYACVx5YIY9xSmldS46MpEYwPEhQmhbkgETKHQMn3362Km7cz0zfS9mdeYmPlumnve6fl+v++ce+/MQAcddNDB/xYqBltVDLauJYe3VoWj8cKnMrsks0vRWOGTteKxtSiqc/7T8rxJIFcJOZO3w/bcmcyaK/MOaIK8PO8Uy+IBPOFG9At+1nzZj1ApeAfYVhMTAANcD97Kmi7TEdL5wiOKdAFYXw6sSLljEQO2d/7PrDgz7YAiHaexeEBd8nQ8S87MDGg82A+8WF7EZpT/GHs0FryUFW8mI6RxuqXwIrCxqfjl9VUrlR63fdxolzuTDjiFX5JYPIA96Pzwsyy42+6AxrueldzPKK5WrKOlhyZv0IbmJtrhb8uAfiBQT/gror86fuVaF4e+285cycM5R5hf4Nvh39h433x9iT8suvuU7WXFg6Rob4R6gsP14kHMzAXMLyzfY3OlHDfnYu+wPnLBe+1IaNmAxsItkn1YFwUgzEdIQiqvJVHwo/g6cLSdD3ytGxAngEKNlAqCKgOLJsIGBoBQ2Ihi99DqaMmAioUDwK6qSK2iOgPlDjTb0NpJ0X+lFS2pDejHe3uFvqiKrMgp+C7GgGteF/taozyQVk9qAy6a/woWieLfapB3dSMkgnzDEVos0+u84PO0elIZ0Fhhp2Gvlhkbj0R9B/xchBc34XVlDA7obGEwjabEBjRKKGkEtOpm80zkbHkfhHFvP96/ydxJTVQfDqtwJU10XuEjUOLjLsgv4JzDOUeQqzPQ9IJmi5sPPkjKk8iAzoZ9Zu79pEUBfK9BB5qLB8DgiEaD/tUzExiQMHnuJBAmKbiIMB8tdyC/UCmW+N8DecnuhtU7UPRfA3suMXUFYWWEljqQXHwF2kHRH14tq6lDTbBB8+ElTBvS0v90sZsL0+uQxPbNt3im71baEgDXLe/3267Zq40SmhqIzgWnzWj921Pqtx5XQqdzQ6WXGz1vaEBj4W5JxVaJr/6TZ+z3bpxg95MzPNRTaqGKKiLdPhuKzsRlxBrQJF26GUwBj7XAyvTfPvu/eZSbd8pbbH0Y8f2bl9nUm8ZETfsum5WesD3M1mfFbmJ3K/iYFsUjOD91DzO3bekUmrkN56fWpytSi83OBUfjMlcY0HgwYOLtFGwreDf13l06gRZNPHx/0rff4IpG7+qMv60+XmNAx/DkGIEWfgKs4h0cmOX13dfoWVeiu6vE8PM32DWwovvNi1SHyuG8PE7pWK3mmj2gov+GsHQ/PGVw0jQsEhM2OGQvlE4srms7gB3JgjcdkosHkDhcva7fA8m/1v0H4gGwWo1182QHgb9a5U2HFsTDtJkOZsHeQQcddNABAP8C0LLWACVQP/4AAAAASUVORK5CYII="/>
+		</div>
+		<div class="message-content">
+			<div rel="js-message-title" class="content-item title">찐 타이틀</div>
+			<div rel="js-message-content" class="content-item content">찐 내용</div>
+		</div>
+	</div>
+	<div class="date-picker">
+		<div class="date-picker-item location">
+			<div class="date-picker-item-property title">위치</div>
+			<div class="date-picker-item-property content">
+				<input class="location-content-item input" type="text" maxlength="100" placeholder="어디로 갈까요?" readonly/>
+			</div>
+		</div>
+		<div class="date-picker-item date-from">
+			<div class="date-picker-item-property title">예약&nbsp;시작</div>
+			<div class="date-picker-item-property content">
+				<input class="location-content-item input" type="text" maxlength="10" placeholder="언제부터" readonly/>
+			</div>
+		</div>
+		<div class="date-picker-item date-to">
+			<div class="date-picker-item-property title">예약&nbsp;종료</div>
+			<div class="date-picker-item-property content">
+				<input class="location-content-item input" type="text" maxlength="10" placeholder="언제까지" readonly/>
+			</div>
+		</div>
+		<div rel="js-date-picker-people" class="date-picker-item people">
+			<div class="date-picker-item-property title">인원수</div>
+			<div class="date-picker-item-property content">
+				<input rel="js-number-value" class="location-content-item input" type="text" maxlength="4" placeholder="누구와 가나요?" readonly/>
+			</div>
+		</div>
+	</div>
+	<div rel="js-date-picker-people-form" class="date-picker-people">
+		<div class="date-picker-people-item number">
+			<div class="date-picker-people-item-property name">인원수</div>
+			<div class="date-picker-people-item-property button">
+				<div rel="js-number-down" class="button-item down"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAFu0lEQVR4nOWbX2xTVRzHv79zW/6IjJk5NCq0Y8mGDwONzkiCUOOTothFhzJlG0ZrhAcTHsT44puE+KBGQUKClqIDM7FjMjTRxEJUIlnEzWDccIwWTXBEWYtK2XrPz4e165+1Xe9t770d+zzd3nPO737PN6f3nvO75wKzHDL6Ar83tVbFJNYwiZXEXA9CHTGqGbgRQGW82igB/zDhEhiDTDRALPtsAifu8Pv+MlKfIQYMP9a+nAQ2AfwIgBUAhM5QEkAfgGOSlQPLuj8YKJnIOCUzoNfjsVddjLYIoi0M3FequOnQDwTevTQc7KBAIFaSiMUG6PV47FUj154nxisAnMVLKohhBu90hkP7ijWiKANCj7c/oIJ3EdBQTJwi6CfBWx1+37d6A+gy4EJz83w5tuAtBnv0xighDMYejtC2moA3qrWxZvHn1j9XLxD7BEQrtbY1mF9IYoPj8/1ntDTSZEDQ3fYQM/wAFmqSZh4RMLud3b5vCm1Q8ONp2N3uZsZRlG/nAaACRF8G3W0bCm1Q0AgIrm9vZuKDABTd0sxFBeEpZ9f+w9NVnNaA8+tbHwTRFwDmlkSaeYwR06OObu9X+SrlNWBiRsenUN7DPh9hVaXG2qPes7kq5LwHDLva55Hgg5i5nQeARULhwxeam+fnqpDTALEIbwO4yxBZJkJAgzp2w5t5yqcSbGpdzZJO5CqfgTAgVjuPfPh9ZsGUEcAul41VvIfrp/MAQAy5p9fjsWcWTDHgfKXjhTKc5RUNAQ3VI9c2Z55PM6DX47HHV3XXJSyxnV0uW+q5NAOqLkZbYN6S1nwIy0KVzo2pp9L/AoK2mirIApj5pdTfkze6oabWOkVSyVNO5YhkZXkivTY5AhQp2qyTZC4CsWeSxwlYrrNEjRUQPTx5CCRS1zQC/dnbmYZKsfFqR0/HZQEAMVWsxezpPAAo0j5nLQDYAIAFVhBriyDmz4PttltLL00H439cBEe1pQPjidwuGwAQc73Wi1a/9jLmNdyptZkhRPvO4M/Xc653shPv88SwJ9RpvahSuUhrE8PQqSXFAMbiEuqZKSwGkje+mZz00MtCIGnAAguFWEWaAbOWhAH/WqrCGq4ASQOuWCjEKlIMIIxYKsUaRoDkY3BQa2v1crjEevSjU8sAkJgKEw0Qa5sLj7zxDuy3l89UWDNESQOIZZ/WJDBHoxgbOq/9wmUCq7IfiP8FlDn245jYkDRbUIWMnQDiBizp3Pc3gH5LJZkIE3509HRcBtInQj0W6bEAOpY4mjRAFeyzRoz5SJIdieNJA2r9vkECTlkjyVRO1vp9k4/9zLXALpPFmA4x7079nWbApVvmHgQwbKoiM2GcWxoJHUo9lWbAvXv3jjN4p7mqTIR4R+bO0inLYWc4tA/MfeapMgcGfnaEQ97M81MMoEAgRqCtE22uGyQJfjHbvuKsCRFH9/7vwNhjvC6z4F1Ov+9ktpKcGSGO0DYApw3TZB79ypyr23MV5jSgJuCNqoKfBhAxRJY5jCqsPrGks/Nqrgp5c4K1ft8gEz0OQPMu7DJgjMDNS7o/+i1fpWmTojVd3gCBNwFQSybNeFQwbXQc8X09XcWCssKOI75PmehJzIyRcI0ILc5u72eFVNaUBRl2t7uIuQtA+bwXS2eUhXTX+A8cL7SBpvcCNV3egKpSI4CfNEszntMKq41aOg/oeDFSe9R7lsO0ChMLp3KYLEmA3x0fq1g13Q0vG0XtBg262+6RwPvEaCwmjm6Y+0DKlmxbYAul6O2w7HLZQhXOzQx+FYRlxcYrkCEQdjjs/3mps7Oop1PJ9gOzy2ULVTo3MvMWAPeXKm4GJ4l599JI6FDZfDiZjaGm1jpFxbPx3Vh3Q/+nNiqA00zUI2P4ON+HD3oxfEd4cF3LTVLY1pAiVoDlcoDqAb4ZoAokH6dhgCMAXQJ4ECR+ZVX2QxHHa7q8o0ZrnNX8Dys13u3YcfWpAAAAAElFTkSuQmCC"/></div>
+			</div>
+			<div class="date-picker-people-item-property number">
+				<a rel="js-number" class="number-value">1</a>
+			</div>
+			<div class="date-picker-people-item-property button">
+				<div rel="js-number-up" class="button-item up"><img src="data:image/png;base64,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"/></div>
+			</div>
+		</div>
+	</div>
+	<br><br>
+	<div rel="js-slider" class="slider">
+		<%
+			List<ImageModel> images = (List<ImageModel>) request.getAttribute("images");
+			for(ImageModel image : images){
+		%>
+		<%= String.format("<img src=\"%s\">", image.url) %>
+		<%
+			}
+		%>
+		<img src="https://www.kitchensanctuary.com/wp-content/uploads/2020/06/Korean-Fried-Fried-Chicken-new-feature-image-7377.jpg">
+		<img src="https://img.freepik.com/free-photo/side-view-chicken-burger-deep-fired-chicken-fillet-with-tomato-cheese-lettuce-burger-buns_141793-4816.jpg?size=626&ext=jpg">
+		<img src="https://www.savingdessert.com/wp-content/uploads/2018/03/Chicago-Style-Deep-Dish-Pizza-5.jpg">
+		<img src="https://th4.tmon.kr/thumbs/image/d26/07c/a58/c4aa0a377_700x700_95_FIT.jpg">
+	</div>
+</body>

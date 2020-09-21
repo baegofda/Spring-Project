@@ -1,11 +1,14 @@
 const scrollBtn = document.querySelector(".scroll-btn");
+const inputNameWrite = document.querySelector("#name__write");
+const inputPwWrite = document.querySelector("#pw__write");
+const inputPwCheck = document.querySelector("#pw__check");
 const addressSearch = document.querySelector(".address--search");
-const agreementBlocker = document.querySelector(".agreement--blocker");
-const agreeDetails = document.querySelector(".agreement");
-const privateBlocker = document.querySelector(".private--blocker");
-const privateDetails = document.querySelector(".private");
-const locationBlocker = document.querySelector(".location--blocker");
-const locationDetails = document.querySelector(".location");
+const agreementActive = document.querySelector(".argeementActive");
+const argeementActiveRemove = document.querySelector(".agreement--blocker");
+const privateActive = document.querySelector(".privateActive");
+const privateActiveRemove = document.querySelector(".private--blocker");
+const locationActive = document.querySelector(".locationActive");
+const locationActiveRemove = document.querySelector(".location--blocker");
 const selectAll = document.querySelector(".all--select");
 const objs = document.querySelectorAll(".agree--select");
 const findPwSubmit = document.querySelector(".find-pw__submit");
@@ -30,6 +33,240 @@ if (scrollBtn != null) {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 }
+if (inputNameWrite != null) {
+    inputNameWrite.addEventListener("keyup", () => {
+        nameRules();
+    });
+}
+if (inputPwWrite != null) {
+    inputPwWrite.addEventListener("keyup", () => {
+        pwRules();
+        pwCheck();
+    });
+}
+if (inputPwCheck != null) {
+    inputPwCheck.addEventListener("keyup", () => {
+        pwCheck();
+    });
+}
+if (agreementActive != null) {
+    agreementActive.addEventListener("click", () => {
+        agreementActiveFunction();
+    });
+}
+
+if (argeementActiveRemove != null) {
+    argeementActiveRemove.addEventListener("click", () => {
+        argeementActiveRemoveFunction();
+    });
+}
+
+if (privateActive != null) {
+    privateActive.addEventListener("click", () => {
+        privateActiveFunction();
+    });
+}
+
+if (privateActiveRemove != null) {
+    privateActiveRemove.addEventListener("click", () => {
+        privateActiveRemoveFunction();
+    });
+}
+
+if (locationActive != null) {
+    locationActive.addEventListener("click", () => {
+        locationActiveFunction();
+    });
+}
+
+if (locationActiveRemove != null) {
+    locationActiveRemove.addEventListener("click", () => {
+        locationActiveRemoveFunction();
+    });
+}
+
+if (addressSearch != null) {
+    addressSearch.addEventListener("click", () => {
+        addressSearchFunction();
+    });
+}
+
+if (selectAll != null) {
+    if (selectAll != null) {
+        selectAll.addEventListener(
+            "click",
+            function () {
+                for (i = 0; i < objs.length; i++) {
+                    objs[i].checked = selectAll.checked;
+                }
+            },
+            false
+        );
+    }
+
+    if (objs != null) {
+        for (i = 0; i < objs.length; i++) {
+            objs[i].addEventListener(
+                "click",
+                function () {
+                    for (j = 0; j < objs.length; j++) {
+                        if (objs[j].checked === false) {
+                            selectAll.checked = false;
+                            return;
+                        }
+                    }
+                    selectAll.checked = true;
+                },
+                false
+            );
+        }
+    }
+}
+
+if (findPwResetLogin != null) {
+    findPwResetLogin.addEventListener("click", () => {
+        location.href = "login.html";
+    });
+}
+
+if (findPwResetMain != null) {
+    findPwResetMain.addEventListener("click", () => {
+        location.href = "main.html";
+    });
+}
+
+if (userLeaveCancleBtn != null) {
+    userLeaveCancleBtn.addEventListener("click", () => {
+        history.go(-1);
+    });
+}
+
+if (loginJoin != null) {
+    loginJoin.addEventListener("click", () => {
+        location.href = "join.html";
+    });
+}
+
+if (userLeaveBtn != null) {
+    userLeaveBtn.addEventListener("click", () => {
+        if (confirm("회원탈퇴를 원하십니까 ?") == true) {
+            location.href = "userLeave.html";
+        } else {
+            return false;
+        }
+    });
+}
+
+// --------------------------- 작업시 유효성 검사이후 넘겨주세요
+if (myPageUpdateBtn != null) {
+    myPageUpdateBtn.addEventListener("click", () => {
+        if (true) {
+            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+            // document.formname.submit();
+            alert("수정완료 !");
+            location.href = "main.html";
+        } else {
+            alert("수정실패 ! 입력하신 정보를 확인해주세요.");
+            return false;
+        }
+    });
+}
+
+if (userLeaveSubmitBtn != null) {
+    userLeaveSubmitBtn.addEventListener("click", () => {
+        if (true) {
+            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+            // document.formname.submit();
+            alert("탈퇴가 완료되었습니다. 그동안 이용해주셔서 감사합니다.");
+            location.href = "main.html";
+        } else {
+            alert("탈퇴에 실패하였습니다. 비밀번호를 확인해주세요.");
+            return false;
+        }
+    });
+}
+
+if (updatePwBtn != null) {
+    updatePwBtn.addEventListener("click", () => {
+        if (true) {
+            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+            // document.formname.submit();
+            alert("수정완료 ! 환영합니다.");
+            location.href = "main.html";
+        } else {
+            alert("수정실패 ! 입력하신 정보를 확인해주세요.");
+            return false;
+        }
+    });
+}
+
+if (loginSubmit != null) {
+    loginSubmit.addEventListener("click", () => {
+        if (true) {
+            // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+            // document.formname.submit();
+            alert("로그인성공 ! 환영합니다.");
+            location.href = "main.html";
+        } else {
+            alert("로그인실패 ! 아이디 혹은 비밀번호를 확인해주세요.");
+            return false;
+        }
+    });
+}
+
+if (findPwSubmit != null) {
+    findPwSubmit.addEventListener("click", () => {
+        if (true) {
+            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+            // document.formname.submit();
+            location.href = "findPwReset.html";
+        } else {
+            alert("존재하지 않는 회원 정보 입니다.");
+            return false;
+        }
+    });
+}
+
+if (submitBtn != null) {
+    submitBtn.addEventListener("click", () => {
+        if (true) {
+            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+            // document.formname.submit();
+            alert("가입완료 ! 잘 부탁드립니다.");
+            location.href = "main.html";
+        } else {
+            alert("가입실패 ! 입력하신 정보를 확인해주세요.");
+            return false;
+        }
+    });
+}
+
+if (emailCheckBtn != null) {
+    emailCheckBtn.addEventListener("click", () => {
+        if (true) {
+            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+            // document.formname.submit();
+            alert("사용하실 수 있는 이메일입니다.");
+        } else {
+            alert("이미 가입된 이메일입니다.");
+            return false;
+        }
+    });
+}
+
+if (nameCheckBtn != null) {
+    nameCheckBtn.addEventListener("click", () => {
+        if (true) {
+            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+            // document.formname.submit();
+            alert("사용하실 수 있는 닉네임입니다.");
+        } else {
+            alert("이미 가입된 닉네임입니다.");
+            return false;
+        }
+    });
+}
+//-----------------------------
 
 function nameRules() {
     const nameWrite = document.querySelector("#name__write").value;
@@ -156,261 +393,81 @@ function pwCheck() {
         pwConfrim.style.fontSize = "12px";
     }
 }
-
-function argeementActive() {
-    agreementBlocker.classList.add("active");
-    agreeDetails.classList.add("active");
+function agreementActiveFunction() {
+    argeementActiveRemove.classList.add("active");
+    agreementActive.classList.add("active");
+}
+function argeementActiveRemoveFunction() {
+    argeementActiveRemove.classList.remove("active");
+    agreementActive.classList.remove("active");
 }
 
-function argeementActiveRemove() {
-    agreementBlocker.classList.remove("active");
-    agreeDetails.classList.remove("active");
+function privateActiveFunction() {
+    privateActiveRemove.classList.add("active");
+    privateActive.classList.add("active");
 }
 
-function privateActive() {
-    privateBlocker.classList.add("active");
-    privateDetails.classList.add("active");
+function privateActiveRemoveFunction() {
+    privateActiveRemove.classList.remove("active");
+    privateActive.classList.remove("active");
 }
 
-function privateActiveRemove() {
-    privateBlocker.classList.remove("active");
-    privateDetails.classList.remove("active");
+function locationActiveFunction() {
+    locationActiveRemove.classList.add("active");
+    locationActive.classList.add("active");
 }
 
-function locationActive() {
-    locationBlocker.classList.add("active");
-    locationDetails.classList.add("active");
+function locationActiveRemoveFunction() {
+    locationActiveRemove.classList.remove("active");
+    locationActive.classList.remove("active");
 }
 
-function locationActiveRemove() {
-    locationBlocker.classList.remove("active");
-    locationDetails.classList.remove("active");
-}
+function addressSearchFunction() {
+    new daum.Postcode({
+        oncomplete: function (data) {
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
-if (selectAll != null) {
-    if (selectAll != null) {
-        selectAll.addEventListener(
-            "click",
-            function () {
-                for (i = 0; i < objs.length; i++) {
-                    objs[i].checked = selectAll.checked;
-                }
-            },
-            false
-        );
-    }
+            // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var addr = ""; // 주소 변수
+            // var extraAddr = ""; // 참고항목 변수
 
-    if (objs != null) {
-        for (i = 0; i < objs.length; i++) {
-            objs[i].addEventListener(
-                "click",
-                function () {
-                    for (j = 0; j < objs.length; j++) {
-                        if (objs[j].checked === false) {
-                            selectAll.checked = false;
-                            return;
-                        }
-                    }
-                    selectAll.checked = true;
-                },
-                false
-            );
-        }
-    }
-}
+            //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+            if (data.userSelectedType === "R") {
+                // 사용자가 도로명 주소를 선택했을 경우
+                addr = data.roadAddress;
+            } else {
+                // 사용자가 지번 주소를 선택했을 경우(J)
+                addr = data.jibunAddress;
+            }
 
-if (addressSearch != null) {
-    addressSearch.addEventListener("click", () => {
-        new daum.Postcode({
-            oncomplete: function (data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+            // // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+            // if(data.userSelectedType === 'R'){
+            //     // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+            //     // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+            //     if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+            //         extraAddr += data.bname;
+            //     }
+            //     // 건물명이 있고, 공동주택일 경우 추가한다.
+            //     if(data.buildingName !== '' && data.apartment === 'Y'){
+            //         extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+            //     }
+            //     // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+            //     if(extraAddr !== ''){
+            //         extraAddr = ' (' + extraAddr + ')';
+            //     }
+            //     // 조합된 참고항목을 해당 필드에 넣는다.
+            //     document.getElementById("sample6_extraAddress").value = extraAddr;
 
-                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var addr = ""; // 주소 변수
-                // var extraAddr = ""; // 참고항목 변수
+            // } else {
+            //     document.getElementById("sample6_extraAddress").value = '';
+            // }
 
-                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-                if (data.userSelectedType === "R") {
-                    // 사용자가 도로명 주소를 선택했을 경우
-                    addr = data.roadAddress;
-                } else {
-                    // 사용자가 지번 주소를 선택했을 경우(J)
-                    addr = data.jibunAddress;
-                }
-
-                // // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
-                // if(data.userSelectedType === 'R'){
-                //     // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                //     // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                //     if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                //         extraAddr += data.bname;
-                //     }
-                //     // 건물명이 있고, 공동주택일 경우 추가한다.
-                //     if(data.buildingName !== '' && data.apartment === 'Y'){
-                //         extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                //     }
-                //     // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                //     if(extraAddr !== ''){
-                //         extraAddr = ' (' + extraAddr + ')';
-                //     }
-                //     // 조합된 참고항목을 해당 필드에 넣는다.
-                //     document.getElementById("sample6_extraAddress").value = extraAddr;
-
-                // } else {
-                //     document.getElementById("sample6_extraAddress").value = '';
-                // }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                // document.getElementById('sample6_postcode').value = data.zonecode;
-                document.getElementById("address").value = addr;
-                // 커서를 상세주소 필드로 이동한다.
-                document.getElementById("sample6_detailAddress").focus();
-            },
-        }).open();
-    });
-}
-
-if (findPwResetLogin != null) {
-    findPwResetLogin.addEventListener("click", () => {
-        location.href = "login.html";
-    });
-}
-
-if (findPwResetMain != null) {
-    findPwResetMain.addEventListener("click", () => {
-        location.href = "main.html";
-    });
-}
-
-if (userLeaveCancleBtn != null) {
-    userLeaveCancleBtn.addEventListener("click", () => {
-        history.go(-1);
-    });
-}
-
-if (loginJoin != null) {
-    loginJoin.addEventListener("click", () => {
-        location.href = "join.html";
-    });
-}
-
-if (userLeaveBtn != null) {
-    userLeaveBtn.addEventListener("click", () => {
-        if (confirm("회원탈퇴를 원하십니까 ?") == true) {
-            location.href = "userLeave.html";
-        } else {
-            return false;
-        }
-    });
-}
-
-// --------------------------- 작업시 유효성 검사이후 넘겨주세요
-if (myPageUpdateBtn != null) {
-    myPageUpdateBtn.addEventListener("click", () => {
-        if (true) {
-            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
-            // document.formname.submit();
-            alert("수정완료 !");
-            location.href = "main.html";
-        } else {
-            alert("수정실패 ! 입력하신 정보를 확인해주세요.");
-            return false;
-        }
-    });
-}
-
-if (userLeaveSubmitBtn != null) {
-    userLeaveSubmitBtn.addEventListener("click", () => {
-        if (true) {
-            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
-            // document.formname.submit();
-            alert("탈퇴가 완료되었습니다. 그동안 이용해주셔서 감사합니다.");
-            location.href = "main.html";
-        } else {
-            alert("탈퇴에 실패하였습니다. 비밀번호를 확인해주세요.");
-            return false;
-        }
-    });
-}
-
-if (updatePwBtn != null) {
-    updatePwBtn.addEventListener("click", () => {
-        if (true) {
-            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
-            // document.formname.submit();
-            alert("수정완료 ! 환영합니다.");
-            location.href = "main.html";
-        } else {
-            alert("수정실패 ! 입력하신 정보를 확인해주세요.");
-            return false;
-        }
-    });
-}
-
-if (loginSubmit != null) {
-    loginSubmit.addEventListener("click", () => {
-        if (false) {
-            // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
-            // document.formname.submit();
-            alert("로그인성공 ! 환영합니다.");
-            location.href = "main.html";
-        } else {
-            alert("로그인실패 ! 아이디 혹은 비밀번호를 확인해주세요.");
-            return false;
-        }
-    });
-}
-
-if (findPwSubmit != null) {
-    findPwSubmit.addEventListener("click", () => {
-        if (false) {
-            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
-            // document.formname.submit();
-            location.href = "findPwReset.html";
-        } else {
-            alert("존재하지 않는 회원 정보 입니다.");
-            return false;
-        }
-    });
-}
-
-if (submitBtn != null) {
-    submitBtn.addEventListener("click", () => {
-        if (true) {
-            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
-            // document.formname.submit();
-            alert("가입완료 ! 잘 부탁드립니다.");
-            location.href = "main.html";
-        } else {
-            alert("가입실패 ! 입력하신 정보를 확인해주세요.");
-            return false;
-        }
-    });
-}
-
-if (emailCheckBtn != null) {
-    emailCheckBtn.addEventListener("click", () => {
-        if (true) {
-            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
-            // document.formname.submit();
-            alert("사용하실 수 있는 이메일입니다.");
-        } else {
-            alert("이미 가입된 이메일입니다.");
-            return false;
-        }
-    });
-}
-
-if (nameCheckBtn != null) {
-    nameCheckBtn.addEventListener("click", () => {
-        if (true) {
-            // 작업시 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
-            // document.formname.submit();
-            alert("사용하실 수 있는 닉네임입니다.");
-        } else {
-            alert("이미 가입된 닉네임입니다.");
-            return false;
-        }
-    });
+            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+            // document.getElementById('sample6_postcode').value = data.zonecode;
+            document.getElementById("address").value = addr;
+            // 커서를 상세주소 필드로 이동한다.
+            document.getElementById("sample6_detailAddress").focus();
+        },
+    }).open();
 }

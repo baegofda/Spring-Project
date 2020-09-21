@@ -66,9 +66,10 @@ header {
 }
 
 .nav-list {
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content: flex-end;
 }
 
 .nav-list-content {

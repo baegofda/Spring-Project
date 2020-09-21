@@ -122,7 +122,6 @@
                                     placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합"
                                     value="세션값 입력"
                                     maxlength="16"
-                                    onkeyup="nameRules()"
                                     required
                                 /><input
                                     class="mypage--form__btn"
@@ -168,7 +167,6 @@
                                     type="password"
                                     placeholder="새 비밀번호를 입력해주세요"
                                     maxlength="16"
-                                    onkeyup="pwRules(), pwCheck()"
                                 />
                                 <div
                                     class="check__message write__message"
@@ -194,7 +192,6 @@
                                     type="password"
                                     placeholder="새 비밀번호를 한번 더 입력해주세요"
                                     maxlength="16"
-                                    onkeyup="pwCheck()"
                                 />
                                 <div class="check__message pw__confirm"></div>
                             </td>
@@ -288,9 +285,8 @@
                                             >
                                         </label>
                                         <a
-                                            class="detail"
+                                            class="detail locationActive"
                                             href="#none"
-                                            onclick="locationActive()"
                                         >
                                             <p>약관보기</p>
                                             <img
@@ -299,7 +295,6 @@
                                         </a>
                                         <div
                                             class="window--blocker location--blocker"
-                                            onclick="locationActiveRemove()"
                                         >
                                             <div
                                                 class="agreement--detail location"
