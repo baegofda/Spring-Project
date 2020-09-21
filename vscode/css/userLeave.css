@@ -1,49 +1,49 @@
-.join {
+.user-leave {
     margin: 0 33%;
     padding: 10rem 0;
     text-align: center;
 }
 
-.join__title {
+.user-leave__title {
     font-size: 30px;
     margin: 0;
     padding: 0;
 }
-.join__sub {
+.user-leave__sub {
     font-size: 12px;
     text-align: right;
     margin: 1.5rem 0 0.6rem 0;
     padding: 0;
 }
 
-.join__sub--color-pink {
+.user-leave__sub--color-pink {
     color: var(--color-pink);
 }
 
-.join--form {
+.userleave--form {
     font-size: 14px;
     width: 100%;
 }
 
-.join--form__table {
+.userleave--form__table {
     border-top: 1px solid var(--color-black);
     border-collapse: collapse;
     width: 100%;
     border-bottom: 1px solid var(--color-border);
 }
 
-.join--form th {
+.userleave--form th {
     padding: 1.8rem 0 1.8rem 1.2rem;
     text-align: left;
     vertical-align: baseline;
-    width: 30%;
+    width: 25%;
 }
 
-.join--form__sub--color-pink {
+.userleave--form__sub--color-pink {
     color: var(--color-pink);
 }
 
-.join--form td {
+.userleave--form td {
     align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
@@ -53,13 +53,13 @@
     text-align: left;
 }
 
-.join--form input {
+.userleave--form input {
     height: 44px;
     box-sizing: border-box;
     border-radius: 0.2rem;
 }
 
-.join--form__input {
+.userleave--form__input {
     border: 1px solid var(--color-input-color);
     line-height: 44px;
     outline: none;
@@ -67,29 +67,37 @@
     width: 70%;
 }
 
-.join--form__input::placeholder {
+.userleave--form input:read-only {
+    background-color: #e8f0fe;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.userleave--form input:valid {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.userleave--form__input::placeholder {
     color: var(--color-input-color);
 }
 
-.join--form__input:focus {
+.userleave--form__input:focus {
     border: 1px solid var(--color-black);
 }
 
-.join--form__btn,
-#join--form__btn--address {
+.userleave--form__btn,
+#userleave--form__btn--address {
     background-color: var(--color-white);
     border: 1px solid var(--color-personal-orange);
-    box-sizing: border-box;
     color: var(--color-personal-orange);
     cursor: pointer;
     font-weight: 700;
     line-height: 44px;
     outline: none;
-    width: 100px;
 }
 
-.join--form__btn {
+.userleave--form__btn {
     margin-left: 1rem;
+    padding: 0 1.3rem;
 }
 
 .check__message {
@@ -98,18 +106,18 @@
     width: 100%;
 }
 
-#join--form__btn--address {
+#userleave--form__btn--address {
     align-items: center;
     border-radius: 0.2rem;
-    box-sizing: border-box;
     display: flex;
     font-size: 14px;
     text-align: center;
     justify-content: center;
     margin-left: 1rem;
+    padding: 0 1.3rem;
 }
 
-#join--form__btn--address img {
+#userleave--form__btn--address img {
     height: 14px;
     line-height: 14px;
     margin-right: 0.2rem;
@@ -120,54 +128,42 @@
     margin-bottom: 0.9rem;
 }
 
-.join--form__input:hover,
-.join--form__btn:hover,
-#join--form__btn--address:hover {
+.userleave--form__input:hover,
+.userleave--form__btn:hover,
+#userleave--form__btn--address:hover {
     box-shadow: var(--box-shadow);
 }
 
-.join--form__agree {
+.userleave--form__agree {
     border-top: 1px solid var(--color-black);
 }
 
-.join--form__submit {
+.userleave--form__submit {
     margin-top: 3rem;
 }
 
-.submit-btn {
-    background-color: var(--color-personal-orange);
-    border: none;
-    color: var(--color-white);
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    outline: none;
-    padding: 0.5rem 0;
-    width: 40%;
-}
-
-.join--form__agree ul {
+.userleave--form__agree ul {
     width: 100%;
     z-index: 1;
 }
 
-.join--form__agree ul li {
+.userleave--form__agree ul li {
     position: relative;
     width: 100%;
 }
 
-.join--form__agree ul li:not(:first-child) {
+.userleave--form__agree ul li:not(:first-child) {
     margin-top: 0.9rem;
 }
 
-.join--form__agree ul li:last-child {
+.userleave--form__agree ul li:last-child {
     align-items: center;
     display: flex;
     justify-content: center;
     margin-bottom: 0.5rem;
 }
 
-.join--form__agree li label {
+.userleave--form__agree li label {
     align-items: center;
     color: var(--color-black);
     display: flex;
@@ -180,7 +176,7 @@
     font-weight: bold;
 }
 
-.join--form__agree input[type="checkbox"] {
+.userleave--form__agree input[type="checkbox"] {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -310,4 +306,37 @@ input[type="checkbox"]:checked + div.ico {
     text-align: center;
     margin: 0;
     padding: 0;
+}
+
+.user-leave__btn {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+}
+
+.user-leave__btn input {
+    border: none;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 44px;
+    outline: none;
+    width: 21%;
+}
+.user-leave__btn input:first-child {
+    margin-right: 1rem;
+}
+
+.user-leave__btn .user-leave__submit {
+    background-color: var(--color-personal-orange);
+    color: var(--color-white);
+}
+
+.user-leave__btn .user-leave__cancle {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-personal-orange);
+    color: var(--color-personal-orange);
 }

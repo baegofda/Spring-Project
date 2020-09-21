@@ -1,49 +1,49 @@
-.join {
+.mypage {
     margin: 0 33%;
     padding: 10rem 0;
     text-align: center;
 }
 
-.join__title {
+.mypage__title {
     font-size: 30px;
     margin: 0;
     padding: 0;
 }
-.join__sub {
+.mypage__sub {
     font-size: 12px;
     text-align: right;
     margin: 1.5rem 0 0.6rem 0;
     padding: 0;
 }
 
-.join__sub--color-pink {
+.mypage__sub--color-pink {
     color: var(--color-pink);
 }
 
-.join--form {
+.mypage--form {
     font-size: 14px;
     width: 100%;
 }
 
-.join--form__table {
+.mypage--form__table {
     border-top: 1px solid var(--color-black);
     border-collapse: collapse;
     width: 100%;
     border-bottom: 1px solid var(--color-border);
 }
 
-.join--form th {
+.mypage--form th {
     padding: 1.8rem 0 1.8rem 1.2rem;
     text-align: left;
     vertical-align: baseline;
-    width: 30%;
+    width: 25%;
 }
 
-.join--form__sub--color-pink {
+.mypage--form__sub--color-pink {
     color: var(--color-pink);
 }
 
-.join--form td {
+.mypage--form td {
     align-items: flex-start;
     display: flex;
     flex-wrap: wrap;
@@ -53,13 +53,13 @@
     text-align: left;
 }
 
-.join--form input {
+.mypage--form input {
     height: 44px;
     box-sizing: border-box;
     border-radius: 0.2rem;
 }
 
-.join--form__input {
+.mypage--form__input {
     border: 1px solid var(--color-input-color);
     line-height: 44px;
     outline: none;
@@ -67,16 +67,25 @@
     width: 70%;
 }
 
-.join--form__input::placeholder {
+.mypage--form input:read-only {
+    background-color: #e8f0fe;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.mypage--form input:valid {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.mypage--form__input::placeholder {
     color: var(--color-input-color);
 }
 
-.join--form__input:focus {
+.mypage--form__input:focus {
     border: 1px solid var(--color-black);
 }
 
-.join--form__btn,
-#join--form__btn--address {
+.mypage--form__btn,
+#mypage--form__btn--address {
     background-color: var(--color-white);
     border: 1px solid var(--color-personal-orange);
     box-sizing: border-box;
@@ -88,7 +97,7 @@
     width: 100px;
 }
 
-.join--form__btn {
+.mypage--form__btn {
     margin-left: 1rem;
 }
 
@@ -98,10 +107,9 @@
     width: 100%;
 }
 
-#join--form__btn--address {
+#mypage--form__btn--address {
     align-items: center;
     border-radius: 0.2rem;
-    box-sizing: border-box;
     display: flex;
     font-size: 14px;
     text-align: center;
@@ -109,7 +117,7 @@
     margin-left: 1rem;
 }
 
-#join--form__btn--address img {
+#mypage--form__btn--address img {
     height: 14px;
     line-height: 14px;
     margin-right: 0.2rem;
@@ -120,54 +128,42 @@
     margin-bottom: 0.9rem;
 }
 
-.join--form__input:hover,
-.join--form__btn:hover,
-#join--form__btn--address:hover {
+.mypage--form__input:hover,
+.mypage--form__btn:hover,
+#mypage--form__btn--address:hover {
     box-shadow: var(--box-shadow);
 }
 
-.join--form__agree {
+.mypage--form__agree {
     border-top: 1px solid var(--color-black);
 }
 
-.join--form__submit {
+.mypage--form__submit {
     margin-top: 3rem;
 }
 
-.submit-btn {
-    background-color: var(--color-personal-orange);
-    border: none;
-    color: var(--color-white);
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    outline: none;
-    padding: 0.5rem 0;
-    width: 40%;
-}
-
-.join--form__agree ul {
+.mypage--form__agree ul {
     width: 100%;
     z-index: 1;
 }
 
-.join--form__agree ul li {
+.mypage--form__agree ul li {
     position: relative;
     width: 100%;
 }
 
-.join--form__agree ul li:not(:first-child) {
+.mypage--form__agree ul li:not(:first-child) {
     margin-top: 0.9rem;
 }
 
-.join--form__agree ul li:last-child {
+.mypage--form__agree ul li:last-child {
     align-items: center;
     display: flex;
     justify-content: center;
     margin-bottom: 0.5rem;
 }
 
-.join--form__agree li label {
+.mypage--form__agree li label {
     align-items: center;
     color: var(--color-black);
     display: flex;
@@ -180,7 +176,7 @@
     font-weight: bold;
 }
 
-.join--form__agree input[type="checkbox"] {
+.mypage--form__agree input[type="checkbox"] {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -310,4 +306,38 @@ input[type="checkbox"]:checked + div.ico {
     text-align: center;
     margin: 0;
     padding: 0;
+}
+
+.mypage__btn {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+}
+
+.mypage__btn input {
+    border: none;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 44px;
+    outline: none;
+    width: 20%;
+}
+
+.mypage__btn input:first-child {
+    margin-right: 1rem;
+}
+
+.mypage__btn .mypage__update {
+    background-color: var(--color-personal-orange);
+    color: var(--color-white);
+}
+
+.mypage__btn .mypage__leave {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-personal-orange);
+    color: var(--color-personal-orange);
 }

@@ -59,10 +59,10 @@
                                 <a href="#">지도로 보기</a>
                             </li>
                             <li class="nav-list-content">
-                                <a href="#">회원가입</a>
+                                <a href="join.html">회원가입</a>
                             </li>
                             <li class="nav-list-content">
-                                <a href="#">로그인</a>
+                                <a href="login.html">로그인</a>
                             </li>
                         </ul>
                     </nav>
@@ -90,24 +90,24 @@
                         필수입력사항
                     </p>
                 </div>
-                <div class="form">
-                    <table class="form__table">
+                <div class="join--form">
+                    <table class="join--form__table">
                         <tr>
                             <th>
-                                이메일<span class="form__sub--color-pink"
+                                이메일<span class="join--form__sub--color-pink"
                                     >*</span
                                 >
                             </th>
                             <td>
                                 <input
                                     id="email__write"
-                                    class="form__input"
+                                    class="join--form__input"
                                     type="text"
                                     placeholder="example@naver.com"
                                     maxlength="16"
                                     required
                                 /><input
-                                    class="form__btn"
+                                    class="join--form__btn email-check"
                                     type="button"
                                     value="중복확인"
                                 />
@@ -115,21 +115,21 @@
                         </tr>
                         <tr>
                             <th>
-                                닉네임<span class="form__sub--color-pink"
+                                닉네임<span class="join--form__sub--color-pink"
                                     >*</span
                                 >
                             </th>
                             <td>
                                 <input
                                     id="name__write"
-                                    class="form__input"
+                                    class="join--form__input"
                                     type="text"
                                     placeholder="6자 이상의 영문 혹은 영문과 숫자를 조합"
                                     maxlength="16"
                                     onkeyup="nameRules()"
                                     required
                                 /><input
-                                    class="form__btn"
+                                    class="join--form__btn name-check"
                                     type="button"
                                     value="중복확인"
                                 />
@@ -144,14 +144,15 @@
                         </tr>
                         <tr>
                             <th>
-                                비밀번호<span class="form__sub--color-pink"
+                                비밀번호<span
+                                    class="join--form__sub--color-pink"
                                     >*</span
                                 >
                             </th>
                             <td>
                                 <input
                                     id="pw__write"
-                                    class="form__input pw__write"
+                                    class="join--form__input pw__write"
                                     type="password"
                                     placeholder="비밀번호를 입력해주세요"
                                     maxlength="16"
@@ -171,14 +172,15 @@
                         </tr>
                         <tr class="pw-check">
                             <th>
-                                비밀번호확인<span class="form__sub--color-pink"
+                                비밀번호확인<span
+                                    class="join--form__sub--color-pink"
                                     >*</span
                                 >
                             </th>
                             <td>
                                 <input
                                     id="pw__check"
-                                    class="form__input"
+                                    class="join--form__input"
                                     type="password"
                                     placeholder="비밀번호를 한번 더 입력해주세요"
                                     maxlength="16"
@@ -190,11 +192,13 @@
                         </tr>
                         <tr>
                             <th>
-                                이름<span class="form__sub--color-pink">*</span>
+                                이름<span class="join--form__sub--color-pink"
+                                    >*</span
+                                >
                             </th>
                             <td>
                                 <input
-                                    class="form__input"
+                                    class="join--form__input"
                                     type="text"
                                     placeholder="이름을 입력해주세요"
                                     maxlength="16"
@@ -204,21 +208,21 @@
                         </tr>
                         <tr class="address">
                             <th>
-                                주소<span class="form__sub--color-pink">*</span>
+                                주소<span class="join--form__sub--color-pink"
+                                    >*</span
+                                >
                             </th>
                             <td>
                                 <input
-                                    id="sample6_address"
-                                    class="form__input"
+                                    id="address"
+                                    class="join--form__input"
                                     type="text"
                                     placeholder="주소를 검색해 주세요"
                                     maxlength="16"
                                     required
                                 />
-                                <a
-                                    href="#none"
-                                    onclick="sample6_execDaumPostcode()"
-                                    ><span id="form__btn--address">
+                                <a class="address--search" href="#none"
+                                    ><span id="join--form__btn--address">
                                         <img
                                             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIKdmlld0JveD0iMCAwIDE3MiAxNzIiCnN0eWxlPSIgZmlsbDojMDAwMDAwOyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PHBhdGggZD0iTTAsMTcydi0xNzJoMTcydjE3MnoiIGZpbGw9Im5vbmUiPjwvcGF0aD48ZyBmaWxsPSIjZmZiOThiIj48cGF0aCBkPSJNNzMuNDU4MzMsMjEuNWMtMjguNjMyMTQsMCAtNTEuOTU4MzMsMjMuMzI2MjEgLTUxLjk1ODMzLDUxLjk1ODMzYzAsMjguNjMyMTIgMjMuMzI2MTksNTEuOTU4MzMgNTEuOTU4MzMsNTEuOTU4MzNjMTIuMzg1MjksMCAyMy43NzA3OSwtNC4zNzUwOSAzMi43MTE5MSwtMTEuNjQ1ODNsMzUuMTU0NDYsMzUuMTU0NDZjMS4zNDgxNSwxLjQwNDEyIDMuMzUwMDUsMS45Njk3MSA1LjIzMzY0LDEuNDc4NjZjMS44ODM1OSwtMC40OTEwNSAzLjM1NDU2LC0xLjk2MjAyIDMuODQ1NjEsLTMuODQ1NjFjMC40OTEwNSwtMS44ODM1OSAtMC4wNzQ1NSwtMy44ODU0OSAtMS40Nzg2NiwtNS4yMzM2NGwtMzUuMTU0NDYsLTM1LjE1NDQ2YzcuMjcwNzQsLTguOTQxMTIgMTEuNjQ1ODMsLTIwLjMyNjYzIDExLjY0NTgzLC0zMi43MTE5MWMwLC0yOC42MzIxMiAtMjMuMzI2MTksLTUxLjk1ODMzIC01MS45NTgzMywtNTEuOTU4MzN6TTczLjQ1ODMzLDMyLjI1YzIyLjgyMjQyLDAgNDEuMjA4MzMsMTguMzg1OTMgNDEuMjA4MzMsNDEuMjA4MzNjMCwxMS4xMTc2OSAtNC4zODUyOSwyMS4xNjIxNSAtMTEuNDk4ODYsMjguNTYxNjljLTAuNDM4NDksMC4zMjIyOSAtMC44MjU1LDAuNzA5MyAtMS4xNDc3OSwxLjE0Nzc5Yy03LjM5OTUzLDcuMTEzNTcgLTE3LjQ0Mzk5LDExLjQ5ODg2IC0yOC41NjE2OSwxMS40OTg4NmMtMjIuODIyNDIsMCAtNDEuMjA4MzMsLTE4LjM4NTkzIC00MS4yMDgzMywtNDEuMjA4MzNjMCwtMjIuODIyNCAxOC4zODU5MSwtNDEuMjA4MzMgNDEuMjA4MzMsLTQxLjIwODMzeiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+"
                                             alt="주소검색"
@@ -228,7 +232,7 @@
                                 >
                                 <input
                                     id="sample6_detailAddress"
-                                    class="form__input"
+                                    class="join--form__input"
                                     type="text"
                                     placeholder="상세주소를 입력해 주세요"
                                     maxlength="16"
@@ -237,13 +241,13 @@
                         </tr>
                         <tr>
                             <th>
-                                휴대폰<span class="form__sub--color-pink"
+                                휴대폰<span class="join--form__sub--color-pink"
                                     >*</span
                                 >
                             </th>
                             <td>
                                 <input
-                                    class="form__input"
+                                    class="join--form__input"
                                     type="text"
                                     placeholder="숫자만 입력해주세요"
                                     maxlength="16"
@@ -251,9 +255,10 @@
                                 />
                             </td>
                         </tr>
-                        <tr class="form__agree">
+                        <tr class="join--form__agree">
                             <th>
-                                이용약관동의<span class="form__sub--color-pink"
+                                이용약관동의<span
+                                    class="join--form__sub--color-pink"
                                     >*</span
                                 >
                             </th>
@@ -3277,7 +3282,7 @@
                                             <div id="sms--ico" class="ico">
                                                 <i class="fas fa-check"></i>
                                             </div>
-                                            SMS<span class="agree-sub"
+                                            SMS 수신<span class="agree-sub"
                                                 >(선택)</span
                                             > </label
                                         ><label for="email"
@@ -3289,7 +3294,7 @@
                                             <div id="email--ico" class="ico">
                                                 <i class="fas fa-check"></i>
                                             </div>
-                                            이메일<span class="agree-sub"
+                                            이메일 수신<span class="agree-sub"
                                                 >(선택)</span
                                             >
                                         </label>
@@ -3298,7 +3303,7 @@
                             </td>
                         </tr>
                     </table>
-                    <div class="form__submit">
+                    <div class="join--form__submit">
                         <input
                             class="submit-btn"
                             type="button"
