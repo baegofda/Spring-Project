@@ -268,7 +268,7 @@ input[type="checkbox"]:checked + div.ico {
     pointer-events: all;
 }
 
-.agreement--detail {
+.window--detail {
     top: 50%;
     left: 50%;
     background-color: #ffffff;
@@ -287,9 +287,10 @@ input[type="checkbox"]:checked + div.ico {
     z-index: 999;
 }
 
-.agreement--detail.active {
+.window--detail.active {
     pointer-events: all;
     transform: translate(-50%, -50%);
+    z-index: 600;
 }
 
 .window--blocker .detail--title {

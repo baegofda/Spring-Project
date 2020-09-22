@@ -53,6 +53,10 @@
     text-align: left;
 }
 
+.userleave--form__table td p {
+    width: 100%;
+}
+
 .userleave--form input {
     height: 44px;
     box-sizing: border-box;

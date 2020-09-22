@@ -73,10 +73,37 @@ header {
 }
 
 .nav-list-content {
-    padding: 0 0.5rem;
     line-height: 1rem;
+    padding: 0 0.5rem;
 }
 
-.nav-list li:not(:last-child) {
+.nav-list .nav-list-content:not(:last-child) {
     border-right: 2px solid var(--color-border);
 }
+
+.nav-list-content .drop {
+    position: relative;
+}
+
+.nav-list-content .drop .drop__container{
+    background-color: var(--color-white);
+    border:1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    display: none;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    position: absolute;
+    padding: 1rem 0.3rem;
+    width: 100%;
+}
+
+
+
+.nav-list-content .drop .drop__container.active{
+    display: block;
+}
+
+.nav-list-content .drop  ul li:not(:last-child){
+    margin-bottom: 0.5rem;
+}
+
