@@ -35,6 +35,12 @@ const nameCheckBtn = document.querySelector(".name-check");
 let i = 0;
 let j = 0;
 
+if (drop != null) {
+	drop.addEventListener("click", () => {
+		dropAction();
+	});
+}
+
 if (agreementView != null) {
 	agreementView.addEventListener("click", () => {
 		agreementHandeler();
@@ -63,12 +69,6 @@ if (privateBlocker != null) {
 if (locationBlocker != null) {
 	locationBlocker.addEventListener("click", () => {
 		locationHandeler();
-	});
-}
-
-if (drop != null) {
-	drop.addEventListener("click", () => {
-		dropAction();
 	});
 }
 
