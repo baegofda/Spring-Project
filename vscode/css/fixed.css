@@ -15,3 +15,7 @@
 .fixed__list li:not(:last-child) {
     margin-bottom: 0.5rem;
 }
+
+.fixed__list a:hover {
+    color: #333333;
+}

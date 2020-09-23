@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>비밀번호 재설정 :: 당근나라</title>
-        <link rel="stylesheet" href="../css/common.css" />
-        <script src="../javascript/common.js" defer></script>
+        <title>회원탈퇴 :: 당근나라</title>
+        <link rel="stylesheet" href="../../css/common.css" />
+        <script src="../../javascript/common.js" defer></script>
         <script
             src="https://kit.fontawesome.com/797af710b1.js"
             crossorigin="anonymous"
@@ -31,7 +31,7 @@
         <header class="header">
             <div class="header__fixed-bar">
                 <section class="header__fixed-bar-logo section-logo">
-                    <a href="main.html">
+                    <a href="../main/main.html">
                         <img
                             src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/logo-basic-24b18257ac4ef693c02233bf21e9cb7ecbf43ebd8d5b40c24d99e14094a44c81.svg"
                             alt="당근나라"
@@ -77,50 +77,61 @@
                 <li><a href="#">불량거래 후기</a></li>
                 <li><a href="#">판매중 이에요.</a></li>
                 <li><a href="#">나눔중 이에요.</a></li>
-                <li><a href="#">구매합니다 ~!</a></li>
+                <li><a href="../board/toBuyBoard.html">구매합니다 ~!</a></li>
             </ul>
         </aside>
         <!-- 섹션 시작 -->
+        <!-- 각 input의 value값을 DB에서 가져올 값으로 수정해주세요 -->
         <section class="section">
-            <div class="update-pw">
-                <div class="find-pw-reset__content">
-                    <h1 class="update-pw__title">비밀번호 재설정</h1>
-                    <p class="update-article">
-                        비밀번호를 초기화 하셨군요 ?
-                        <br />비밀번호를 재설정 후 이용해주세요 !
+            <div class="user-leave">
+                <div class="user-leave__head">
+                    <h1 class="user-leave__title">회원탈퇴</h1>
+                    <p class="user-leave__sub">
+                        <span class="user-leave__sub--color-pink">*</span>
+                        필수입력사항
                     </p>
                 </div>
-                <div class="update-pw__container">
-                    <p class="update-pw__info--label">현재 비밀번호</p>
-                    <input
-                        id="pw--reset"
-                        class="update-pw__info"
-                        type="text"
-                        placeholder="초기화된 비밀번호를 입력해주세요"
-                    />
-                    <p class="update-pw__info--label">새 비밀번호</p>
-                    <input
-                        id="pw__write"
-                        class="update-pw__info"
-                        type="text"
-                        placeholder="새 비밀번호를 입력해주세요"
-                    />
-                    <div class="check__message write__message"></div>
-                    <div class="check__message write__message1"></div>
-                    <div class="check__message write__message2"></div>
-                    <p class="update-pw__info--label">새 비밀번호확인</p>
-                    <input
-                        id="pw__check"
-                        class="update-pw__info"
-                        type="text"
-                        placeholder="새 비밀번호를 한번 더 입력해주세요"
-                    />
-                    <div class="check__message pw__confirm"></div>
-                    <div class="update-pw__btn">
+                <div class="userleave--form">
+                    <table class="userleave--form__table">
+                        <tr>
+                            <th>회원탈퇴안내</th>
+                            <td>
+                                <p>이용에 불편을 드려 죄송합니다.</p>
+                                <p>
+                                    항상 발전하는 당근나라가 되도록
+                                    노력하겠습니다.
+                                </p>
+                                <p>그동안 이용해주셔서 감사합니다.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                비밀번호확인<span
+                                    class="userleave--form__sub--color-pink"
+                                    >*</span
+                                >
+                            </th>
+                            <td>
+                                <input
+                                    class="userleave--form__input"
+                                    type="text"
+                                    maxlength="16"
+                                    placeholder="비밀번호를 입력해주세요"
+                                    required
+                                />
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="user-leave__btn">
                         <input
-                            class="update-pw__submit"
+                            class="user-leave__cancle"
                             type="button"
-                            value="수정하기"
+                            value="돌아가기"
+                        />
+                        <input
+                            class="user-leave__submit"
+                            type="button"
+                            value="탈퇴하기"
                         />
                     </div>
                 </div>

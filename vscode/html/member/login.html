@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>비밀번호찾기 :: 당근나라</title>
-        <link rel="stylesheet" href="../css/common.css" />
-        <script src="../javascript/common.js" defer></script>
+        <title>로그인 :: 당근나라</title>
+        <link rel="stylesheet" href="../../css/common.css" />
+        <script src="../../javascript/common.js" defer></script>
         <script
             src="https://kit.fontawesome.com/797af710b1.js"
             crossorigin="anonymous"
@@ -31,7 +31,7 @@
         <header class="header">
             <div class="header__fixed-bar">
                 <section class="header__fixed-bar-logo section-logo">
-                    <a href="main.html">
+                    <a href="../main/main.html">
                         <img
                             src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/logo-basic-24b18257ac4ef693c02233bf21e9cb7ecbf43ebd8d5b40c24d99e14094a44c81.svg"
                             alt="당근나라"
@@ -77,31 +77,40 @@
                 <li><a href="#">불량거래 후기</a></li>
                 <li><a href="#">판매중 이에요.</a></li>
                 <li><a href="#">나눔중 이에요.</a></li>
-                <li><a href="#">구매합니다 ~!</a></li>
+                <li><a href="../board/toBuyBoard.html">구매합니다 ~!</a></li>
             </ul>
         </aside>
         <!-- 섹션 시작 -->
         <section class="section">
-            <div class="find-pw">
-                <h1 class="find-pw__title">비밀번호찾기</h1>
-                <div class="find-pw__container">
-                    <p class="find-pw__info--label">이름</p>
+            <div class="login">
+                <h1 class="login__title">로그인</h1>
+                <div class="login__container">
                     <input
-                        class="find-pw__info"
-                        type="text"
-                        placeholder="이름을 입력해주세요"
-                    />
-                    <p class="find-pw__info--label">이메일</p>
-                    <input
-                        class="find-pw__info"
+                        class="login__info"
                         type="text"
                         placeholder="이메일을 입력해주세요"
                     />
-                    <div class="find-pw__btn">
+                    <input
+                        class="login__info"
+                        type="text"
+                        placeholder="비밀번호를 입력해주세요"
+                    />
+                    <div class="login__text">
+                        <a class="login__text--forgot" href="findPw.html"
+                            ><p>비밀번호를 찾으시겠어요 ?</p></a
+                        >
+                    </div>
+                    <div class="login__btn">
                         <input
-                            class="find-pw__submit"
-                            type="submit"
-                            value="찾기"
+                            class="login__submit"
+                            type="button"
+                            value="로그인"
+                        />
+
+                        <input
+                            class="login__join"
+                            type="button"
+                            value="회원가입"
                         />
                     </div>
                 </div>

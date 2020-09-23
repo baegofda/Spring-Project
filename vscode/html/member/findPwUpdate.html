@@ -3,9 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>당신 근처의 당근나라</title>
-        <link rel="stylesheet" href="../css/common.css" />
-        <script src="../javascript/common.js" defer></script>
+        <title>비밀번호 재설정 :: 당근나라</title>
+        <link rel="stylesheet" href="../../css/common.css" />
+        <script src="../../javascript/common.js" defer></script>
+        <script
+            src="https://kit.fontawesome.com/797af710b1.js"
+            crossorigin="anonymous"
+            defer
+        ></script>
+        <script
+            src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
+            defer
+        ></script>
         <link
             rel="shortcut icon"
             type="image/x-icon"
@@ -22,10 +31,10 @@
         <header class="header">
             <div class="header__fixed-bar">
                 <section class="header__fixed-bar-logo section-logo">
-                    <a href="main.html">
+                    <a href="../main/main.html">
                         <img
                             src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/header/logo-basic-24b18257ac4ef693c02233bf21e9cb7ecbf43ebd8d5b40c24d99e14094a44c81.svg"
-                            alt="당근마켓"
+                            alt="당근나라"
                         />
                     </a>
                 </section>
@@ -46,18 +55,11 @@
                 <section class="header__fixed-bar-nav section-nav">
                     <nav class="header__fixed-bar-nav-container">
                         <ul class="header__fixed-bar-nav-list nav-list">
-                            <li class="nav-list-content drop">
-                                <span class="nav-list-text">
-                                Welcome ~! <span class="name">이준호</span>님
-                            </span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA1ElEQVRIie2TsQ3CMBBF/zkLpMQLQO9zmV2IBBINJZQZgDAAVRAj0FBlhrRZwV1GwDQGhUhJnFQg+Xdn371nyzIQEvJfYeZMa50DEDPGBTOfmTn7Wuw0xdbaIzMXEyXCzRwAxO2NqF0YY0op5YKItlLKVZIk97qurQf8CiAFcKuqag/gMxN1u40xDydJm6ZZjkje8LWDbwA8e28wUTIK7xV4SLzgg4IBCfnCAYCGBK3TFnCP6NZSH7ivAABIKXUhop2rveBTI7TWuVLqhHkfMSTkV/MCeGNw/fvNnQwAAAAASUVORK5CYII=">
-                                    <ul class="drop__container ">
-                                        <a href="#"><li>마이페이지</li></a>
-                                        <a href="#"><li>찜목록</li></a>
-                                        <a href="#"><li>판매내역</li></a>
-                                        <a href="#"><li>구매내역</li></a>
-                                        <a href="#"><li>관심내역</li></a>
-                                        <a href="#"><li>로그아웃</li></a>
-                                    </ul>
+                            <li class="nav-list-content">
+                                <a href="join.html">회원가입</a>
+                            </li>
+                            <li class="nav-list-content">
+                                <a href="login.html">로그인</a>
                             </li>
                             <li class="nav-list-content">
                                 <a href="#">지도로 보기</a>
@@ -75,117 +77,55 @@
                 <li><a href="#">불량거래 후기</a></li>
                 <li><a href="#">판매중 이에요.</a></li>
                 <li><a href="#">나눔중 이에요.</a></li>
-                <li><a href="#">구매합니다 ~!</a></li>
+                <li><a href="../board/toBuyBoard.html">구매합니다 ~!</a></li>
             </ul>
         </aside>
         <!-- 섹션 시작 -->
-        <section class="main__section section-1">
-            <div class="main__section-container">
-                <div class="main__section-content section-1-text">
-                    <h1>당신 근처의<br />당근나라</h1>
-                    <p>
-                        중고 거래부터 동네 정보까지, 이웃과 함께 해요 <br />
-                        가깝고 따뜻한 당신의 근처를 만들어요.
+        <section class="section">
+            <div class="update-pw">
+                <div class="find-pw-reset__content">
+                    <h1 class="update-pw__title">비밀번호 재설정</h1>
+                    <p class="update-article">
+                        비밀번호를 초기화 하셨군요 ?
+                        <br />비밀번호를 재설정 후 이용해주세요 !
                     </p>
                 </div>
-                <div class="main__section-content section-1-image"></div>
-            </div>
-        </section>
-        <section class="main__section section-2">
-            <div class="main__section-container">
-                <div class="main__section-content section-2-image"></div>
-                <div class="main__section-content section-2-text">
-                    <h1>우리 동네<br />중고 직거래 마켓</h1>
-                    <p>동네 주민들과 가깝고 따뜻한 거래를 지금 경험해보세요.</p>
-                    <div
-                        class="main__section-content section2-button-container"
-                    >
+                <div class="update-pw__container">
+                    <p class="update-pw__info--label">현재 비밀번호</p>
+                    <input
+                        id="pw--reset"
+                        class="update-pw__info"
+                        type="text"
+                        placeholder="초기화된 비밀번호를 입력해주세요"
+                    />
+                    <p class="update-pw__info--label">새 비밀번호</p>
+                    <input
+                        id="pw__write"
+                        class="update-pw__info"
+                        type="text"
+                        placeholder="새 비밀번호를 입력해주세요"
+                    />
+                    <div class="check__message write__message"></div>
+                    <div class="check__message write__message1"></div>
+                    <div class="check__message write__message2"></div>
+                    <p class="update-pw__info--label">새 비밀번호확인</p>
+                    <input
+                        id="pw__check"
+                        class="update-pw__info"
+                        type="text"
+                        placeholder="새 비밀번호를 한번 더 입력해주세요"
+                    />
+                    <div class="check__message pw__confirm"></div>
+                    <div class="update-pw__btn">
                         <input
-                            class="section-2-btn"
+                            class="update-pw__submit"
                             type="button"
-                            value="인기매물 보기"
-                            onclick='location.href="https://www.daangn.com/hot_articles"'
-                        />
-                        <input
-                            class="section-2-btn"
-                            type="button"
-                            value="믿을 수 있는 중고거래"
-                            onclick='location.href="https://www.daangn.com/trust"'
+                            value="수정하기"
                         />
                     </div>
                 </div>
             </div>
         </section>
-        <section class="main__section section-3">
-            <div class="main__section-container">
-                <div class="main__section-content section-3-text">
-                    <h1>이웃과 함께 하는<br />동네 생활</h1>
-                    <p>우리 동네의 다양한 이야기를 이웃과 함께 나누어요.</p>
-                    <ul class="section-3-text-list">
-                        <li class="section-3-text-list-content">
-                            <div
-                                class="section-3-text-list-content-icon icon-question"
-                            ></div>
-                            <div>
-                                <strong>우리동네질문</strong>
-                                <p>
-                                    궁금한 게 있을 땐<br />이웃에게 물어보세요.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="section-3-text-list-content">
-                            <div
-                                class="section-3-text-list-content-icon icon-lost"
-                            ></div>
-                            <div>
-                                <strong>동네분실센터</strong>
-                                <p>
-                                    무언가를 잃어버렸을때,<br />함께 찾을 수
-                                    있어요.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="section-3-text-list-content">
-                            <div
-                                class="section-3-text-list-content-icon icon-group"
-                            ></div>
-                            <div>
-                                <strong>동네모임</strong>
-                                <p>
-                                    관심사가 비슷한 이웃과<br />온오프라인으로
-                                    만나요.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="main__section-content section-3-image"></div>
-            </div>
-        </section>
-        <section class="main__section section-4">
-            <div class="main__section-container">
-                <div class="main__section-content section-4-image"></div>
-                <div class="main__section-content section-4-text">
-                    <h1>내 근처에서 찾는<br />우리 나눔 장터</h1>
-                    <p>
-                        우리 동네 나눔을 찾고 있나요?<br />동네 주민과 함께
-                        나눔을 해보아요.
-                    </p>
-                    <div
-                        class="main__section-content section4-button-container"
-                    >
-                        <input
-                            class="section-4-btn"
-                            type="button"
-                            value="우리동네 나눔글 찾기"
-                            onclick='location.href="https://town.daangn.com/"'
-                        />
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 홈 버튼 -->
-        <div class="scroll-btn"></div>
         <!-- 하단 카피라이트 -->
         <footer class="footer">
             <div class="footer-container">

@@ -8,6 +8,7 @@
 @import "findPw.css";
 @import "findPwReset.css";
 @import "findPwUpdate.css";
+@import "toBuy.css";
 @import "footer.css";
 
 :root {
@@ -21,6 +22,7 @@
     --color-blue: #3b88c3;
     --color-yellow: #fbbe28;
     --color-pink: #fd7f84;
+    --color-count: #ef402f;
     --color-sub-color: #666666;
     --color-light-grey: #dfdfdf;
     --color-footer-text-grey: #495057;

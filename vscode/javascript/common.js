@@ -77,6 +77,9 @@ if (scrollBtn != null) {
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	});
 }
+
+
+
 if (inputNameWrite != null) {
 	inputNameWrite.addEventListener("keyup", () => {
 		nameRules();
@@ -327,6 +330,7 @@ function nameRules() {
 		//     nameMessage2.style.fontSize = "12px";
 		// }
 	} else {
+		nameMessage.style.display = "block";
 		nameMessage.innerHTML = `！닉네임을 입력해주세요.`;
 		nameMessage.style.color = "#b3130b";
 		nameMessage.style.fontSize = "12px";
@@ -380,6 +384,7 @@ function pwRules() {
 			write__message2.style.fontSize = "12px";
 		}
 	} else {
+		write__message.style.display = "block";
 		write__message.innerHTML = `！비밀번호를 입력해주세요.`;
 		write__message.style.color = "#b3130b";
 		write__message.style.fontSize = "12px";
@@ -399,11 +404,13 @@ function pwCheck() {
 			pwConfrim.style.color = "#b3130b";
 			pwConfrim.style.fontSize = "12px";
 		} else {
+			pwConfrim.style.display = "block";
 			pwConfrim.innerHTML = `✓ 비밀번호가 일치합니다.`;
 			pwConfrim.style.color = "#0f851a";
 			pwConfrim.style.fontSize = "12px";
 		}
 	} else {
+		pwConfrim.style.display = "block";
 		pwConfrim.innerHTML = `！비밀번호를 입력해주세요.`;
 		pwConfrim.style.color = "#b3130b";
 		pwConfrim.style.fontSize = "12px";
