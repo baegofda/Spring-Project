@@ -7,7 +7,7 @@
     padding: 5rem 0;
 }
 
-.footer a{
+.footer a {
     color: var(--color-white);
 }
 
@@ -16,14 +16,16 @@
     display: flex;
     justify-content: space-around;
     padding-bottom: 3rem;
-    border-bottom: 1px solid #ADB5BD;
+    border-bottom: 1px solid #adb5bd;
 }
 
 .footer-top-logo {
-    background-image: url("https://d1unjqcospf8gs.cloudfront.net/assets/home/base/footer/logo-a4f4848ffd1d5fcb13d1d3ecf82ffbc77c31ebe226f67097386497a34638c059.svg");
+    background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fn3H3e%2FbtqJvUJlS8Y%2Fzus5jAMsB5fi3mwkG4IjnK%2Fimg.png");
+    background-size: 124px 35px;
+    background-repeat: no-repeat;
     fill: var(--color-footer);
-    width: 130px;
-    height: 37px;
+    width: 124px;
+    height: 35px;
 }
 
 .footer-top ul {
@@ -58,7 +60,6 @@
 
 .footer-bottom ul li address:not(:first-child) {
     margin-left: 0.5rem;
-
 }
 
 .footer-bottom-sns ul {

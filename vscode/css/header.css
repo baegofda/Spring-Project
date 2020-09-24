@@ -18,8 +18,8 @@ header {
 }
 
 .section-logo {
-    width: 120px;
-    height: 34px;
+    width: 122px;
+    height: 35px;
     margin-right: 2rem;
 }
 
@@ -78,10 +78,10 @@ header {
 
 .nav-list-content {
     line-height: 1rem;
-    padding : 0 0.5rem;
+    padding: 0 0.5rem;
 }
 
-.nav-list-content img{
+.nav-list-content img {
     height: 0.9rem;
     line-height: 0.9rem;
     margin-left: 0.3rem;
@@ -97,9 +97,9 @@ header {
     position: relative;
 }
 
-.nav-list .drop .drop__container{
+.nav-list .drop .drop__container {
     background-color: var(--color-white);
-    border:1px solid var(--color-border);
+    border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
     display: none;
     font-size: 0.8rem;
@@ -109,18 +109,16 @@ header {
     width: 90%;
 }
 
-.nav-list .drop .drop__container li{
+.nav-list .drop .drop__container li {
     box-sizing: border-box;
     padding: 0.4rem 0.8rem;
     width: 100%;
 }
 
-.nav-list .drop .drop__container.active{
+.nav-list .drop .drop__container.active {
     display: block;
 }
 
-
-.nav-list .drop .drop__container li:hover{
-   background-color: #ebebeb;
+.nav-list .drop .drop__container li:hover {
+    background-color: #ebebeb;
 }
-
