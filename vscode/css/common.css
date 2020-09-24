@@ -8,7 +8,10 @@
 @import "findPw.css";
 @import "findPwReset.css";
 @import "findPwUpdate.css";
-@import "toBuy.css";
+@import "noticeBoard.css";
+@import "blackListBoard.css";
+@import "badReviewBoard.css";
+@import "toBuyBoard.css";
 @import "footer.css";
 
 :root {
