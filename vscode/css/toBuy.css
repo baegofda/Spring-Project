@@ -75,7 +75,8 @@
 }
 
 .board__content:hover {
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
+    opacity: 0.5;
     border-radius: 0.5rem;
 }
 
@@ -130,7 +131,6 @@
 }
 
 .board__content--thumbnail img:hover {
-
     transform: scale(1.1);
 }
 
