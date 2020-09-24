@@ -14,12 +14,18 @@
     margin-bottom: 1rem;
 }
 
+.bad-review__head h1 {
+    line-height: 1.5rem;
+}
+
 .bad-review__title {
     margin: 0 0.5rem 0 0;
     padding: 0;
 }
 
 .bad-review__sub {
+    font-size: 0.9rem;
+    line-height: 0.9rem;
     margin: 0;
     padding: 0;
 }
@@ -42,16 +48,23 @@
 }
 
 .bad-review__sort {
-    border-bottom: 1px solid var(--color-border);
     margin-bottom: 0.5rem;
-    width: 58.1px;
 }
 
 .bad-review__category {
-    border: none;
+    background: url("https://t1.daumcdn.net/cfile/tistory/99761B495C84AA8716")
+        no-repeat 100% 50%;
+    background-size: 1.3rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.3rem;
+    color: #333333;
     font-family: "Noto Sans KR", sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
     outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0.4rem 0.3rem;
+    width: 150px;
 }
 
 .bad-review__content {
