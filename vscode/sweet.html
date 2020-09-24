@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -40,17 +41,19 @@
         }
     </style>
 </head>
+
 <body>
     <div class="sweet-bar--cotainer">
     </div>
     <script>
-        const sweetBarContainer = document.querySelector(".sweet-bar--cotainer");
-        const sweetText = document.querySelector(".sweet-bar--text");
-        let sweetB = 0;
+
 
         document.ready = meterHandeler();
 
         function meterHandeler() {
+            const sweetBarContainer = document.querySelector(".sweet-bar--cotainer");
+            const sweetText = document.querySelector(".sweet-bar--text");
+            let sweetB = 0;
             if (sweetB != 0) {
                 if (sweetB < 33) {
                     sweetBarContainer.classList.add("red");
@@ -62,7 +65,6 @@
          low="33" high="66" optimum="80"
          value="${sweetB}">
         </meter>`
-                    console.log("33미만");
                 } else if (sweetB != 66 && 33 <= sweetB && sweetB < 66) {
                     sweetBarContainer.classList.add("orange");
                     sweetBarContainer.innerHTML =
@@ -73,7 +75,6 @@
          low="33" high="66" optimum="80"
          value="${sweetB}">
         </meter>`
-                    console.log("33 < num < 66");
                 } else if (66 <= sweetB) {
                     sweetBarContainer.classList.add("green");
                     sweetBarContainer.innerHTML =
@@ -84,7 +85,6 @@
          low="33" high="66" optimum="80"
          value="${sweetB}">
         </meter>`
-                    console.log("66 < num");
                 }
             } else {
                 sweetBarContainer.innerHTML =
@@ -95,9 +95,9 @@
          low="34" high="66" optimum="80"
          value="${sweetB}">
         </meter>`
-                console.log("거래량 없음");
             }
         }
     </script>
 </body>
+
 </html>
