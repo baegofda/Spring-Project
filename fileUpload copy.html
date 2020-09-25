@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>JS Bin</title>
+    </head>
+    <body>
+        <input type="file" accept=".jpg, .jpeg, .png" class="image-input" />
+        <div class="image__container"></div>
+        <script>
+            const imageInput = document.querySelector(".image-input");
+            const imageInputLen = document.querySelector("input").value;
+            const imageContainer = document.querySelector(".image__container");
+            const btn = document.querySelector(".btn");
+            imageInput.addEventListener("change", (event) => {
+                for (var image of event.target.files) {
+                    var reader = new FileReader();
+                    while (imageContainer.firstChild) {
+                        imageContainer.removeChild(imageContainer.firstChild);
+                    }
+                    reader.onload = function (event) {
+                        var img = document.createElement("img");
+                        var btn = document.createElement("input");
+                        var result1 = event.target.result;
+                        btn.setAttribute("class", "delete");
+                        btn.setAttribute("value", "삭제");
+                        btn.setAttribute("type", "button");
+                        img.setAttribute("src", result1);
+                        imageContainer.appendChild(img);
+                        imageContainer.appendChild(btn);
+
+                        btn.addEventListener("click", (event) => {
+                            imageInput.value = "";
+                            img.remove();
+                            btn.remove();
+                        });
+                    };
+                    console.log(imageInput.value);
+                    console.log(image);
+                    reader.readAsDataURL(image);
+                }
+            });
+        </script>
+    </body>
+</html>
