@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<!-- 나은 --> 
+	
+		<!-- 지예 -->
+	
+		<!-- 태빈 -->
+	
+		<!-- 종환 -->
+	
+		<!-- 진영 -->
+	
+		<!-- 석준 -->
+		
+		<!-- 현배 -->
+	</typeAliases>
+	
+	<mappers>
+		<!-- 나은 --> 
+	
+		<!-- 지예 -->
+	
+		<!-- 태빈 -->
+	
+		<!-- 종환 -->
+	
+		<!-- 진영 -->
+	
+		<!-- 석준 -->
+		
+		<!-- 현배 -->
+	</mappers>
+
+</configuration>
