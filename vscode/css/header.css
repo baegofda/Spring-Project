@@ -61,6 +61,23 @@ header {
     line-height: 40px;
 }
 
+.search-keyword {
+    font-size: 0.88rem;
+    margin-top: 0.5rem;
+}
+
+.keyword-title {
+    font-weight: 500;
+}
+
+.keyword-contnet {
+    color: var(--color-sub-color);
+}
+
+.keyword-contnet a {
+    margin-left: 0.5rem;
+}
+
 .header__fixed-bar-nav {
     align-items: center;
     display: flex;

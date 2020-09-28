@@ -32,6 +32,71 @@ const submitBtn = document.querySelector(".submit-btn");
 const emailCheckBtn = document.querySelector(".email-check");
 const nameCheckBtn = document.querySelector(".name-check");
 
+const imageInput1 = document.querySelector(".image-1");
+const imageContainer1 = document.querySelector(".button-1");
+const imageInput2 = document.querySelector(".image-2");
+const imageContainer2 = document.querySelector(".button-2");
+const imageInput3 = document.querySelector(".image-3");
+const imageContainer3 = document.querySelector(".button-3");
+const imageInput4 = document.querySelector(".image-4");
+const imageContainer4 = document.querySelector(".button-4");
+const imageInput5 = document.querySelector(".image-5");
+const imageContainer5 = document.querySelector(".button-5");
+
+const sweetBarContainer = document.querySelector(".sweet-cotainer");
+
+const PicksBtn = document.querySelector(".picks-container");
+const PicksIco = document.querySelector(".picks-ico");
+
+const listBtn = document.querySelector(".list--btn");
+
+const noticeWriteSubmit = document.querySelector(".notice-board-write__submit");
+const blackListWriteSubmit = document.querySelector(
+    ".black-list-board-write__submit"
+);
+const badReviewWriteSubmit = document.querySelector(
+    ".bad-review-board-write__submit"
+);
+
+const saleWriteSubmit = document.querySelector(".sale-board-write__submit");
+const sharingWriteSubmit = document.querySelector(
+    ".sharing-board-write__submit"
+);
+const buyWriteSubmit = document.querySelector(".buy-board-write__submit");
+
+const noticeUpdateSubmit = document.querySelector(
+    ".notice-board-update__submit"
+);
+const blackListUpdateSubmit = document.querySelector(
+    ".black-list-board-update__submit"
+);
+const badReviewUpdateSubmit = document.querySelector(
+    ".bad-review-board-update__submit"
+);
+const saleUpdateSubmit = document.querySelector(".sale-board-update__submit");
+const sharingUpdateSubmit = document.querySelector(
+    ".sharing-board-update__submit"
+);
+const buyUpdateSubmit = document.querySelector(".buy-board-update__submit");
+
+const noticeReadDelete = document.querySelector(".notice-board-read__delete");
+const blackListReadDelete = document.querySelector(
+    ".black-list-board-read__delete"
+);
+const badReviewReadDelete = document.querySelector(
+    ".bad-review-board-read__delete"
+);
+const saleReadDelete = document.querySelector(".sale-board-read__delete");
+const sharingReadDelete = document.querySelector(".sharing-board-read__delete");
+const buyReadDelete = document.querySelector(".buy-board-read__delete");
+
+const noticeReadUpdate = document.querySelector(".notice-board-read__update");
+const blackListReadUpdate = document.querySelector(".black-list-read__update");
+const badReviewReadUpdate = document.querySelector(".bad-review-read__update");
+const saleReadUpdate = document.querySelector(".sale-board-read__update");
+const sharingReadUpdate = document.querySelector(".sharing-board-read__update");
+const buyReadUpdate = document.querySelector(".buy-board-read__update");
+
 let i = 0;
 let j = 0;
 
@@ -133,6 +198,7 @@ if (selectAll != null) {
     }
 }
 
+// 작업시 넘어갈 링크는 잘 체크하셔서 알맞게 수정 부탁드립니다
 if (findPwResetLogin != null) {
     findPwResetLogin.addEventListener("click", () => {
         location.href = "login.html";
@@ -276,6 +342,402 @@ if (nameCheckBtn != null) {
         }
     });
 }
+if (imageInput1 != null) {
+    imageInput1.addEventListener("change", () => {
+        imageThumbnail1();
+    });
+}
+if (imageInput2 != null) {
+    imageInput2.addEventListener("change", () => {
+        imageThumbnail2();
+    });
+}
+if (imageInput3 != null) {
+    imageInput3.addEventListener("change", () => {
+        imageThumbnail3();
+    });
+}
+if (imageInput4 != null) {
+    imageInput4.addEventListener("change", () => {
+        imageThumbnail4();
+    });
+}
+if (imageInput5 != null) {
+    imageInput5.addEventListener("change", () => {
+        imageThumbnail5();
+    });
+}
+
+if (listBtn != null) {
+    listBtn.addEventListener("click", () => {
+        if (confirm("되돌아가시겠어요 ?") == true) {
+            history.go(-1);
+        } else {
+            return false;
+        }
+    });
+}
+
+if (noticeWriteSubmit != null) {
+    noticeWriteSubmit.addEventListener("click", () => {
+        if (confirm("글을 등록할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("등록완료 ! 감사합니다.");
+                location.href = "noticeBoard.html";
+            } else {
+                alert("등록실패 ! 작성하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (blackListWriteSubmit != null) {
+    blackListWriteSubmit.addEventListener("click", () => {
+        if (confirm("글을 등록할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("등록완료 ! 감사합니다.");
+                location.href = "blackListBoard.html";
+            } else {
+                alert("등록실패 ! 작성하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (badReviewWriteSubmit != null) {
+    badReviewWriteSubmit.addEventListener("click", () => {
+        if (confirm("글을 등록할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("등록완료 ! 감사합니다.");
+                location.href = "badReviewBoard.html";
+            } else {
+                alert("등록실패 ! 작성하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (saleWriteSubmit != null) {
+    saleWriteSubmit.addEventListener("click", () => {
+        if (confirm("글을 등록할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("등록완료 ! 감사합니다.");
+                location.href = "toSaleBoard.html";
+            } else {
+                alert("등록실패 ! 작성하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (sharingWriteSubmit != null) {
+    sharingWriteSubmit.addEventListener("click", () => {
+        if (confirm("글을 등록할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("등록완료 ! 감사합니다.");
+                location.href = "toSharingBoard.html";
+            } else {
+                alert("등록실패 ! 작성하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (buyWriteSubmit != null) {
+    buyWriteSubmit.addEventListener("click", () => {
+        if (confirm("글을 등록할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("등록완료 ! 감사합니다.");
+                location.href = "toBuyBoard.html";
+            } else {
+                alert("등록실패 ! 작성하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (noticeUpdateSubmit != null) {
+    noticeUpdateSubmit.addEventListener("click", () => {
+        if (confirm("글을 수정할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("수정완료 !");
+                location.href = "noticeBoard.html";
+            } else {
+                alert("수정실패 ! 수정하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (blackListUpdateSubmit != null) {
+    blackListUpdateSubmit.addEventListener("click", () => {
+        if (confirm("글을 수정할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("수정완료 !");
+                location.href = "blackListBoard.html";
+            } else {
+                alert("수정실패 ! 수정하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (badReviewUpdateSubmit != null) {
+    badReviewUpdateSubmit.addEventListener("click", () => {
+        if (confirm("글을 수정할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("수정완료 !");
+                location.href = "badReviewBoard.html";
+            } else {
+                alert("수정실패 ! 수정하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (saleUpdateSubmit != null) {
+    saleUpdateSubmit.addEventListener("click", () => {
+        if (confirm("글을 수정할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("수정완료 !");
+                location.href = "toSaleBoard.html";
+            } else {
+                alert("수정실패 ! 수정하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (sharingUpdateSubmit != null) {
+    sharingUpdateSubmit.addEventListener("click", () => {
+        if (confirm("글을 수정할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("수정완료 !");
+                location.href = "toSharingBoard.html";
+            } else {
+                alert("수정실패 ! 수정하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (buyUpdateSubmit != null) {
+    buyUpdateSubmit.addEventListener("click", () => {
+        if (confirm("글을 수정할까요 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("수정완료 !");
+                location.href = "toBuyBoard.html";
+            } else {
+                alert("수정실패 ! 수정하신 글을 확인해주세요.");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (noticeReadDelete != null) {
+    noticeReadDelete.addEventListener("click", () => {
+        if (confirm("삭제하시겠습니까 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("삭제완료 !");
+                location.href = "noticeBoard.html";
+            } else {
+                alert("삭제실패 !");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (blackListReadDelete != null) {
+    blackListReadDelete.addEventListener("click", () => {
+        if (confirm("삭제하시겠습니까 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("삭제완료 !");
+                location.href = "blackListBoard.html";
+            } else {
+                alert("삭제실패 !");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (badReviewReadDelete != null) {
+    badReviewReadDelete.addEventListener("click", () => {
+        if (confirm("삭제하시겠습니까 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("삭제완료 !");
+                location.href = "badReviewBoard.html";
+            } else {
+                alert("삭제실패 !");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (saleReadDelete != null) {
+    saleReadDelete.addEventListener("click", () => {
+        if (confirm("삭제하시겠습니까 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("삭제완료 !");
+                location.href = "toSaleBoard.html";
+            } else {
+                alert("삭제실패 !");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (sharingReadDelete != null) {
+    sharingReadDelete.addEventListener("click", () => {
+        if (confirm("삭제하시겠습니까 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("삭제완료 !");
+                location.href = "toSharingBoard.html";
+            } else {
+                alert("삭제실패 !");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (buyReadDelete != null) {
+    buyReadDelete.addEventListener("click", () => {
+        if (confirm("삭제하시겠습니까 ?") == true) {
+            if (true) {
+                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
+                // document.formname.submit();
+                alert("삭제완료 !");
+                location.href = "toBuyBoard.html";
+            } else {
+                alert("삭제실패 !");
+            }
+        } else {
+            return false;
+        }
+    });
+}
+
+if (noticeReadUpdate != null) {
+    noticeReadUpdate.addEventListener("click", () => {
+        location.href = "noticeBoardUpdate.html";
+    });
+}
+
+if (blackListReadUpdate != null) {
+    blackListReadUpdate.addEventListener("click", () => {
+        location.href = "blackListBoardUpdate.html";
+    });
+}
+
+if (badReviewReadUpdate != null) {
+    badReviewReadUpdate.addEventListener("click", () => {
+        location.href = "badReviewBoardUpdate.html";
+    });
+}
+
+if (saleReadUpdate != null) {
+    saleReadUpdate.addEventListener("click", () => {
+        location.href = "toSaleBoardUpdate.html";
+    });
+}
+
+if (sharingReadUpdate != null) {
+    sharingReadUpdate.addEventListener("click", () => {
+        location.href = "toSharingBoardUpdate.html";
+    });
+}
+
+if (buyReadUpdate != null) {
+    buyReadUpdate.addEventListener("click", () => {
+        location.href = "toBuyBoardUpdate.html";
+    });
+}
+
+if (PicksBtn != null) {
+    PicksBtn.addEventListener("click", () => {
+        if (PicksBtn.classList.contains("click")) {
+            PicksBtn.classList.remove("click");
+            PicksIco.setAttribute(
+                "src",
+                "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjYiIGhlaWdodD0iMjYiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIHRyYW5zZm9ybT0iIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBmb250LWZhbWlseT0ibm9uZSIgZm9udC13ZWlnaHQ9Im5vbmUiIGZvbnQtc2l6ZT0ibm9uZSIgdGV4dC1hbmNob3I9Im5vbmUiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTogbm9ybWFsIj48cGF0aCBkPSJNMCwxNzJ2LTE3MmgxNzJ2MTcyeiIgZmlsbD0ibm9uZSI+PC9wYXRoPjxnIGZpbGw9IiMwMDAwMDAiPjxwYXRoIGQ9Ik01MS4wNjI1LDI2Ljg3NWMtMjIuMjM0ODYsMCAtNDAuMzEyNSwxOC4yODc2IC00MC4zMTI1LDQwLjMxMjVjMCw3LjY4NDU3IDMuNDg1MzUsMTQuMzQwMzMgNi43MTg3NSwxOS4xNDg0NGMzLjIzMzQsNC44MDgxIDYuNTUwNzgsNy44OTQ1MyA2LjU1MDc4LDcuODk0NTNsNTguMTE3MTksNTguMjg1MTZsMy44NjMyOCwzLjg2MzI4bDMuODYzMjgsLTMuODYzMjhsNTguMTE3MTksLTU4LjI4NTE2YzAsMCAxMy4yNjk1MywtMTEuNjk0ODIgMTMuMjY5NTMsLTI3LjA0Mjk3YzAsLTIyLjAyNDkgLTE4LjA3NzY0LC00MC4zMTI1IC00MC4zMTI1LC00MC4zMTI1Yy0xOC40NTU1NywwIC0zMC4zMzkzNSwxMS4xMDY5MyAtMzQuOTM3NSwxNS43ODkwNmMtNC41OTgxNSwtNC42ODIxMyAtMTYuNDgxOTMsLTE1Ljc4OTA2IC0zNC45Mzc1LC0xNS43ODkwNnpNNTEuMDYyNSwzNy42MjVjMTYuMDYyMDEsMCAzMC45MDYyNSwxNS42MjEwOSAzMC45MDYyNSwxNS42MjEwOWw0LjAzMTI1LDQuNTM1MTZsNC4wMzEyNSwtNC41MzUxNmMwLDAgMTQuODQ0MjQsLTE1LjYyMTA5IDMwLjkwNjI1LC0xNS42MjEwOWMxNi4zNTU5NiwwIDI5LjU2MjUsMTMuNDE2NTEgMjkuNTYyNSwyOS41NjI1YzAsOC4yOTM0NiAtMTAuMDc4MTIsMTkuNDg0MzggLTEwLjA3ODEyLDE5LjQ4NDM4bC01NC40MjE4Nyw1NC40MjE4OGwtNTQuNDIxODcsLTU0LjQyMTg3YzAsMCAtMi42MDM1MiwtMi40OTg1NCAtNS4yMDcwMywtNi4zODI4MWMtMi42MDM1MiwtMy44ODQyOCAtNC44NzEwOSwtOC45NDQzMyAtNC44NzEwOSwtMTMuMTAxNTZjMCwtMTYuMTQ1OTkgMTMuMjA2NTQsLTI5LjU2MjUgMjkuNTYyNSwtMjkuNTYyNXoiPjwvcGF0aD48L2c+PC9nPjwvZz48L3N2Zz4="
+            );
+        } else {
+            PicksBtn.classList.add("click");
+            PicksIco.setAttribute(
+                "src",
+                "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjYiIGhlaWdodD0iMjYiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PHBhdGggZD0iTTg2LDE3MmMtNDcuNDk2NDksMCAtODYsLTM4LjUwMzUxIC04NiwtODZ2MGMwLC00Ny40OTY0OSAzOC41MDM1MSwtODYgODYsLTg2djBjNDcuNDk2NDksMCA4NiwzOC41MDM1MSA4Niw4NnYwYzAsNDcuNDk2NDkgLTM4LjUwMzUxLDg2IC04Niw4NnoiIGZpbGw9Im5vbmUiPjwvcGF0aD48cGF0aCBkPSJNODYsMTY4LjU2Yy00NS41OTY2MywwIC04Mi41NiwtMzYuOTYzMzcgLTgyLjU2LC04Mi41NnYwYzAsLTQ1LjU5NjYzIDM2Ljk2MzM3LC04Mi41NiA4Mi41NiwtODIuNTZ2MGM0NS41OTY2MywwIDgyLjU2LDM2Ljk2MzM3IDgyLjU2LDgyLjU2djBjMCw0NS41OTY2MyAtMzYuOTYzMzcsODIuNTYgLTgyLjU2LDgyLjU2eiIgZmlsbD0ibm9uZSI+PC9wYXRoPjxnIGZpbGw9IiNmZjM4NWMiPjxwYXRoIGQ9Ik0xMTguMjUsMjEuNWMtMjAuNzQ3NSwwIC0zMi4yNSwxNC45NzgzMyAtMzIuMjUsMTQuOTc4MzNjMCwwIC0xMS41MDI1LC0xNC45NzgzMyAtMzIuMjUsLTE0Ljk3ODMzYy0yMS43NzIzMywwIC0zOS40MTY2NywxNy42NDQzMyAtMzkuNDE2NjcsMzkuNDE2NjdjMCwyOS44OTIxNyAzNS4yMDI2Nyw1OC44NTk4MyA0NS4wMTM4Myw2OC4wMTE2N2MxMS4zMDE4MywxMC41MzUgMjYuNjUyODMsMjQuMDggMjYuNjUyODMsMjQuMDhjMCwwIDE1LjM1MSwtMTMuNTQ1IDI2LjY1MjgzLC0yNC4wOGM5LjgxMTE3LC05LjE1MTgzIDQ1LjAxMzgzLC0zOC4xMTk1IDQ1LjAxMzgzLC02OC4wMTE2N2MwLC0yMS43NzIzMyAtMTcuNjQ0MzMsLTM5LjQxNjY3IC0zOS40MTY2NywtMzkuNDE2Njd6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4="
+            );
+        }
+    });
+}
+
 //-----------------------------
 function dropAction() {
     if (dropContainer.classList.contains("active")) {
@@ -430,6 +892,7 @@ function locationHandeler() {
     locationDetail.classList.toggle("active");
 }
 
+//주소검색
 function addressSearchFunction() {
     new daum.Postcode({
         oncomplete: function (data) {
@@ -479,3 +942,211 @@ function addressSearchFunction() {
         },
     }).open();
 }
+//주소검색
+
+//파일첨부
+function imageThumbnail1() {
+    for (var image of event.target.files) {
+        var reader = new FileReader();
+        while (imageContainer1.firstChild) {
+            imageContainer1.removeChild(imageContainer1.firstChild);
+        }
+        reader.onload = function (event) {
+            var img = document.createElement("img");
+            var btn = document.createElement("div");
+            var result1 = event.target.result;
+            btn.setAttribute("class", "del-btn");
+            img.setAttribute("src", result1);
+            imageContainer1.appendChild(img);
+            imageContainer1.appendChild(btn);
+
+            btn.addEventListener("click", (event) => {
+                imageInput1.value = "";
+                img.remove();
+                btn.remove();
+            });
+        };
+        reader.readAsDataURL(image);
+    }
+}
+
+function imageThumbnail2() {
+    for (var image of event.target.files) {
+        var reader = new FileReader();
+        while (imageContainer2.firstChild) {
+            imageContainer2.removeChild(imageContainer2.firstChild);
+        }
+        reader.onload = function (event) {
+            var img = document.createElement("img");
+            var btn = document.createElement("div");
+            var result1 = event.target.result;
+            btn.setAttribute("class", "del-btn");
+            img.setAttribute("src", result1);
+            imageContainer2.appendChild(img);
+            imageContainer2.appendChild(btn);
+
+            btn.addEventListener("click", (event) => {
+                imageInput2.value = "";
+                img.remove();
+                btn.remove();
+            });
+        };
+        reader.readAsDataURL(image);
+    }
+}
+
+function imageThumbnail3() {
+    for (var image of event.target.files) {
+        var reader = new FileReader();
+        while (imageContainer3.firstChild) {
+            imageContainer3.removeChild(imageContainer3.firstChild);
+        }
+        reader.onload = function (event) {
+            var img = document.createElement("img");
+            var btn = document.createElement("div");
+            var result1 = event.target.result;
+            btn.setAttribute("class", "del-btn");
+            img.setAttribute("src", result1);
+            imageContainer3.appendChild(img);
+            imageContainer3.appendChild(btn);
+
+            btn.addEventListener("click", (event) => {
+                imageInput3.value = "";
+                img.remove();
+                btn.remove();
+            });
+        };
+        reader.readAsDataURL(image);
+    }
+}
+
+function imageThumbnail4() {
+    for (var image of event.target.files) {
+        var reader = new FileReader();
+        while (imageContainer4.firstChild) {
+            imageContainer4.removeChild(imageContainer4.firstChild);
+        }
+        reader.onload = function (event) {
+            var img = document.createElement("img");
+            var btn = document.createElement("div");
+            var result1 = event.target.result;
+            btn.setAttribute("class", "del-btn");
+            img.setAttribute("src", result1);
+            imageContainer4.appendChild(img);
+            imageContainer4.appendChild(btn);
+
+            btn.addEventListener("click", (event) => {
+                imageInput4.value = "";
+                img.remove();
+                btn.remove();
+            });
+        };
+        reader.readAsDataURL(image);
+    }
+}
+function imageThumbnail5() {
+    for (var image of event.target.files) {
+        var reader = new FileReader();
+        while (imageContainer5.firstChild) {
+            imageContainer5.removeChild(imageContainer5.firstChild);
+        }
+        reader.onload = function (event) {
+            var img = document.createElement("img");
+            var btn = document.createElement("div");
+            var result1 = event.target.result;
+            btn.setAttribute("class", "del-btn");
+            img.setAttribute("src", result1);
+            imageContainer5.appendChild(img);
+            imageContainer5.appendChild(btn);
+
+            btn.addEventListener("click", (event) => {
+                imageInput5.value = "";
+                img.remove();
+                btn.remove();
+            });
+        };
+        reader.readAsDataURL(image);
+    }
+}
+// 파일첨부
+
+// 슬라이드
+const showing_class = "showing";
+const firstslide = document.querySelector(".slide:nth-child(1)");
+const lastslide = document.querySelector(".slide:nth-child(5)");
+const left_btn = document.querySelector(".left");
+
+function right_move() {
+    const currentslide = document.querySelector(".showing");
+    if (currentslide) {
+        const nextslide = currentslide.nextElementSibling;
+        currentslide.classList.remove(showing_class);
+        if (nextslide != left_btn) {
+            nextslide.classList.add(showing_class);
+        } else {
+            firstslide.classList.add(showing_class);
+        }
+    }
+}
+
+function left_move() {
+    const currentslide = document.querySelector(".showing");
+    if (currentslide) {
+        const prevslide = currentslide.previousElementSibling;
+        currentslide.classList.remove(showing_class);
+        if (prevslide) {
+            prevslide.classList.add(showing_class);
+        } else {
+            lastslide.classList.add(showing_class);
+        }
+    }
+}
+//
+
+// 당도측정
+if (sweetBarContainer != null) {
+    document.ready = meterHandeler();
+
+    function meterHandeler() {
+        let sweetB = 70;
+        if (sweetB != 0) {
+            if (sweetB < 33) {
+                sweetBarContainer.classList.add("red");
+                sweetBarContainer.innerHTML = `<p class="sweet-bar--text">${sweetB}%</p>
+ <i class="fas fa-carrot"></i>
+<meter
+ min="0" max="100"
+ low="33" high="66" optimum="80"
+ value="${sweetB}">
+</meter>`;
+            } else if (sweetB != 66 && 33 <= sweetB && sweetB < 66) {
+                sweetBarContainer.classList.add("orange");
+                sweetBarContainer.innerHTML = `<p class="sweet-bar--text">${sweetB}%</p>
+<i class="fas fa-carrot"></i>
+<meter
+ min="0" max="100"
+ low="33" high="66" optimum="80"
+ value="${sweetB}">
+</meter>`;
+            } else if (66 <= sweetB) {
+                sweetBarContainer.classList.add("green");
+                sweetBarContainer.innerHTML = `<p class="sweet-bar--text">${sweetB}%</p>
+<i class="fas fa-carrot"></i>
+<meter
+ min="0" max="100"
+ low="33" high="66" optimum="80"
+ value="${sweetB}">
+</meter>`;
+            }
+        } else {
+            sweetBarContainer.innerHTML = `<p class="sweet-bar--text">거래량이 부족해요 ! </p>
+<i class="fas fa-carrot"></i>
+<meter
+ min="0" max="100"
+ low="34" high="66" optimum="80"
+ value="${sweetB}">
+</meter>`;
+        }
+    }
+}
+//

@@ -10,9 +10,7 @@
         <div class="image__container"></div>
         <script>
             const imageInput = document.querySelector(".image-input");
-            const imageInputLen = document.querySelector("input").value;
             const imageContainer = document.querySelector(".image__container");
-            const btn = document.querySelector(".btn");
             imageInput.addEventListener("change", (event) => {
                 for (var image of event.target.files) {
                     var reader = new FileReader();
