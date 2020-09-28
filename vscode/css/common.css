@@ -11,7 +11,10 @@
 @import "noticeBoard.css";
 @import "blackListBoard.css";
 @import "badReviewBoard.css";
+@import "toSaleBoard.css";
+@import "toSharingBoard.css";
 @import "toBuyBoard.css";
+@import "searchList.css";
 @import "footer.css";
 
 :root {
