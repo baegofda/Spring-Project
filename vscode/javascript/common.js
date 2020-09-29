@@ -43,6 +43,9 @@ const imageContainer4 = document.querySelector(".button-4");
 const imageInput5 = document.querySelector(".image-5");
 const imageContainer5 = document.querySelector(".button-5");
 
+const selectStatus = document.querySelector(".category-status");
+const selectInput = document.querySelector(".category-input");
+
 const sweetBarContainer = document.querySelector(".sweet-cotainer");
 
 const PicksBtn = document.querySelector(".picks-container");
@@ -738,6 +741,16 @@ if (PicksBtn != null) {
     });
 }
 
+if (selectStatus != null) {
+    selectStatus.addEventListener("change", () => {
+        if(selectStatus.value == "3") {
+            alert("거래완료 변경시엔 거래자 아이디를 입력해 주셔야합니다.");
+            selectInput.style.display ="block";
+        } else {
+            selectInput.style.display ="none";
+        }
+    });
+}
 //-----------------------------
 function dropAction() {
     if (dropContainer.classList.contains("active")) {

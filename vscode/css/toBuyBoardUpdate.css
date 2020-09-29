@@ -9,6 +9,10 @@
     width: 100%;
 }
 
+.buy-board-update__sort {
+    display: flex;
+}
+
 .buy-board-update__category {
     background: url("https://t1.daumcdn.net/cfile/tistory/99761B495C84AA8716")
         no-repeat 100% 50%;
@@ -21,12 +25,16 @@
     outline: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    margin-right: 1rem;
     padding: 0.4rem 0.3rem;
     width: 150px;
 }
 
-.buy-board-update__category:first-child {
-    margin-right: 1rem;
+.buy-board-update__category--text{
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    display: none;
+    padding: 0.4rem 0.3rem;
 }
 
 .buy-board-update__info {
@@ -44,7 +52,7 @@
     margin-right: 1rem;
 }
 
-.article__buy-board-update input {
+.buy-board-update__info input {
     border: none;
     font-family: "Noto Sans KR", sans-serif;
     font-weight: bold;
