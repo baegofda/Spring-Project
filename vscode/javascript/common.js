@@ -94,8 +94,12 @@ const sharingReadDelete = document.querySelector(".sharing-board-read__delete");
 const buyReadDelete = document.querySelector(".buy-board-read__delete");
 
 const noticeReadUpdate = document.querySelector(".notice-board-read__update");
-const blackListReadUpdate = document.querySelector(".black-list-read__update");
-const badReviewReadUpdate = document.querySelector(".bad-review-read__update");
+const blackListReadUpdate = document.querySelector(
+    ".black-list-board-read__update"
+);
+const badReviewReadUpdate = document.querySelector(
+    ".bad-review-board-read__update"
+);
 const saleReadUpdate = document.querySelector(".sale-board-read__update");
 const sharingReadUpdate = document.querySelector(".sharing-board-read__update");
 const buyReadUpdate = document.querySelector(".buy-board-read__update");
@@ -743,11 +747,11 @@ if (PicksBtn != null) {
 
 if (selectStatus != null) {
     selectStatus.addEventListener("change", () => {
-        if(selectStatus.value == "3") {
+        if (selectStatus.value == "3") {
             alert("거래완료 변경시엔 거래자 아이디를 입력해 주셔야합니다.");
-            selectInput.style.display ="block";
+            selectInput.style.display = "block";
         } else {
-            selectInput.style.display ="none";
+            selectInput.style.display = "none";
         }
     });
 }
