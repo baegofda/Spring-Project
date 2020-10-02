@@ -1,0 +1,125 @@
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+}
+
+.header__fixed-bar {
+    align-items: flex-start;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    left: 0;
+    padding: 1rem 23%;
+    top: 0;
+}
+
+.section-logo {
+    width: 120px;
+    height: 34px;
+    margin-right: 2rem;
+}
+
+.section-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.section-search {
+    flex-grow: 2;
+}
+
+.header__fixed-bar-search-container {
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+.search-input {
+    line-height: 40px;
+    border: none;
+    color: var(--color-black);
+    flex-grow: 2;
+    font-size: 1rem;
+    margin: 0;
+    outline: none;
+    padding: 0;
+}
+
+.search-icon {
+    outline: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    line-height: 40px;
+}
+
+.header__fixed-bar-nav {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    height: 44px;
+}
+
+.nav-list {
+    align-items: center;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content: flex-end;
+}
+
+.nav-list-content {
+    line-height: 1rem;
+    padding : 0 0.5rem;
+}
+
+.nav-list-content img{
+    height: 0.9rem;
+    line-height: 0.9rem;
+    margin-left: 0.3rem;
+    width: 0.9rem;
+}
+
+.nav-list .nav-list-content:not(:last-child) {
+    border-right: 2px solid var(--color-border);
+}
+
+.nav-list .drop {
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-list .drop .drop__container{
+    background-color: var(--color-white);
+    border:1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    display: none;
+    font-size: 0.8rem;
+    margin-top: 0.6rem;
+    position: absolute;
+    padding: 0.8rem 0;
+    width: 90%;
+}
+
+.nav-list .drop .drop__container li{
+    box-sizing: border-box;
+    padding: 0.4rem 0.8rem;
+    width: 100%;
+}
+
+.nav-list .drop .drop__container.active{
+    display: block;
+}
+
+
+.nav-list .drop .drop__container li:hover{
+   background-color: #ebebeb;
+}

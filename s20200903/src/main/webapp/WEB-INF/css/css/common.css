@@ -1,0 +1,64 @@
+@import "header.css";
+@import "fixed.css";
+@import "index.css";
+@import "join.css";
+@import "login.css";
+@import "myPage.css";
+@import "userLeave.css";
+@import "findPw.css";
+@import "findPwReset.css";
+@import "findPwUpdate.css";
+@import "footer.css";
+
+:root {
+    /* color
+    ex) color: var(--color-black);
+    */
+
+    --color-personal-orange: #ffb98b;
+    --color-black: #3f454d;
+    --color-white: #ffffff;
+    --color-blue: #3b88c3;
+    --color-yellow: #fbbe28;
+    --color-pink: #fd7f84;
+    --color-sub-color: #666666;
+    --color-light-grey: #dfdfdf;
+    --color-footer-text-grey: #495057;
+    --color-border: #f2f2f2;
+    --color-input-color: #cccccc;
+    --color-list-orange: rgba(255, 185, 139, 0.7);
+
+    /*background-color
+    ex) background-color: var(--color-section);
+    */
+    --color-section: #fbf7f2;
+    --color-section3: #e6f3e6;
+    --color-footer: #495057;
+
+    /*box-shadow*/
+    --box-shadow: 0 0 0.5rem 0.001rem rgba(0, 0, 0, 0.12);
+
+    /*border-radius*/
+    --border-radius: 0.5rem;
+}
+
+body {
+    all: unset;
+    font-family: "Noto Sans KR", sans-serif;
+    box-sizing: border-box;
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
