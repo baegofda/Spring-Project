@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원상세보기 :: 당근나라</title>
+        <link rel="stylesheet" href="../../css/common.css" />
+        <script src="../../javascript/common.js" defer></script>
+        <script
+            src="https://kit.fontawesome.com/797af710b1.js"
+            crossorigin="anonymous"
+            defer
+        ></script>
+        <script
+            src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
+            defer
+        ></script>
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcz9VUi%2FbtqJt0b2VUe%2FiiBIEnDkufPInk4hKsunE1%2Fimg.png"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <!-- 메뉴 고정바 -->
+        <header class="header">
+            <div class="header__fixed-bar">
+                <section class="header__fixed-bar-logo section-logo">
+                    <a href="../main/main.html">
+                        <img
+                            src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FSQxEt%2FbtqJs5kkQnP%2FhvX1kh8aeqli9J93tF5qV1%2Ftfile.svg"
+                            alt="당근나라"
+                        />
+                    </a>
+                </section>
+                <section class="header__fixed-bar-search section-search">
+                    <div class="header__fixed-bar-search-container">
+                        <input
+                            class="search-input"
+                            type="text"
+                            placeholder="동네 이름, 물품명 등을 검색해보세요!"
+                        />
+                        <input
+                            type="image"
+                            class="search-icon"
+                            src="https://img.icons8.com/ios-glyphs/30/000000/search.png"
+                        />
+                    </div>
+                </section>
+                <section class="header__fixed-bar-nav section-nav">
+                    <nav class="header__fixed-bar-nav-container">
+                        <ul class="header__fixed-bar-nav-list nav-list">
+                            <li class="nav-list-content drop">
+                                <span class="nav-list-text">
+                                    Welcome ~!
+                                    <!-- 로그인 회원에 따라서 이름 바뀌게 작업 -->
+                                    <span class="name">이준호</span>님 </span
+                                ><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA1ElEQVRIie2TsQ3CMBBF/zkLpMQLQO9zmV2IBBINJZQZgDAAVRAj0FBlhrRZwV1GwDQGhUhJnFQg+Xdn371nyzIQEvJfYeZMa50DEDPGBTOfmTn7Wuw0xdbaIzMXEyXCzRwAxO2NqF0YY0op5YKItlLKVZIk97qurQf8CiAFcKuqag/gMxN1u40xDydJm6ZZjkje8LWDbwA8e28wUTIK7xV4SLzgg4IBCfnCAYCGBK3TFnCP6NZSH7ivAABIKXUhop2rveBTI7TWuVLqhHkfMSTkV/MCeGNw/fvNnQwAAAAASUVORK5CYII="
+                                />
+                                <ul class="drop__container">
+                                    <a href="../member/myPage.html"
+                                        ><li>마이페이지</li></a
+                                    >
+                                    <a href="../member/picksList.html"
+                                        ><li>관심목록</li></a
+                                    >
+                                    <a href="../member/toSaleList.html"
+                                        ><li>판매내역</li></a
+                                    >
+                                    <a href="../member/toBuyList.html"
+                                        ><li>구매내역</li></a
+                                    >
+                                    <a href="../member/toSharingList.html"
+                                        ><li>나눔내역</li></a
+                                    >
+                                    <a href="#"><li>로그아웃</li></a>
+                                </ul>
+                            </li>
+                            <li class="nav-list-content">
+                                <a href="#">지도로 보기</a>
+                            </li>
+                            <!-- 관리자 로그인시 활성화 될 수 있게
+                                 <li class="nav-list-content drop">
+                                <span class="nav-list-text">
+                                    Welcome ~!
+                                    <span class="name">관리자</span>님 </span
+                                ><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAA1ElEQVRIie2TsQ3CMBBF/zkLpMQLQO9zmV2IBBINJZQZgDAAVRAj0FBlhrRZwV1GwDQGhUhJnFQg+Xdn371nyzIQEvJfYeZMa50DEDPGBTOfmTn7Wuw0xdbaIzMXEyXCzRwAxO2NqF0YY0op5YKItlLKVZIk97qurQf8CiAFcKuqag/gMxN1u40xDydJm6ZZjkje8LWDbwA8e28wUTIK7xV4SLzgg4IBCfnCAYCGBK3TFnCP6NZSH7ivAABIKXUhop2rveBTI7TWuVLqhHkfMSTkV/MCeGNw/fvNnQwAAAAASUVORK5CYII="
+                                />
+                                <ul class="drop__container">
+                                    <a href="../admin/adminManageList.html"
+                                        ><li>회원관리</li></a
+                                    >
+                                    <a href="#"><li>로그아웃</li></a>
+                                </ul>
+                            </li>
+                            <li class="nav-list-content">
+                                <a href="#">지도로 보기</a>
+                            </li> -->
+                        </ul>
+                    </nav>
+                </section>
+            </div>
+        </header>
+        <!-- 메뉴 목록 리스트 -->
+        <aside class="fixed__list">
+            <ul>
+                <li><a href="../board/noticeBoard.html">공지사항</a></li>
+                <li><a href="../board/blackListBoard.html">검거완료 !</a></li>
+                <li>
+                    <a href="../board/badReviewBoard.html">불량거래 후기</a>
+                </li>
+                <li><a href="../board/toSaleBoard.html">판매중 이에요.</a></li>
+                <li>
+                    <a href="../board/toSharingBoard.html">나눔중 이에요.</a>
+                </li>
+                <li><a href="../board/toBuyBoard.html">구매합니다 ~!</a></li>
+            </ul>
+        </aside>
+        <!-- 섹션 시작 -->
+        <section class="section">
+            <article class="user-detail">
+                <div class="user-detail__container">
+                    <div class="user-detail__info">
+                        <div class="user-detail__text">
+                            <strong class="user-detail__text--name"
+                                >닉네임 (email@daum.net)</strong
+                            >
+                            <p class="user-detail__text--address">
+                                서울특별시 송파구 석촌동
+                            </p>
+                        </div>
+                        <div class="user-detail__sweet--container">
+                            <div
+                                class="user-detail__sweet--item sweet-cotainer"
+                            ></div>
+                            <p class="user-detail__sweet--title">당도</p>
+                        </div>
+                    </div>
+                    <!-- 관리자가 볼경우에만 활성화 -->
+                    <div class="user-detail__info-admin">
+                        <strong>회원 상세내역</strong>
+                        <table>
+                            <tr>
+                                <td>이름</td>
+                                <td>이준호</td>
+                            </tr>
+                            <tr>
+                                <td>전화번호</td>
+                                <td>01048309376</td>
+                            </tr>
+                            <tr>
+                                <td>상태</td>
+                                <td>
+                                    <!-- <label for="user-detail__info-admin--nomal">
+                                        <div
+                                            class="user-detail__info-admin-label label--nomal"
+                                        >
+                                            일반
+                                        </div>
+                                        <input
+                                            class="user-detail__info-admin--nomal"
+                                            type="radio"
+                                            name="status"
+                                        />
+                                    </label>
+                                    <label
+                                        for="user-detail__info-admin--suspension"
+                                    >
+                                        <div
+                                            class="user-detail__info-admin-label label--suspension"
+                                        >
+                                            정지
+                                        </div>
+                                        <input
+                                            class="user-detail__info-admin--suspension"
+                                            type="radio"
+                                            name="status"
+                                        />
+                                    </label>
+                                    <label
+                                        for="user-detail__info-admin--withdraswal"
+                                    >
+                                        <div
+                                            class="user-detail__info-admin-label label--withdraswal"
+                                        >
+                                            탈퇴
+                                        </div>
+                                        <input
+                                            class="user-detail__info-admin--withdraswal"
+                                            type="radio"
+                                            name="status"
+                                        />
+                                    </label> -->
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="user-detail__status">
+                        <p>회원등급 : 일반회원</p>
+                        <div class="vertical"></div>
+                        <p>총 거래내역 : 12건</p>
+                        <div class="vertical"></div>
+                        <p>총 판매내역 : 8건</p>
+                        <div class="vertical"></div>
+                        <p>총 나눔내역 : 1건</p>
+                        <div class="vertical"></div>
+                        <p>총 구매내역 : 3건</p>
+                    </div>
+                    <!-- 카테고리 불문 최신 순, 제목에 해당 게시글 링크-->
+                    <div class="user-detail__summary">
+                        <strong>활동내역</strong>
+                        <table>
+                            <tr>
+                                <th>카테고리</th>
+                                <th>제목</th>
+                                <th>작성일</th>
+                            </tr>
+                            <tr>
+                                <td>판매중</td>
+                                <td>
+                                    <a href="#">판매중게시판 제목입니다.</a>
+                                </td>
+                                <td>2020.09.23</td>
+                            </tr>
+                            <!-- 더미데이터 -->
+                            <tr>
+                                <td>나눔중</td>
+                                <td>나눔중게시판 제목입니다.</td>
+                                <td>2020.09.23</td>
+                            </tr>
+                            <tr>
+                                <td>구매중</td>
+                                <td>구매중게시판 제목입니다.</td>
+                                <td>2020.09.23</td>
+                            </tr>
+                            <tr>
+                                <td>불량거래후기</td>
+                                <td>불량거래후기게시판 제목입니다.</td>
+                                <td>2020.09.23</td>
+                            </tr>
+                            <tr>
+                                <td>판매중</td>
+                                <td>판매중게시판 제목입니다.</td>
+                                <td>2020.09.23</td>
+                            </tr>
+                            <!-- 더미데이터 -->
+                        </table>
+                    </div>
+                    <div class="user-detail__page-num-container">
+                        <ul class="page-num-container">
+                            <a href="#">
+                                <li
+                                    class="page-num-container__left-btn page-num-container__btn"
+                                >
+                                    <i class="fas fa-chevron-left"></i>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="page-num-container__num">1</li>
+                            </a>
+                            <!-- 더미데이터 -->
+                            <a href="#">
+                                <li class="page-num-container__num">2</li>
+                            </a>
+                            <a href="#">
+                                <li class="page-num-container__num">3</li>
+                            </a>
+                            <a href="#">
+                                <li class="page-num-container__num">4</li>
+                            </a>
+                            <a href="#">
+                                <li class="page-num-container__num">5</li>
+                            </a>
+                            <!-- 더미데이터 -->
+                            <a href="#">
+                                <li
+                                    class="page-num__right-btn page-num-container__btn"
+                                >
+                                    <i class="fas fa-chevron-right"></i>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <!-- 하단 카피라이트 -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-top-logo"></div>
+                    <ul class="footer-top-list">
+                        <li class="footer-top-list-content">
+                            <a href="https://www.daangn.com/trust"
+                                >믿을 수 있는 중고거래</a
+                            >
+                        </li>
+                        <li class="footer-top-list-content">
+                            <a href="https://www.daangn.com/wv/faqs">
+                                자주 묻는 질문</a
+                            >
+                        </li>
+                    </ul>
+                    <ul class="footer-top-list">
+                        <li class="footer-top-list-content">
+                            <a
+                                href="https://www.notion.so/3d0197c137ec43d18ff739b5b254a3c8/"
+                            >
+                                회사 소개
+                            </a>
+                        </li>
+                        <li class="footer-top-list-content">
+                            <a href="https://ad.daangn.com/"> 광고주센터 </a>
+                        </li>
+                        <li class="footer-top-list-content">
+                            <a href="https://town.daangn.com/"> 동네가게 </a>
+                        </li>
+                    </ul>
+                    <ul class="footer-top-list">
+                        <li class="footer-top-list-content">
+                            <a href="https://www.daangn.com/policy/terms">
+                                이용약관
+                            </a>
+                        </li>
+                        <li class="footer-top-list-content">
+                            <a href="https://www.daangn.com/policy/privacy">
+                                개인정보 취급방침
+                            </a>
+                        </li>
+                        <li class="footer-top-list-content">
+                            <a href="https://www.daangn.com/policy/location">
+                                위치기반서비스 이용약관
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-bottom-copyright">
+                        <ul class="footer-bottom-list-container">
+                            <li class="footer-bottom-list-conent">
+                                <address>고객문의 cs@daangnservice.com</address>
+                                <address>제휴문의 contact@daangn.com</address>
+                            </li>
+                            <li class="footer-bottom-list-conent">
+                                <address>
+                                    사업자 등록번호 : 375-87-000-88
+                                </address>
+                                <address>
+                                    서울특별시 구로구 디지털로 30길 28 609호
+                                </address>
+                            </li>
+                            <li class="footer-bottom-list-conent">
+                                ©Danggeun Market Inc.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-bottom-sns">
+                        <ul class="footer-bottom-sns-container">
+                            <li class="sns-icon">
+                                <a href="https://www.facebook.com/daangn">
+                                    <img
+                                        src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/footer/icon-facebook-0563f4a93852d073b41f13b8bcabb03d47af3bb3a6755cdfedd8a73686c7f18c.svg"
+                                    />
+                                </a>
+                            </li>
+                            <li class="sns-icon">
+                                <a
+                                    href="https://www.instagram.com/daangnmarket/"
+                                >
+                                    <img
+                                        src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/footer/icon-instagram-2f6c88a461597907c114b7ce28eab053fcae791ed26417915fefb6f7c9f95756.svg"
+                                    />
+                                </a>
+                            </li>
+                            <li class="sns-icon">
+                                <a href="https://blog.naver.com/daangn">
+                                    <img
+                                        src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/footer/icon-blog-e1b0d512d1766a6962ec5bbb5b0803d2a6a9c55ad97db5ba9eebb76013caceba.svg"
+                                    />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

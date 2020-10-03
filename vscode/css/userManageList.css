@@ -1,0 +1,136 @@
+.article__user-manage-list {
+    margin: 0 29%;
+    padding: 10rem 0;
+}
+
+.user-manage-list--title {
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.article__user-manage-list table {
+    border-collapse: collapse;
+    border-top: 1px solid var(--color-black);
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+.article__user-manage-list table tr {
+    border-bottom: 1px solid var(--color-border);
+    width: 100%;
+}
+
+.article__user-manage-list table tr th {
+    padding: 0.8rem 0;
+}
+
+.article__user-manage-list table tr th:nth-of-type(6),
+.article__user-manage-list table tr td:nth-of-type(6) {
+    padding-right: 1rem;
+}
+
+.article__user-manage-list table tr td {
+    padding: 0.5rem 0;
+}
+
+#user-status {
+    background: url("https://t1.daumcdn.net/cfile/tistory/99761B495C84AA8716")
+        no-repeat 100% 50%;
+    background-size: 1.3rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.3rem;
+    color: #333333;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    outline: none;
+    padding: 0 0.3rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+}
+
+.user-manage-list__page-num-container {
+    margin-top: 1.5rem;
+}
+
+.page-num-container {
+    align-items: center;
+    border: none;
+    display: flex;
+    justify-content: center;
+    outline: none;
+}
+
+.page-num-container li {
+    height: 26px;
+    line-height: 26px;
+    margin: 0 0.5rem;
+    outline: none;
+    text-align: center;
+    vertical-align: middle;
+    width: 26px;
+}
+
+.page-num-container .page-num-container__num {
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    box-shadow: 0 0 0.2rem 0.001rem rgba(0, 0, 0, 0.12);
+}
+
+.page-num-container .page-num-container__num:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.page-num-container .page-num-container__btn {
+    font-size: 1.1rem;
+}
+
+.page-num-container .page-num-container__btn:hover {
+    color: red;
+}
+
+.user-manage-list__search-container {
+    align-items: center;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+#search-container__category {
+    background: url("https://t1.daumcdn.net/cfile/tistory/99761B495C84AA8716")
+        no-repeat 100% 50%;
+    background-size: 1.3rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.3rem;
+    color: #333333;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 0.8rem;
+    height: 100%;
+    margin-right: 0.5rem;
+    -moz-appearance: none;
+    outline: none;
+    padding: 0.2rem 0.3rem;
+    -webkit-appearance: none;
+    width: 4rem;
+}
+
+.search-container__input {
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    box-sizing: border-box;
+    height: 100%;
+    margin-right: 0.5rem;
+    outline: none;
+    padding: 0.2rem 0.3rem;
+    width: 30%;
+}
+
+.search-container__icon {
+    height: 25px;
+    outline: none;
+    width: 25px;
+}

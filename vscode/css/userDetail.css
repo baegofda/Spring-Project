@@ -1,0 +1,234 @@
+.user-detail {
+    margin: 0 30%;
+    padding: 10rem 0;
+}
+
+.user-detail__container {
+    box-sizing: border-box;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem 2.5rem 2.5rem 2.5rem;
+}
+
+.user-detail__info {
+    align-items: center;
+    display: flex;
+}
+
+.user-detail__text--address,
+.user-detail__sweet--title {
+    margin: 0.5rem 0 0 0;
+}
+
+.user-detail__text--address {
+    color: var(--color-sub-color);
+    font-size: 0.8rem;
+}
+
+.user-detail__sweet--container {
+    margin-left: auto;
+}
+
+.user-detail__sweet--item {
+    font-size: 12px;
+    height: 100%;
+    line-height: 12px;
+    width: 120px;
+}
+
+.user-detail__sweet--title {
+    color: var(--color-sub-color);
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.sweet-bar--text {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+meter {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.fa-carrot {
+    float: right;
+}
+
+.red {
+    color: #d83b01;
+}
+
+.orange {
+    color: #ffb900;
+}
+
+.green {
+    color: #107c10;
+}
+
+.user-detail__info-admin {
+    border: 1px solid var(--color-black);
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.user-detail__info-admin strong {
+    font-size: 1rem;
+}
+
+.user-detail__info-admin table {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.user-detail__info-admin table tr {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.user-detail__info-admin table td {
+    padding: 0.8rem 0;
+}
+
+.user-detail__info-admin td:nth-child(1) {
+    width: 20%;
+}
+
+.user-detail__info-admin td:nth-child(2) {
+    width: 80%;
+}
+
+/* .user-detail__info-admin .label {
+    box-sizing: border-box;
+}
+
+.user-detail__info-admin .user-detail__info-admin-label {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-personal-orange);
+    border-radius: 0.2rem;
+    color: var(--color-personal-orange);
+    display: inline-block;
+    padding: 0.2rem 0;
+    position: relative;
+    width: 3rem;
+}
+
+.user-detail__info-admin .user-detail__info-admin-label:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+.user-detail__info-admin input[type="radio"] {
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
+
+.user-detail__info-admin
+    input[type="radio"]:checked
+    + .user-detail__info-admin-label {
+    background-color: var(--color-personal-orange);
+    color: var(--color-white);
+} */
+
+.user-detail__status {
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    display: flex;
+    font-size: 0.8rem;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1rem;
+}
+
+.user-detail__status p {
+    height: 0.8rem;
+    line-height: 0.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+.user-detail__status .vertical {
+    background-color: var(--color-sub-color);
+    height: 0.8rem;
+    line-height: 0.8rem;
+    margin: 0 0.5rem;
+    padding: 0;
+    width: 0.5px;
+}
+
+.user-detail__summary {
+    margin-top: 1.5rem;
+}
+
+.user-detail__summary table {
+    border-top: 1px solid var(--color-black);
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.user-detail__summary table tr {
+    border-bottom: 1px solid var(--color-border);
+    width: 100%;
+}
+
+.user-detail__summary table tr th {
+    padding: 0.8rem 0;
+}
+
+.user-detail__summary table tr td {
+    padding: 0.5rem 0;
+}
+
+.user-detail__page-num-container {
+    margin-top: 1.5rem;
+}
+
+.page-num-container {
+    align-items: center;
+    border: none;
+    display: flex;
+    justify-content: center;
+    outline: none;
+}
+
+.page-num-container li {
+    height: 26px;
+    line-height: 26px;
+    margin: 0 0.5rem;
+    outline: none;
+    text-align: center;
+    vertical-align: middle;
+    width: 26px;
+}
+
+.page-num-container .page-num-container__num {
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    box-shadow: 0 0 0.2rem 0.001rem rgba(0, 0, 0, 0.12);
+}
+
+.page-num-container .page-num-container__num:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.page-num-container .page-num-container__btn {
+    font-size: 1.1rem;
+}
+
+.page-num-container .page-num-container__btn:hover {
+    color: red;
+}
