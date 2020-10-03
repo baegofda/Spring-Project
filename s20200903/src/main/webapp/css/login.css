@@ -1,0 +1,81 @@
+.login {
+    margin: 0 41%;
+    padding: 13rem 0;
+    text-align: center;
+}
+
+.login__title {
+    margin: 0;
+    padding: 0;
+}
+
+.login__container {
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.login__container .login__info {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-input-color);
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+    height: 54px;
+    margin: 0;
+    outline: none;
+    padding: 0 0.9rem;
+    width: 100%;
+}
+
+.login__container .login__info:not(:first-child) {
+    margin-top: 0.6rem;
+}
+
+.login__container .login__info::placeholder {
+    color: var(--color-input-color);
+}
+
+.login__container .login__info:focus {
+    border: 1px solid var(--color-black);
+}
+
+.login__text {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.9rem 0;
+    width: 100%;
+}
+.login a {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+.login a p {
+    margin: 0;
+    padding: 0;
+}
+
+.login__btn input {
+    border: none;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    height: 44px;
+    outline: none;
+    width: 100%;
+}
+
+.login__btn .login__submit {
+    background-color: var(--color-personal-orange);
+    color: var(--color-white);
+    margin-bottom: 0.6rem;
+}
+
+.login__btn .login__join {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-personal-orange);
+    color: var(--color-personal-orange);
+}

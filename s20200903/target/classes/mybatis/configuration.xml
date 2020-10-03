@@ -4,6 +4,9 @@
 
 	<typeAliases>
 		<!-- 나은 --> 
+			<typeAlias alias="NEPost" type="oracle.java.s20200903.model.NEPost"/>
+			<typeAlias alias="NESearch" type="oracle.java.s20200903.model.NESearch"/>
+			<typeAlias alias="NEJoin" type="oracle.java.s20200903.model.NEJoin"/>
 	
 		<!-- 지예 -->
 	
@@ -20,6 +23,7 @@
 	
 	<mappers>
 		<!-- 나은 --> 
+		<mapper resource="mybatis/NE.xml"/>
 	
 		<!-- 지예 -->
 	

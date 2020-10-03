@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.NE">
+
+	<select id="NEbTotal" resultType="int">
+		SELECT count(*) FROM post WHERE bid=2 
+	</select>
+	
+	<select id="NEbList" parameterType="NEPost" resultType="NEPost">
+		SELECT * 
+		FROM (SELECT rownum rn, a.* FROM (SELECT * FROM pmcjoin WHERE bid=2 ORDER BY pnum) a)
+		WHERE rn BETWEEN #{start} AND #{end}
+	</select>
+	
+	<select id="NEsaSList" parameterType="NEJoin" resultType="NEJoin">
+		SELECT * 
+		FROM (SELECT rownum rn, a.* 
+		 	FROM(SELECT *
+				FROM pmcjoin
+				WHERE bid = 1
+				AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
+				ORDER BY pnum DESC) a)
+		WHERE rn BETWEEN 1 AND 6
+	</select>
+	
+	<select id="NEshSList" parameterType="NEJoin" resultType="NEJoin">
+		SELECT * 
+		FROM (SELECT rownum rn, a.* 
+		 	FROM(SELECT *
+				FROM pmcjoin
+				WHERE bid = 3
+				AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
+				ORDER BY pnum DESC) a)
+		WHERE rn BETWEEN 1 AND 6
+	</select>
+	
+	<select id="NEbSList" parameterType="NEJoin" resultType="NEJoin">
+		SELECT * 
+		FROM (SELECT rownum rn, a.* 
+		 	FROM(SELECT *
+				FROM pmcjoin
+				WHERE bid = 2
+				AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
+				ORDER BY pnum DESC) a)
+		WHERE rn BETWEEN 1 AND 4
+	</select>
+	
+ 	<select id="NEswordYN" parameterType="NEJoin" resultType="int">
+		SELECT COUNT(*)
+		FROM search
+		WHERE sword=#{sword}
+	</select> 
+	
+	<insert id="NEsearchInsert" parameterType="NEJoin">
+		INSERT INTO search
+		VALUES(#{sword}, 1)
+	</insert>
+	
+	<update id="NEsearchUpdate" parameterType="NEJoin">
+		UPDATE search
+		SET scnt = scnt+1
+		WHERE sword = #{sword}
+	</update> 
+	
+	<select id="NEgetBuyBid" resultType="int">
+		SELECT max(pnum)
+		FROM post
+		WHERE bid=2
+	</select>
+	
+	<insert id="NEInsertBuyPost" parameterType="NEJoin">
+		INSERT INTO post
+		VALUES(2, #{pnum}, #{mid}, #{ctcode}, 1, #{ptitle}, #{pprice}, sysdate, #{pcontent}, 0, 0,
+		<if test="pimg1!=null"> #{pimg1},</if>
+		<if test="pimg2!=null"> #{pimg2},</if>
+		<if test="pimg3!=null"> #{pimg3},</if>
+		<if test="pimg4!=null"> #{pimg4},</if>
+		<if test="pimg5!=null"> #{pimg5}</if>)
+	</insert>
+
+</mapper>

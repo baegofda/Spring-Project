@@ -1,0 +1,78 @@
+.footer {
+    background-color: var(--color-footer);
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+.footer a {
+    color: var(--color-white);
+}
+
+.footer-top {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #adb5bd;
+}
+
+.footer-top-logo {
+    background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fn3H3e%2FbtqJvUJlS8Y%2Fzus5jAMsB5fi3mwkG4IjnK%2Fimg.png");
+    background-size: 124px 35px;
+    background-repeat: no-repeat;
+    fill: var(--color-footer);
+    width: 124px;
+    height: 35px;
+}
+
+.footer-top ul {
+    margin-left: 11rem;
+}
+
+.footer-top ul li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.footer-bottom {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.footer-bottom ul li {
+    align-items: flex-start;
+    display: flex;
+    font-size: 14px;
+    justify-content: flex-start;
+}
+
+.footer-bottom ul .footer-bottom-list-conent:not(:last-child) {
+    margin-bottom: 0.4rem;
+}
+
+.footer-bottom ul li address {
+    font-style: normal;
+}
+
+.footer-bottom ul li address:not(:first-child) {
+    margin-left: 0.5rem;
+}
+
+.footer-bottom-sns ul {
+    justify-content: center;
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-bottom-sns ul li:not(:last-child) {
+    margin-right: 2.4rem;
+}
+
+.sns-icon img {
+    width: 1.5rem;
+    height: 1.5rem;
+}

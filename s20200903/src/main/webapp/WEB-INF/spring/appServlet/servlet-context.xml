@@ -17,7 +17,7 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>	
-	<context:component-scan base-package="oracle.java.omyBatis" />	
+	<context:component-scan base-package="oracle.java.s20200903"/>	
 	<!-- <context:component-scan base-package="controller,service,dao" /> -->	
 	
 		<!--       File Upload Bean  Setting 파일업로드시 사용   -->
@@ -25,4 +25,7 @@
 		<beans:property name="maxUploadSize" value="10485762"></beans:property>
 	</beans:bean>
 
+	<!-- <beans:bean id="uploadPath" class="java.lang.String">
+		<beans:constructor-arg value="C:\\spring\\springSrc\\s20200903\\src\\main\\webapp\\resources\\image" />
+	</beans:bean> -->
 </beans:beans>
