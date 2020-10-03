@@ -161,11 +161,6 @@ meter {
     width: 1px;
 }
 
-.buy-board-read__content--price {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-top: 0.5rem;
-}
 .buy-board-read__content--article {
     margin-top: 0.5rem;
 }
