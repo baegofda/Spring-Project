@@ -1,0 +1,234 @@
+.article__buy-board-read {
+    margin: 0 29%;
+    padding: 9rem 0;
+}
+
+/* 슬라이드 */
+.silder-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.slider {
+    border-radius: 0.5rem;
+    width: 44rem;
+    height: 32rem;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.slide {
+    border-radius: 0.5rem;
+    width: 44rem;
+    height: 32rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.slide img {
+    border-radius: 0.5rem;
+    width: 44rem;
+    height: 32rem;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 1;
+}
+
+.btns {
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--color-black);
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btns:hover {
+    color: var(--color-personal-orange);
+}
+
+.left {
+    left: 0;
+}
+.right {
+    right: 0;
+}
+/* 슬라이드 */
+
+.buy-board-read__info-container {
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.buy-board-read__name {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.buy-board-read__address {
+    color: var(--color-sub-color);
+    font-size: 0.8rem;
+    margin: 0.5rem 0 0 0;
+}
+.buy-board-read__sweet-cotainer {
+    margin-left: auto;
+}
+.buy-board-read__sweet {
+    font-size: 12px;
+    line-height: 12px;
+    margin-left: auto;
+    width: 120px;
+}
+
+.sweet-bar--text {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+meter {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.fa-carrot {
+    float: right;
+}
+
+.red {
+    color: #d83b01;
+}
+
+.orange {
+    color: #ffb900;
+}
+
+.green {
+    color: #107c10;
+}
+
+.buy-board-read__text {
+    color: var(--color-sub-color);
+    float: right;
+    font-size: 0.8rem;
+}
+
+.buy-board-read__content {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem 0;
+    position: relative;
+}
+.buy-board-read__content--title {
+    font-size: 1.2rem;
+    margin: 0;
+}
+.buy-board-read__content--detail,
+.buy-board-read__content--hits {
+    color: var(--color-sub-color);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.buy-board-read__content--detail span,
+.buy-board-read__content--hits {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.buy-board-read__content--detail .vertical {
+    background-color: var(--color-sub-color);
+    height: 0.8rem;
+    margin: 0.2rem;
+    width: 1px;
+}
+
+.buy-board-read__content--price {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+.buy-board-read__content--article {
+    margin-top: 0.5rem;
+}
+
+.buy-board-read__content--counts {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 3rem;
+    position: absolute;
+    right: 1.2rem;
+    text-align: center;
+    top: 1rem;
+    margin: 0;
+    width: 3rem;
+}
+
+.buy-board-read__content--counts:hover {
+    background-color: var(--color-border);
+}
+
+.buy-board-read__content--counts img {
+    height: 1.5rem;
+    margin-top: 12px;
+    width: 1.5rem;
+}
+
+.buy-board-read__btn-container {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.buy-board-read__list {
+    border: 1px solid var(--color-personal-orange);
+    color: var(--color-personal-orange);
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 44px;
+    margin: 0 !important;
+    outline: none;
+    text-align: center;
+}
+
+.buy-board-read__delete,
+.buy-board-read__update {
+    background-color: var(--color-personal-orange);
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 0 1rem !important;
+    outline: none;
+}
+
+.buy-board-read__list,
+.buy-board-read__delete,
+.buy-board-read__update {
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    font-weight: 400 !important;
+    height: 44px !important;
+    width: 5rem !important;
+}

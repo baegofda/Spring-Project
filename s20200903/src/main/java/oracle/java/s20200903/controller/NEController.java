@@ -1,17 +1,19 @@
 package oracle.java.s20200903.controller;
 
-import java.io.File;
-import java.util.List;
-import java.util.UUID;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.util.*;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import oracle.java.s20200903.model.NEJoin;
@@ -90,42 +92,69 @@ public class NEController {
 	
 	// 새 글 insert
 	@RequestMapping(value="buyPostWrite", method=RequestMethod.POST)
-	public String buyPostInsert(HttpServletRequest request, NEJoin neJoin, Model model, MultipartFile pimg1) throws Exception {
+	public String buyPostInsert(HttpServletRequest request, NEJoin neJoin, Model model) throws Exception {
 		System.out.println("buyPostInsert start...");
 		
-		String uploadPath = "C:\\spring\\springSrc\\s20200903\\src\\main\\webapp\\resources\\image";
-		System.out.println("originalName => "+ pimg1.getOriginalFilename());
-		System.out.println("file Size => "+ pimg1.getSize());
-		System.out.println("file ContentType => "+ pimg1.getContentType());
+		// 기초 정보 저장
+		neJoin.setCtcode(Integer.parseInt(request.getParameter("ctcode")));
+		neJoin.setPprice(Integer.parseInt(request.getParameter("pprice")));
+		neJoin.setPimg1(request.getParameter("pprice"));
 		
-		String savedName = uploadFile(pimg1.getOriginalFilename(), pimg1.getBytes(), uploadPath);
-		neJoin.setPimg1(savedName);
+		// 이미지 파일명 저장
+		neJoin.setPimg1(request.getParameter("img1"));
+		neJoin.setPimg2(request.getParameter("img2"));
+		neJoin.setPimg3(request.getParameter("img3"));
+		neJoin.setPimg4(request.getParameter("img4"));
+		neJoin.setPimg5(request.getParameter("img5"));
+		
+		// 타이틀 및 내용 정보 저장
+		neJoin.setPtitle(request.getParameter("ptitle"));
+		neJoin.setPcontent(request.getParameter("pcontinet"));
+		
+		// 유저정보 입력과 동시에 데이터 최종 Insert
 		neJoin.setMid("user@naver.com");	// 통합 전이라 직접 입력. 통합 후에는 input hidden으로 session에서 불러와 저장
-		ns.InsertBuyPost(neJoin);
-		
-		model.addAttribute("savedName",savedName);
+//		ns.InsertBuyPost(neJoin);
+	
+		// 기존 소스코드 주석 처리 (추 후 삭제 요망)
+//		System.out.println("originalName => "+ pimg1.getOriginalFilename());
+//		System.out.println("file Size => "+ pimg1.getSize());
+//		System.out.println("file ContentType => "+ pimg1.getContentType());
+//		String savedName = uploadFile(pimg1.getOriginalFilename(), pimg1.getBytes(), uploadPath);
+//		model.addAttribute("savedName",savedName);
 		
 		return "forward:buylist.do";
 	}
 	
-	// 파일명을 생성해 경로에 저장하는 메소드
-	public String uploadFile(String originalName, byte[] fileData, String uploadPath) throws Exception {
+	// 파일명을 생성해 경로에 저장하는 메소드 -> ajax와 연결하여 저장하도록 수정 
+	@RequestMapping(value="/uploadFile", method=RequestMethod.POST)
+	@ResponseBody
+	public String uploadFile(@RequestParam("file") MultipartFile file) throws Exception {
 		System.out.println("uploadFile start...");
-		System.out.println("uploadPath => " + uploadPath);
-		UUID uid = UUID.randomUUID();
 		
-		File fileDirectory = new File(uploadPath);
+	    try {
+	    BufferedImage src = ImageIO.read(new ByteArrayInputStream(file.getBytes()));
+	    File destination = new File("/src/main/webapp/resources/image/Image1.png");
+	    ImageIO.write(src, "png", destination);
+	    } catch(Exception e) {
+	        e.printStackTrace();
+	    }
+//		String filename = uploadfile.getOriginalFilename();
+//		String uploadPath = "/src/main/webapp/resources/image";
+//	    String filepath = Paths.get(uploadPath, filename).toString();
+//		System.out.println("uploadPath => " + uploadPath);
+//		UUID uid = UUID.randomUUID();
 		
-		if(!fileDirectory.exists()) {
-			fileDirectory.mkdirs();
-			System.out.println("업로드용 폴더 생성");
-		}
-		String savedName = uid.toString() + "_" + originalName;
+//		File fileDirectory = new File(uploadPath);
+//		
+//		if(!fileDirectory.exists()) {
+//			fileDirectory.mkdirs();
+//			System.out.println("업로드용 폴더 생성");
+//		}
+//		String savedName = uid.toString() + "_" + originalName;
 		//File target = new File(uploadPath, savedName);
 		// uploadPath에 savedName이라는 이름의 파일 생성	
 		//FileCopyUtils.copy(fileData, target);
 		
-		return savedName;
+		return "AA";
 	}
-	
 }
