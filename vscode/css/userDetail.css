@@ -105,38 +105,22 @@ meter {
     width: 80%;
 }
 
-/* .user-detail__info-admin .label {
-    box-sizing: border-box;
+#info-status {
+    background: url("https://t1.daumcdn.net/cfile/tistory/99761B495C84AA8716")
+        no-repeat 100% 50%;
+    background-size: 1.3rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.3rem;
+    color: #333333;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    outline: none;
+    padding: 0 0.3rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15%;
 }
-
-.user-detail__info-admin .user-detail__info-admin-label {
-    background-color: var(--color-white);
-    border: 1px solid var(--color-personal-orange);
-    border-radius: 0.2rem;
-    color: var(--color-personal-orange);
-    display: inline-block;
-    padding: 0.2rem 0;
-    position: relative;
-    width: 3rem;
-}
-
-.user-detail__info-admin .user-detail__info-admin-label:not(:last-child) {
-    margin-right: 0.5rem;
-}
-
-.user-detail__info-admin input[type="radio"] {
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    width: 1px;
-}
-
-.user-detail__info-admin
-    input[type="radio"]:checked
-    + .user-detail__info-admin-label {
-    background-color: var(--color-personal-orange);
-    color: var(--color-white);
-} */
 
 .user-detail__status {
     align-items: center;

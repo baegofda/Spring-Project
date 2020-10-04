@@ -194,7 +194,7 @@
                 </div>
                 <div class="bad-review-board-read__info-container">
                     <div class="bad-review-board-read__info">
-                        <a href="#none"
+                        <a href="../member/userDetail.html"
                             ><div class="bad-review-board-read__name">
                                 작성자
                             </div></a
@@ -238,6 +238,212 @@
                         type="button"
                         value="수정"
                     />
+                </div>
+                <div class="bad-review-board-read__comment">
+                    <strong class="comment__title"
+                        >댓글 <span class="comment__count">10</span></strong
+                    >
+                    <textarea
+                        id="comment__textarea"
+                        placeholder="댓글을 작성해주세요"
+                    ></textarea>
+                    <input
+                        class="comment__submit-btn"
+                        type="submit"
+                        value="댓글 남기기"
+                    />
+                    <ul class="comment__container">
+                        <li id="comment__main">
+                            <div class="comment__nick-name">닉네임</div>
+                            <p class="comment__content">댓글 들어가는곳</p>
+                            <div class="comment__info">
+                                <span class="comment__info--date"
+                                    >2020.10.05</span
+                                >
+                                <a class="comment__info--comment" href="#none"
+                                    >답글쓰기</a
+                                >
+                                <a
+                                    class="comment__info--update"
+                                    href="#none"
+                                    onclick="commentUpdate()"
+                                    >수정</a
+                                >
+                                <a class="comment__info--delete" href="#none"
+                                    >삭제</a
+                                >
+                            </div>
+
+                            <!-- 댓글 수정누르면 나올 수 있게 -->
+                            <!-- <div class="comment__update-container">
+                                <textarea id="comment__update--textarea">
+댓글내용 가져오기</textarea
+                                >
+                                <input
+                                    class="comment__update-btn"
+                                    type="submit"
+                                    value="댓글 수정"
+                                />
+                            </div>
+                        </li> -->
+                            <!-- 댓글 수정누르면 나올 수 있게 -->
+
+                            <!-- 답글일경우에 -->
+                        </li>
+
+                        <li id="comment__sub">
+                            <div class="comment__nick-name">닉네임</div>
+                            <p class="comment__content">
+                                <span class="comment__content--nick-name">
+                                    @답글대상닉네임</span
+                                >답글 들어가는곳
+                            </p>
+                            <div class="comment__info">
+                                <span class="comment__info--date"
+                                    >2020.10.05</span
+                                >
+                                <a class="comment__info--reply" href="#none"
+                                    >답글쓰기</a
+                                >
+                                <a
+                                    class="comment__info--update"
+                                    href="#none"
+                                    onclick="commentUpdate()"
+                                    >수정</a
+                                >
+                                <a class="comment__info--delete" href="#none"
+                                    >삭제</a
+                                >
+                            </div>
+                        </li>
+                        <!-- 답글일경우에 -->
+
+                        <!-- 답글작성시 활성화 -->
+                        <li id="comment__reply">
+                            <div class="comment__reply-container">
+                                <span class="comment__reply--nick-name">
+                                    @답글대상닉네임</span
+                                >
+                                <textarea
+                                    id="comment__reply--textarea"
+                                    placeholder="답글을 남겨주세요"
+                                ></textarea>
+                                <input
+                                    class="comment__reply-btn"
+                                    type="submit"
+                                    value="답글 남기기"
+                                />
+                            </div>
+                        </li>
+                        <!-- 답글작성시 활성화 -->
+
+                        <li id="comment__main">
+                            <div class="comment__nick-name">닉네임</div>
+                            <p class="comment__content">댓글 들어가는곳</p>
+                            <div class="comment__info">
+                                <span class="comment__info--date"
+                                    >2020.10.05</span
+                                >
+                                <a class="comment__info--comment" href="#none"
+                                    >답글쓰기</a
+                                >
+                                <a
+                                    class="comment__info--update"
+                                    href="#none"
+                                    onclick="commentUpdate()"
+                                    >수정</a
+                                >
+                                <a class="comment__info--delete" href="#none"
+                                    >삭제</a
+                                >
+                            </div>
+                        </li>
+                        <li id="comment__sub">
+                            <div class="comment__nick-name">닉네임</div>
+                            <p class="comment__content">
+                                <span class="comment__content--nick-name">
+                                    @답글대상닉네임</span
+                                >답글 들어가는곳
+                            </p>
+                            <div class="comment__info">
+                                <span class="comment__info--date"
+                                    >2020.10.05</span
+                                >
+                                <a class="comment__info--comment" href="#none"
+                                    >답글쓰기</a
+                                >
+                                <a
+                                    class="comment__info--update"
+                                    href="#none"
+                                    onclick="commentUpdate()"
+                                    >수정</a
+                                >
+                                <a class="comment__info--delete" href="#none"
+                                    >삭제</a
+                                >
+                            </div>
+                        </li>
+                        <li id="comment__sub">
+                            <div class="comment__nick-name">닉네임</div>
+                            <p class="comment__content">
+                                <span class="comment__content--nick-name">
+                                    @답글대상닉네임</span
+                                >답글 들어가는곳
+                            </p>
+                            <div class="comment__info">
+                                <span class="comment__info--date"
+                                    >2020.10.05</span
+                                >
+                                <a class="comment__info--comment" href="#none"
+                                    >답글쓰기</a
+                                >
+                                <a
+                                    class="comment__info--update"
+                                    href="#none"
+                                    onclick="commentUpdate()"
+                                    >수정</a
+                                >
+                                <a class="comment__info--delete" href="#none"
+                                    >삭제</a
+                                >
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="comment__page-num-container">
+                        <ul class="page-num-container">
+                            <a href="#">
+                                <li
+                                    class="page-num-container__left-btn page-num-container__btn"
+                                >
+                                    <i class="fas fa-chevron-left"></i>
+                                </li>
+                            </a>
+                            <a href="#">
+                                <li class="page-num-container__num">1</li>
+                            </a>
+                            <!-- 더미데이터 -->
+                            <a href="#">
+                                <li class="page-num-container__num">2</li>
+                            </a>
+                            <a href="#">
+                                <li class="page-num-container__num">3</li>
+                            </a>
+                            <a href="#">
+                                <li class="page-num-container__num">4</li>
+                            </a>
+                            <a href="#">
+                                <li class="page-num-container__num">5</li>
+                            </a>
+                            <!-- 더미데이터 -->
+                            <a href="#">
+                                <li
+                                    class="page-num__right-btn page-num-container__btn"
+                                >
+                                    <i class="fas fa-chevron-right"></i>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </article>

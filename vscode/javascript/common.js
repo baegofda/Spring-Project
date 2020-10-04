@@ -104,9 +104,6 @@ const saleReadUpdate = document.querySelector(".sale-board-read__update");
 const sharingReadUpdate = document.querySelector(".sharing-board-read__update");
 const buyReadUpdate = document.querySelector(".buy-board-read__update");
 
-let i = 0;
-let j = 0;
-
 if (drop != null) {
     drop.addEventListener("click", () => {
         dropAction();
