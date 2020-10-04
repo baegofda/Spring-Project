@@ -61,9 +61,10 @@ public class NEDaoImpl implements NEDao {
 
 	@Override
 	public void InsertBuyPost(NEJoin neJoin) {
-		int pnum = session.selectOne("NEgetBuyBid");
+		int pnum = session.selectOne("NEgetBuyPnum");
 		pnum = pnum + 1;
 		neJoin.setPnum(pnum);
+		System.out.println("InsertBuyPost ==pNum=="+pnum);
 		session.insert("NEInsertBuyPost", neJoin);
 	}
 

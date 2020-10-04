@@ -17,13 +17,13 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
 	rel="stylesheet" />
-<style>
-iframe {
-	width: 0px;
-	height: 0px;
-	border: 0px
-}
-</style>
+
+<!-- ajax로 파일 업로드 -->
+<script src="<c:url value="/js/jquery-3.1.0.min.js"/>"></script>
+<script src="<c:url value="/js/jquery.form.min.js"/>"></script>
+<script type="text/javascript">
+</script>
+
 </head>
 
 <body>
@@ -40,8 +40,8 @@ iframe {
 				<div class="header__fixed-bar-search-container" tabindex="4">
 					<form action="search.do" method="post">
 						<input class="search-input" type="text" name="sword"
-							placeholder="동네 이름, 물품명 등을 검색해보세요!" /> <input
-							type="image" class="search-icon"
+							placeholder="동네 이름, 물품명 등을 검색해보세요!" /> <input type="image"
+							class="search-icon"
 							src="https://img.icons8.com/ios-glyphs/30/000000/search.png" />
 					</form>
 				</div>
@@ -81,8 +81,9 @@ iframe {
 	</aside>
 	<!-- 섹션 시작 -->
 	<article class="article">
-		<form action="buyPostWrite.do" method="post">
+		<form action="buyPostWrite.do" method="post" enctype="multipart/form-data">
 			<div class="article__buy-board-write">
+			
 				<div class="buy-board-write__sort">
 					<select class="buy-board-write__category" name="ctcode" required>
 						<option value="" disabled selected hidden>카테고리</option>
@@ -115,47 +116,49 @@ iframe {
 							placeholder="가격을 입력해주세요" required />
 					</div>
 				</div>
+				
 				<div class="buy-board-write__image">
-					<div class="buy-board-write__image--title">사진 첨부</div>
-					<div class="buy-board-write__image--container">
-						<div class="image--input-container">
-							<label class="image--input-label">
-								<form id="imgFileForm1" method="post" enctype="multipart/form-data">
-									<input name="img1" class="image--input image-1" type="file" accept=".jpg, .jpeg, .png" />
-									<div class="image--input-button button-1"></div> 
-								</form>
-							</label>
+						<div class="buy-board-write__image--title">사진 첨부</div>
+						<div class="buy-board-write__image--container">
+							<div class="image--input-container">
+								<label class="image--input-label">
+									<div class="image--input-button button-1"></div> <input
+									name="img" class="image--input image-1" type="file"
+									accept=".jpg, .jpeg, .png" />
+								</label>
+							</div>
+							<div class="image--input-container">
+								<label class="image--input-label">
+									<div class="image--input-button button-2"></div> <input
+									name="img" class="image--input image-2" type="file"
+									accept=".jpg, .jpeg, .png" />
+								</label>
+							</div>
+							<div class="image--input-container">
+								<label class="image--input-label">
+									<div class="image--input-button button-3"></div> <input
+									name="img" class="image--input image-3" type="file"
+									accept=".jpg, .jpeg, .png" />
+								</label>
+							</div>
+							<div class="image--input-container">
+								<label class="image--input-label">
+									<div class="image--input-button button-4"></div> <input
+									name="img" class="image--input image-4" type="file"
+									accept=".jpg, .jpeg, .png" />
+								</label>
+							</div>
+							<div class="image--input-container">
+								<label class="image--input-label">
+									<div class="image--input-button button-5"></div> <input
+									name="img" class="image--input image-5" type="file"
+									accept=".jpg, .jpeg, .png" />
+								</label>
+							</div>
 						</div>
-						<div class="image--input-container">
-							<label class="image--input-label">
-								<div class="image--input-button button-2"></div> <input
-								name="images" class="image--input image-2" type="file"
-								accept=".jpg, .jpeg, .png" />
-							</label>
-						</div>
-						<div class="image--input-container">
-							<label class="image--input-label">
-								<div class="image--input-button button-3"></div> <input
-								name="images" class="image--input image-3" type="file"
-								accept=".jpg, .jpeg, .png" />
-							</label>
-						</div>
-						<div class="image--input-container">
-							<label class="image--input-label">
-								<div class="image--input-button button-4"></div> <input
-								name="images" class="image--input image-4" type="file"
-								accept=".jpg, .jpeg, .png" />
-							</label>
-						</div>
-						<div class="image--input-container">
-							<label class="image--input-label">
-								<div class="image--input-button button-5"></div> <input
-								name="images" class="image--input image-5" type="file"
-								accept=".jpg, .jpeg, .png" />
-							</label>
-						</div>
-					</div>
 				</div>
+				
+
 				<div class="buy-board-write__title">
 					<textarea name="ptitle" class="buy-board-write__title--textarea"
 						placeholder="제목을 입력해주세요" required></textarea>
@@ -165,14 +168,15 @@ iframe {
 						class="buy-board-write__content--textarea"
 						placeholder="내용을 입력해주세요" required></textarea>
 				</div>
+
 				<div class="buy-board-write__btn-container">
-					<a href="#none"><div class="buy-board-write__list list--btn">돌아가기</div></a>
-					<input class="buy-board-write__submit" type="submit" value="작성하기" />
+					<a href="referer.do"><div
+							class="buy-board-write__list list--btn">돌아가기</div></a>
+					<button class="buy-board-write__submit">작성하기</button>
 				</div>
 			</div>
 		</form>
 	</article>
-	<iframe name="myBatisFrame"></iframe>
 	<!-- 하단 카피라이트 -->
 	<footer class="footer">
 		<div class="footer-container">
@@ -180,8 +184,7 @@ iframe {
 				<div class="footer-top-logo"></div>
 				<ul class="footer-top-list">
 					<li class="footer-top-list-content"><a
-						href="https://www.daangn.com/trust">믿을
-							수 있는 중고거래</a></li>
+						href="https://www.daangn.com/trust">믿을 수 있는 중고거래</a></li>
 					<li class="footer-top-list-content"><a
 						href="https://www.daangn.com/wv/faqs"> 자주 묻는 질문</a></li>
 				</ul>
@@ -224,8 +227,7 @@ iframe {
 								src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/footer/icon-facebook-0563f4a93852d073b41f13b8bcabb03d47af3bb3a6755cdfedd8a73686c7f18c.svg" />
 						</a></li>
 						<li class="sns-icon"><a
-							href="https://www.instagram.com/daangnmarket/">
-								<img
+							href="https://www.instagram.com/daangnmarket/"> <img
 								src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/footer/icon-instagram-2f6c88a461597907c114b7ce28eab053fcae791ed26417915fefb6f7c9f95756.svg" />
 						</a></li>
 						<li class="sns-icon"><a href="https://blog.naver.com/daangn">

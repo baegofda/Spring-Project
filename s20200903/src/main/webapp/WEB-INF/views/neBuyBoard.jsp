@@ -116,7 +116,7 @@
                         <p class="to-buy__sub">
                             <strong class="to-buy__total-head">전체 글</strong>
                             <!-- 불러오는 게시글 갯수불러오기 -->
-                            <span class="to-buy__count">120</span>
+                            <span class="to-buy__count">${pg.total }</span>
                         </p>
                         <a href="buyBoardWriteForm.do"
                             ><div class="to-buy__write">글작성</div></a
@@ -154,9 +154,9 @@
                                     <!-- 해당 게시글의 썸네일을 불러올 수 있도록 하기 -->
                                     <img
                                         class="thumbnail"
-                                        src="${bPost.pimg1}"
+                                        src="/image/${bPost.pimg1 }"
                                         alt="img-thumbnail"
-                                    />
+                                    />${bPost.pimg1 }
                                     <!-- src="https://dnvefa72aowie.cloudfront.net/origin/article/202008/881bb464c1c1ed69f59df65d9e25b56d2714b920f81c8e72512664e503b43902.webp?q=95&s=1440x1440&t=inside" -->
                                 </div>
                             </article>

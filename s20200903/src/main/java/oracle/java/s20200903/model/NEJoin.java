@@ -1,5 +1,7 @@
 package oracle.java.s20200903.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class NEJoin {
 	
 	private int bid;
@@ -18,6 +20,15 @@ public class NEJoin {
 	private String pimg3;
 	private String pimg4;
 	private String pimg5;
+	
+	private MultipartFile[] img;
+	
+	public MultipartFile[] getImg() {
+		return img;
+	}
+	public void setImg(MultipartFile[] img) {
+		this.img = img;
+	}
 	
 	private String mnick;
 	private String maddr;

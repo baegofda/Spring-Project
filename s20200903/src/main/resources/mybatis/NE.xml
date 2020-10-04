@@ -8,7 +8,7 @@
 	
 	<select id="NEbList" parameterType="NEPost" resultType="NEPost">
 		SELECT * 
-		FROM (SELECT rownum rn, a.* FROM (SELECT * FROM pmcjoin WHERE bid=2 ORDER BY pnum) a)
+		FROM (SELECT rownum rn, a.* FROM (SELECT * FROM pmcjoin WHERE bid=2 ORDER BY pnum desc) a)
 		WHERE rn BETWEEN #{start} AND #{end}
 	</select>
 	
@@ -62,7 +62,7 @@
 		WHERE sword = #{sword}
 	</update> 
 	
-	<select id="NEgetBuyBid" resultType="int">
+	<select id="NEgetBuyPnum" resultType="int">
 		SELECT max(pnum)
 		FROM post
 		WHERE bid=2
@@ -70,12 +70,13 @@
 	
 	<insert id="NEInsertBuyPost" parameterType="NEJoin">
 		INSERT INTO post
-		VALUES(2, #{pnum}, #{mid}, #{ctcode}, 1, #{ptitle}, #{pprice}, sysdate, #{pcontent}, 0, 0,
-		<if test="pimg1!=null"> #{pimg1},</if>
-		<if test="pimg2!=null"> #{pimg2},</if>
-		<if test="pimg3!=null"> #{pimg3},</if>
-		<if test="pimg4!=null"> #{pimg4},</if>
-		<if test="pimg5!=null"> #{pimg5}</if>)
+		VALUES(2, #{pnum}, #{mid}, #{ctcode}, 1, #{ptitle}, #{pprice}, sysdate, #{pcontent}, 0, 0, 
+			     #{pimg1}, #{pimg2}, #{pimg3}, #{pimg4}, #{pimg5})
 	</insert>
+	<!-- <if test="pimg2!=null"> #{pimg2},</if>
+				<if test="pimg3!=null"> #{pimg3},</if>
+				<if test="pimg4!=null"> #{pimg4},</if>
+				<if test="pimg5!=null"> #{pimg5}</if> -->
+
 
 </mapper>

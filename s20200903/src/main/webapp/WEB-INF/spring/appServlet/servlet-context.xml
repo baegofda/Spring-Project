@@ -24,6 +24,12 @@
 	<beans:bean id="multipartResolver"	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="maxUploadSize" value="10485762"></beans:property>
 	</beans:bean>
+	
+	<!-- Ajax를 이용한 이미지 업로드시 사용 -->
+	<beans:bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"> 
+		<beans:property name="contentType" value="application/json;charset=UTF-8" /> 
+	</beans:bean>
+
 
 	<!-- <beans:bean id="uploadPath" class="java.lang.String">
 		<beans:constructor-arg value="C:\\spring\\springSrc\\s20200903\\src\\main\\webapp\\resources\\image" />

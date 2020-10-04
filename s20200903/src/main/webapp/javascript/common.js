@@ -62,7 +62,6 @@ const saleWriteSubmit = document.querySelector(".sale-board-write__submit");
 const sharingWriteSubmit = document.querySelector(
     ".sharing-board-write__submit"
 );
-const buyWriteSubmit = document.querySelector(".buy-board-write__submit");
 
 const noticeUpdateSubmit = document.querySelector(
     ".notice-board-update__submit"
@@ -463,22 +462,6 @@ if (sharingWriteSubmit != null) {
     });
 }
 
-if (buyWriteSubmit != null) {
-    buyWriteSubmit.addEventListener("click", () => {
-        if (confirm("글을 등록할까요 ?") == true) {
-            if (true) {
-                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
-                // document.formname.submit();
-                alert("등록완료 ! 감사합니다.");
-                location.href = "toBuyBoard.html";
-            } else {
-                alert("등록실패 ! 작성하신 글을 확인해주세요.");
-            }
-        } else {
-            return false;
-        }
-    });
-}
 
 if (noticeUpdateSubmit != null) {
     noticeUpdateSubmit.addEventListener("click", () => {
@@ -955,32 +938,11 @@ function imageThumbnail1() {
             var img = document.createElement("img");
             var btn = document.createElement("div");
             var result1 = event.target.result;
-            //var formData = new FormData($('#imgFileForm1')[0]));
-            // 이부분을 AJAX 로 연결하여 등록처리 후, 파일명을 아래 result1에 저장
-            // 파일명은 uploadFile 함수에서 규칙을 가지고 생성할 것
-            // 예, 20201003200723_img1.jpg
-            $.ajax({
-                url: "/s20200903/uploadFile",
-                type: "POST",
-                dataType: "text",
-                enctype: 'multipart/form-data',
-                processData: false,
-                contentType: false,
-                cache: false,
-                data: {"file": result1},
-                success: function () {
-                	 btn.setAttribute("class", "del-btn");
-                     img.setAttribute("src", result1);
-                     imageContainer1.appendChild(img);
-                     imageContainer1.appendChild(btn);
-                },
-                error: function () {
-                     imageInput1.value = "";
-                     img.remove();
-                     btn.remove();
-                }
-              });
-            console.log("AA")
+            btn.setAttribute("class", "del-btn");
+            img.setAttribute("src", result1);
+            imageContainer1.appendChild(img);
+            imageContainer1.appendChild(btn);
+
             btn.addEventListener("click", (event) => {
                 imageInput1.value = "";
                 img.remove();
