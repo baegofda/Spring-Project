@@ -237,6 +237,7 @@
 }
 
 .comment__content--nick-name,
+.comment__update--nick-name,
 .comment__reply--nick-name {
     font-size: 0.8rem;
     font-weight: 500;
@@ -244,7 +245,8 @@
     padding: 0;
 }
 
-.comment__reply--nick-name {
+.comment__reply--nick-name,
+.comment__update--nick-name {
     margin-bottom: 0.5rem;
 }
 
