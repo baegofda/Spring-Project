@@ -156,7 +156,7 @@
                                         class="thumbnail"
                                         src="/image/${bPost.pimg1 }"
                                         alt="img-thumbnail"
-                                    />${bPost.pimg1 }
+                                    />
                                     <!-- src="https://dnvefa72aowie.cloudfront.net/origin/article/202008/881bb464c1c1ed69f59df65d9e25b56d2714b920f81c8e72512664e503b43902.webp?q=95&s=1440x1440&t=inside" -->
                                 </div>
                             </article>

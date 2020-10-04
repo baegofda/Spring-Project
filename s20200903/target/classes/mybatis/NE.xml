@@ -8,7 +8,12 @@
 	
 	<select id="NEbList" parameterType="NEPost" resultType="NEPost">
 		SELECT * 
-		FROM (SELECT rownum rn, a.* FROM (SELECT * FROM pmcjoin WHERE bid=2 ORDER BY pnum desc) a)
+		FROM 
+			(SELECT rownum rn, a.*
+			 FROM (SELECT bid, pnum, mid, ctcode, pstatus, ptitle, pprice, TO_CHAR(pdate,'yyyy-mm-dd') pdate, pcontent, phit, ppicks, pimg1, pimg2, pimg3, pimg4, pimg5, maddr, mnick, msweet, ctkinds    
+				  FROM pmcjoin 
+				  WHERE bid=2 
+				  ORDER BY pnum desc) a)
 		WHERE rn BETWEEN #{start} AND #{end}
 	</select>
 	

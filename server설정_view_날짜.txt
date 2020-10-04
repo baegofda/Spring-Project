@@ -1,0 +1,21 @@
+<Context docBase="s20200903" path="/s20200903" reloadable="true" source="org.eclipse.jst.jee.server:s20200903"/>
+<Context path="/image" reloadable="true" docBase="C:\\Spring-Project\\s20200903\\src\\main\\webapp\\resources\\image"/> 
+
+
+CREATE OR REPLACE VIEW pmcjoin AS
+SELECT p.bid, p.pnum, p.mid, p.ctcode, p.pstatus, p.ptitle, p.pprice, TRUNC(p.pdate) pdate, p.pcontent, p.phit, p.ppicks, p.pimg1, p.pimg2, p.pimg3, p.pimg4, p.pimg5, m.maddr, m.mnick, m.msweet, c.ctkinds
+FROM post p, member m, categori c
+WHERE p.mid = m.mid
+AND   p.ctcode = c.ctcode;
+
+SELECT * 
+		FROM 
+			(SELECT rownum rn, a.*
+			 FROM (SELECT ctcode, pstatus, ptitle, pprice, TRUNC(pdate,'dd') pdate, pcontent, phit, ppicks, pimg1, pimg2, pimg3, pimg4, pimg5, maddr, mnick, msweet, ctkinds  
+				  FROM pmcjoin 
+				  WHERE bid=2 
+				  ORDER BY pnum desc) a)
+		WHERE rn BETWEEN 1 AND 5;
+    
+SELECT TO_CHAR(pdate,'yyyy-mm-dd') pdate
+FROM post;
