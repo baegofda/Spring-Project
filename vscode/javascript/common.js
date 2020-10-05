@@ -106,13 +106,12 @@ const sharingReadUpdate = document.querySelector(".sharing-board-read__update");
 const buyReadUpdate = document.querySelector(".buy-board-read__update");
 
 const chat = document.querySelector(".chat-container__icon");
-const chatContainer = document.querySelector(".chat-container__items")
+const chatContainer = document.querySelector(".chat-container__items");
+const chatItem = document.querySelectorAll(".chat-container__link");
+const chatRoom = document.querySelector(".chat-container__chat-room");
+const chatBack = document.querySelector(".chat-container__chat-room--back");
+const chatDelete = document.querySelectorAll(".chat-container__delete");
 
-if(chat != null){
-    chat.addEventListener("click", () => {
-        chatAction();
-    })
-}
 if (drop != null) {
     drop.addEventListener("click", () => {
         dropAction();
@@ -154,6 +153,40 @@ if (scrollBtn != null) {
     scrollBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
+}
+
+if (chatDelete != null) {
+    for (i = 0; i < chatDelete.length; i++) {
+        chatDelete[i].addEventListener("click", () => {
+            if (confirm("채팅방 나가시겠어요?") === true) {
+                alert("채팅방 나가기 성공 !");
+            } else {
+                alert("탈출실패");
+            }
+        });
+    }
+}
+if (chatBack != null) {
+    chatBack.addEventListener("click", () => {
+        chatContainer.classList.add("active");
+        chatRoom.classList.remove("active");
+    });
+}
+
+if (chat != null) {
+    chat.addEventListener("click", () => {
+        chatAction();
+        chatRoom.classList.remove("active");
+    });
+}
+
+if (chatItem != null) {
+    for (i = 0; i < chatItem.length; i++) {
+        chatItem[i].addEventListener("click", () => {
+            chatRoom.classList.add("active");
+            chatContainer.classList.remove("active");
+        });
+    }
 }
 
 if (inputNameWrite != null) {
@@ -771,10 +804,12 @@ function dropAction() {
 }
 
 function chatAction() {
-    if(chatContainer.classList.contains("active")) {
-        chatContainer.classList.remove("active")
+    if (chatContainer.classList.contains("active")) {
+        chatContainer.classList.remove("active");
+    } else if (chatRoom.classList.contains("active")) {
+        chatContainer.classList.remove("active");
     } else {
-        chatContainer.classList.add("active")
+        chatContainer.classList.add("active");
     }
 }
 

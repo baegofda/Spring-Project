@@ -634,6 +634,178 @@
                 </div>
             </div>
         </section>
+        <!-- 실시간 채팅 아이콘 -->
+        <div class="chat-container">
+            <div class="chat-container__relative">
+                <div class="chat-container__icon">
+                    <!-- 새로운 메세지 있을때만 -->
+                    <div class="chat-container__icon--new">N</div>
+                </div>
+                <div class="chat-container__items">
+                    <div class="chat-container__header">chat</div>
+                    <ul class="chat-container__list">
+                        <li class="chat-container__item">
+                            <a class="chat-container__link" href="#none">
+                                <div class="chat-container__text">
+                                    <strong class="chat-container__nick"
+                                        >닉네임</strong
+                                    >
+                                    <p class="chat-container__summary">
+                                        채팅창 메세지채팅창 메세지채팅창
+                                        메세지채팅창 메세지채팅창 메세지채팅창
+                                        메세지채팅창 메세지채팅창 메세지채팅창
+                                        메세지
+                                    </p>
+                                </div>
+                                <div class="chat-container__info">
+                                    <p class="chat-container__date">
+                                        2020.10.06
+                                    </p>
+                                </div>
+                            </a>
+                            <div class="chat-container__delete">
+                                나가기
+                                <img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAACnElEQVR4nO3dv27TUABG8dMIJoYWMTPwEjwBCwNigJYKCnRB8HRI7IzsMMLUFTGlCDFAKQwu0D/XECfXvZ/q85O8VIl95RO7SnzjADwDvgI/J7bsA9uEWQO+AFdaD6SROXANOGw9kN/W6F4tU3aVLkyEWesB6KRLhb/doDu/XkTrwF7rQfxLKcicoEO4svjTs6esMAYJY5AwBgljkDAGCWOQMAYJY5AwBgljkDAGCWOQMAYJY5AwBglTukB1kc3p5hHE8ggJY5AwBgljkDAGCWOQMAYJY5DhrgOvgNfArTE2cHqa/sYYG7lAXvJ3X30HNmtvwCDDvOHk/qoexSDD3KaLcDrKVq0NGGS4e8A3Tu63A2CnxsoNspz7nD1SqkQxyPJGiWKQ1VSPYpDVbVKO8niZlRmkjmpRDFLPFuUoT4asxCB1rRzFIPU9oBzl6SJPNsg4SlF+sEAUg4xnm+7IGBTFIOPqi7Lb9wSDjG+XLsLx/XwIvCg92CDnY+EorYLsAJ8K25/acub01SLIZaZ507S+5YCjm6m1uqY+OxqIClocIQAPgY+F7U9tiThlTVHfP/Xnpx9okPGVYvS+FzHIuAa/WzfIePzoJMjSn/gapL6+GAtdEzFIXV6gCtIXY9B1dYPU4SSHIH0xlpqbZZDVOFEuiFNJgzjZOkjf1xEe1Vi5QYa5i1/YifKBszH8SltD7xgxBhhkqJvAW+A9cGeMDRgkiDcOCGOQMAYJY5AwBgljkDAGCTO1IBuEv++aWpB4BgljkDAGCWOQMAYJY5AwBgljkDAGCWOQMAYJY5AwBgljkDAGCVP6YckNwn98cQXrrQfwP6Uge+c+Cv3hKSvMDNhvPYiG5sDn1oM4bkZ3z78pRpnT3RrpsPVAjvsFW3N9LhOsh0kAAAAASUVORK5CYII="
+                                />
+                            </div>
+                            <div class="chat-container__new">N</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 채팅방 -->
+                <div class="chat-container__chat-room">
+                    <div class="chat-container__chat-room--header">
+                        <a class="chat-container__chat-room--back" href="#none"
+                            ><i class="fas fa-arrow-left"></i></a
+                        >상대방 닉네임
+                    </div>
+                    <ul class="chat-container__chat-room__list">
+                        <li class="chat-container__chat-room__received">
+                            <div class="message__img">
+                                <i class="fas fa-carrot"></i>
+                            </div>
+                            <div class="message__container">
+                                <div class="message__author">
+                                    <a href="../member/userDetail.html"
+                                        >상대방아이디</a
+                                    ><span class="message__container--date"
+                                        >2020.10.06 16:04</span
+                                    >
+                                </div>
+                                <div class="message__content-received">
+                                    Congrats XD <br />
+                                    Congrats XD <br />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-container__chat-room__sent">
+                            <div class="message__container-sent">
+                                <div class="message__author">
+                                    <span class="message__container--date"
+                                        >2020.10.06 16:08</span
+                                    >
+                                </div>
+                                <div class="message__content-sent">
+                                    Congrats XD <br />
+                                    Congrats XD <br />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-container__chat-room__received">
+                            <div class="message__img">
+                                <i class="fas fa-carrot"></i>
+                            </div>
+                            <div class="message__container">
+                                <div class="message__author">
+                                    <a href="../member/userDetail.html"
+                                        >상대방아이디</a
+                                    ><span class="message__container--date"
+                                        >2020.10.06 16:04</span
+                                    >
+                                </div>
+                                <div class="message__content-received">
+                                    Congrats XD <br />
+                                    Congrats XD <br />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-container__chat-room__sent">
+                            <div class="message__container-sent">
+                                <div class="message__author">
+                                    <span class="message__container--date"
+                                        >2020.10.06 16:08</span
+                                    >
+                                </div>
+                                <div class="message__content-sent">
+                                    Congrats XD <br />
+                                    Congrats XD <br />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-container__chat-room__sent">
+                            <div class="message__container-sent">
+                                <div class="message__author">
+                                    <span class="message__container--date"
+                                        >2020.10.06 16:08</span
+                                    >
+                                </div>
+                                <div class="message__content-sent">
+                                    Congrats XD <br />
+                                    Congrats XD <br />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-container__chat-room__sent">
+                            <div class="message__container-sent">
+                                <div class="message__author">
+                                    <span class="message__container--date"
+                                        >2020.10.06 16:08</span
+                                    >
+                                </div>
+                                <div class="message__content-sent">
+                                    Congrats XD <br />
+                                    Congrats XD <br />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-container__chat-room__sent">
+                            <div class="message__container-sent">
+                                <div class="message__author">
+                                    <span class="message__container--date"
+                                        >2020.10.06 16:08</span
+                                    >
+                                </div>
+                                <div class="message__content-sent">
+                                    Congrats XD <br />
+                                    Congrats XD <br />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="chat-container__chat-room__sent">
+                            <div class="message__container-sent">
+                                <div class="message__author">
+                                    <span class="message__container--date"
+                                        >2020.10.06 16:08</span
+                                    >
+                                </div>
+                                <div class="message__content-sent">
+                                    Congrats XD <br />
+                                    Congrats XD <br />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="chat-container__chat-room__footer">
+                        <input
+                            class="chat-container__chat-room__footer--input"
+                            type="text"
+                            placeholder="Send message"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- 하단 카피라이트 -->
         <footer class="footer">
             <div class="footer-container">
