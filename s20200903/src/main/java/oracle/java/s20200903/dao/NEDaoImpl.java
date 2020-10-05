@@ -68,4 +68,25 @@ public class NEDaoImpl implements NEDao {
 		session.insert("NEInsertBuyPost", neJoin);
 	}
 
+	@Override
+	public NEJoin buyPostDetail(NEJoin neJoin) {
+		return session.selectOne("NEBuyPostDetail", neJoin);
+	}
+
+	@Override
+	public int buyPostDelete(NEJoin neJoin) {
+		return session.delete("NEbuyPostDelete", neJoin);
+	}
+
+	@Override
+	public NEJoin buyPostUpdateForm(NEJoin neJoin) {
+		return session.selectOne("NEBuyPostDetail", neJoin);	// select해 올 데이터가 같기 때문에 재사용
+	}
+	
+	@Override
+	public int buyPostUpdate(NEJoin neJoin) {
+		return session.update("NEbuyPostUpdate", neJoin);
+	}
+
+
 }

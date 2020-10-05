@@ -34,7 +34,7 @@
         <header class="header">
             <div class="header__fixed-bar">
                 <section class="header__fixed-bar-logo section-logo">
-                    <a href="../main/main.html">
+                    <a href="main.do">
                         <img
                             src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FSQxEt%2FbtqJs5kkQnP%2FhvX1kh8aeqli9J93tF5qV1%2Ftfile.svg"
                             alt="당근나라"
@@ -46,6 +46,7 @@
                         class="header__fixed-bar-search-container"
                         tabindex="4"
                     >
+                    <form action="search.do" method="post">
                         <input
                             class="search-input"
                             type="text"
@@ -56,6 +57,7 @@
                             class="search-icon"
                             src="https://img.icons8.com/ios-glyphs/30/000000/search.png"
                         />
+                    </form>
                     </div>
                 </section>
                 <section class="header__fixed-bar-nav section-nav">
@@ -118,7 +120,7 @@
                             <!-- 불러오는 게시글 갯수불러오기 -->
                             <span class="to-buy__count">${pg.total }</span>
                         </p>
-                        <a href="buyBoardWriteForm.do"
+                        <a href="buyPostWriteForm.do"
                             ><div class="to-buy__write">글작성</div></a
                         >
                     </div>
@@ -127,7 +129,7 @@
                 <ul class="to-buy__content">
                     <!-- 링크수정하기 -->
                    <c:forEach var="bPost" items="${blist }">
-                    <a href="detail.do?bid=${bPost.bid }&pnum=${bPost.pnum}">
+                    <a href="buyPostDetail.do?pnum=${bPost.pnum}">
                         <li>
                             <article class="board__content">
                                 <div class="board__content--text">

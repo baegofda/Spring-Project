@@ -10,10 +10,11 @@
 <body>
 
 	<%
-		//response.sendRedirect("buylist.do");
+		response.sendRedirect("buylist.do");
 		//response.sendRedirect("searchResult.do");
 		//response.sendRedirect("main.do");
-		response.sendRedirect("buyBoardWriteForm.do");
+		//response.sendRedirect("buyBoardWriteForm.do");
+		//response.sendRedirect("buyPostDetail.do");
 	%>
 
 </body>

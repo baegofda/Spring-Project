@@ -60,6 +60,26 @@ public class NEServiceImpl implements NEService {
 		nd.InsertBuyPost(neJoin);
 	}
 
+	@Override
+	public NEJoin buyPostDetail(NEJoin neJoin) {
+		return nd.buyPostDetail(neJoin);
+	}
+
+	@Override
+	public int buyPostDelete(NEJoin neJoin) {
+		return nd.buyPostDelete(neJoin);
+	}
+
+	@Override
+	public NEJoin buyPostUpdateForm(NEJoin neJoin) {
+		return nd.buyPostUpdateForm(neJoin);
+	}
+	
+	@Override
+	public int buyPostUpdate(NEJoin neJoin) {
+		return nd.buyPostUpdate(neJoin);
+	}
+
 
 
 }

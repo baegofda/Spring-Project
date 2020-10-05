@@ -95,9 +95,9 @@ public class NEController {
 	
 	
 	// neBuyBoard(list)에서 글 작성을 눌러 구매글 작성 페이지로 이동
-	@RequestMapping(value="buyBoardWriteForm")
+	@RequestMapping(value="buyPostWriteForm")
 	public String buyBoardWrite() {
-		return "neBuyBoardWrite";
+		return "neBuyPostWriteForm";
 	}
 	
 	
@@ -151,7 +151,78 @@ public class NEController {
 		
 			return savedName;
 		}
-	}		
+	}
+	
+	// 구매 게시글 상세
+	@RequestMapping("buyPostDetail")
+	public String buyPostDetail(HttpServletRequest request, Model model) {
+		NEJoin neJoin = new NEJoin();
+		neJoin.setPnum(Integer.parseInt(request.getParameter("pnum")));
+		
+		NEJoin neJoin2 = ns.buyPostDetail(neJoin);
+		model.addAttribute("bPost", neJoin2);
+		return "neBuyPostDetail";
+	}
+	
+	// 구매 게시글 삭제
+	@RequestMapping("buyPostDelete")
+	public String buyPostDelete(HttpServletRequest request, Model model) {
+		NEJoin neJoin = new NEJoin();
+		neJoin.setPnum(Integer.parseInt(request.getParameter("pnum")));
+		System.out.println("pnum----------"+neJoin.getPnum());
+		
+		int result = ns.buyPostDelete(neJoin);
+		model.addAttribute("result", result); // 성공일 시 result = 1
+		
+		return "redirect:buylist.do";
+	}
+	
+	// 구매 게시글 수정 - 수정하려는 글 데이터 가지고 폼으로 이동
+	@RequestMapping("buyPostUpdateForm")
+	public String buyPostUpdateForm(HttpServletRequest request, Model model) {
+		NEJoin neJoin = new NEJoin();
+		neJoin.setPnum(Integer.parseInt(request.getParameter("pnum")));
+		
+		NEJoin neJoin2 = ns.buyPostUpdateForm(neJoin);
+		model.addAttribute("bPost", neJoin2);
+		
+		return "neBuyPostUpdateForm";
+	}
+	
+	// 구매 게시글 수정(DBupdate처리)
+	@RequestMapping(value="buyPostUpdate", method=RequestMethod.POST)
+	public String buyPostUpdate(HttpServletRequest request,@RequestParam("img") MultipartFile[] uploadFile, Model model) throws Exception {
+		NEJoin neJoin = new NEJoin();
+		neJoin.setPnum(Integer.parseInt(request.getParameter("pnum")));
+		
+		System.out.println("buyPostInsert start..." + request.getParameter("img")); 
+		
+		String uploadPath = "C:\\Spring-Project\\s20200903\\src\\main\\webapp\\resources\\image";
+		
+		// bId, pNum은 Dao에서 DB연결을 통해 set
+		neJoin.setMid("user@naver.com");	// 통합 후 neJoin.setMid((String) request.getSession().getAttribute("mid"));
+		neJoin.setCtcode(Integer.parseInt(request.getParameter("ctcode")));
+		neJoin.setPprice(Integer.parseInt(request.getParameter("pprice")));
+		neJoin.setPtitle(request.getParameter("ptitle"));
+		neJoin.setPcontent(request.getParameter("pcontent"));
+		
+		for(int i = 0; i<uploadFile.length; i++) {
+			MultipartFile img = uploadFile[i];
+			logger.info("upload File Name : " + img.getOriginalFilename());
+			logger.info("upload File Size : " + img.getSize());
+			String savedName = uploadFile(img.getOriginalFilename(), img.getBytes(), uploadPath);
+			if(i==0) {neJoin.setPimg1(savedName); System.out.println(savedName);}
+			if(i==1) neJoin.setPimg2(savedName);
+			if(i==2) neJoin.setPimg3(savedName);
+			if(i==3) neJoin.setPimg4(savedName);
+			if(i==4) neJoin.setPimg5(savedName);			
+		}
+		
+		int result = ns.buyPostUpdate(neJoin);
+		model.addAttribute("result", result);
+		return "redirect:buylist.do";
+	}
+	
 	
 	// 이전 페이지로 이동하는 메소드
 	@RequestMapping("referer")

@@ -26,4 +26,12 @@ public interface NEDao {
 
 	void InsertBuyPost(NEJoin neJoin);
 
+	NEJoin buyPostDetail(NEJoin neJoin);
+
+	int buyPostDelete(NEJoin neJoin);
+
+	int buyPostUpdate(NEJoin neJoin);
+
+	NEJoin buyPostUpdateForm(NEJoin neJoin);
+
 }

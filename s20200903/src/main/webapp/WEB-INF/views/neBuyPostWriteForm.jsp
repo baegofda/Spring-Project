@@ -40,7 +40,8 @@
 				<div class="header__fixed-bar-search-container" tabindex="4">
 					<form action="search.do" method="post">
 						<input class="search-input" type="text" name="sword"
-							placeholder="동네 이름, 물품명 등을 검색해보세요!" /> <input type="image"
+							placeholder="동네 이름, 물품명 등을 검색해보세요!" /> 
+						<input type="image"
 							class="search-icon"
 							src="https://img.icons8.com/ios-glyphs/30/000000/search.png" />
 					</form>
@@ -123,7 +124,9 @@
 							<div class="image--input-container">
 								<label class="image--input-label">
 									<div class="image--input-button button-1"></div> <input
-									name="img" class="image--input image-1" type="file"
+									name="img" 
+									class="image--input image-1" 
+									type="file"
 									accept=".jpg, .jpeg, .png" />
 								</label>
 							</div>
@@ -136,14 +139,16 @@
 							</div>
 							<div class="image--input-container">
 								<label class="image--input-label">
-									<div class="image--input-button button-3"></div> <input
+									<div class="image--input-button button-3"></div> 
+									<input
 									name="img" class="image--input image-3" type="file"
 									accept=".jpg, .jpeg, .png" />
 								</label>
 							</div>
 							<div class="image--input-container">
 								<label class="image--input-label">
-									<div class="image--input-button button-4"></div> <input
+									<div class="image--input-button button-4"></div> 
+									<input
 									name="img" class="image--input image-4" type="file"
 									accept=".jpg, .jpeg, .png" />
 								</label>

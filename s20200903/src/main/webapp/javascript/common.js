@@ -96,6 +96,13 @@ const saleReadUpdate = document.querySelector(".sale-board-read__update");
 const sharingReadUpdate = document.querySelector(".sharing-board-read__update");
 const buyReadUpdate = document.querySelector(".buy-board-read__update");
 
+const delbtn1 = document.querySelector(".del-btn1");
+const delbtn2 = document.querySelector(".del-btn2");
+const delbtn3 = document.querySelector(".del-btn3");
+const delbtn4 = document.querySelector(".del-btn4");
+const delbtn5 = document.querySelector(".del-btn5");
+
+
 let i = 0;
 let j = 0;
 
@@ -548,14 +555,15 @@ if (sharingUpdateSubmit != null) {
     });
 }
 
-if (buyUpdateSubmit != null) {
+/*if (buyUpdateSubmit != null) {
     buyUpdateSubmit.addEventListener("click", () => {
         if (confirm("글을 수정할까요 ?") == true) {
             if (true) {
                 // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
                 // document.formname.submit();
                 alert("수정완료 !");
-                location.href = "toBuyBoard.html";
+                var pnum = document.getElementById("pnum").value;
+                location.href = "buyPostUpdate.do?pnum="+pnum;
             } else {
                 alert("수정실패 ! 수정하신 글을 확인해주세요.");
             }
@@ -563,7 +571,7 @@ if (buyUpdateSubmit != null) {
             return false;
         }
     });
-}
+}*/
 
 if (noticeReadDelete != null) {
     noticeReadDelete.addEventListener("click", () => {
@@ -650,17 +658,14 @@ if (sharingReadDelete != null) {
     });
 }
 
+// 삭제 확인 버튼을 누르면 id가 pnum인 input(hidden)태그를 찾아 pnum값 받아 옴, 파라미터로 넘겨줌
 if (buyReadDelete != null) {
     buyReadDelete.addEventListener("click", () => {
         if (confirm("삭제하시겠습니까 ?") == true) {
             if (true) {
-                // 주석해제 후 formname에 값 전달을 위한 form태그의 name을 적어주세요
-                // document.formname.submit();
-                alert("삭제완료 !");
-                location.href = "toBuyBoard.html";
-            } else {
-                alert("삭제실패 !");
-            }
+            	var pnum = document.getElementById("pnum").value;
+                location.href = "buyPostDelete.do?pnum="+pnum;
+            } 
         } else {
             return false;
         }
@@ -699,7 +704,8 @@ if (sharingReadUpdate != null) {
 
 if (buyReadUpdate != null) {
     buyReadUpdate.addEventListener("click", () => {
-        location.href = "toBuyBoardUpdate.html";
+    	var pnum = document.getElementById("pnum").value;
+        location.href = "buyPostUpdateForm.do?pnum="+pnum;
     });
 }
 
@@ -926,6 +932,72 @@ function addressSearchFunction() {
     }).open();
 }
 //주소검색
+
+delbtn1.addEventListener("click", () => {
+    delBtn1();
+});
+
+delbtn2.addEventListener("click", () => {
+    delBtn2();
+});
+
+delbtn3.addEventListener("click", () => {
+    delBtn3();
+});
+
+delbtn4.addEventListener("click", () => {
+    delBtn4();
+});
+
+delbtn5.addEventListener("click", () => {
+    delBtn5();
+});
+
+// x버튼을 누르면 첨부파일 삭제
+function delBtn1() {
+	var img = document.querySelector(".update-image");
+	delbtn.addEventListener("click", (event) => {
+            imageInput1.value = "";
+            img.remove();
+            delbtn.remove();
+        });
+}
+
+function delBtn2() {
+	var img = document.querySelector(".update-image");
+	delbtn.addEventListener("click", (event) => {
+            imageInput2.value = "";
+            img.remove();
+            delbtn.remove();
+        });
+}
+
+function delBtn3() {
+	var img = document.querySelector(".update-image");
+	delbtn.addEventListener("click", (event) => {
+            imageInput3.value = "";
+            img.remove();
+            delbtn.remove();
+        });
+}
+
+function delBtn4() {
+	var img = document.querySelector(".update-image");
+	delbtn.addEventListener("click", (event) => {
+            imageInput4.value = "";
+            img.remove();
+            delbtn.remove();
+        });
+}
+
+function delBtn5() {
+	var img = document.querySelector(".update-image");
+	delbtn.addEventListener("click", (event) => {
+            imageInput5.value = "";
+            img.remove();
+            delbtn.remove();
+        });
+}
 
 //파일첨부
 function imageThumbnail1() {
