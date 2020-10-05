@@ -7,6 +7,7 @@
     <title>당신 근처의 당근나라</title>
     <link rel="stylesheet" href="../../css/common.css" />
     <script src="../../javascript/common.js" defer></script>
+    <script src="https://kit.fontawesome.com/797af710b1.js" crossorigin="anonymous" defer></script>
     <link rel="shortcut icon" type="image/x-icon"
         href="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcz9VUi%2FbtqJt0b2VUe%2FiiBIEnDkufPInk4hKsunE1%2Fimg.png" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
@@ -206,7 +207,7 @@
                 <!-- 새로운 메세지 있을때만 -->
                 <div class="chat-container__icon--new">N</div>
             </div>
-            <div class="chat-container__items">
+            <!-- <div class="chat-container__items">
                 <div class="chat-container__header">chat</div>
                 <ul class="chat-container__list">
                     <li>
@@ -217,7 +218,7 @@
                             </div>
                             <div class="chat-container__info">
                                 <p class="chat-container__date">2020.10.06</p>
-                                    <!-- 새로운 메세지 있을때만 -->
+                              
                                 <div class="chat-container__new">N</div>
                             </div>
                         </a>
@@ -246,60 +247,6 @@
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a href="#none">
-                            <div class="chat-container__text">
-                                <strong class="chat-container__nick">닉네임</strong>
-                                <p class="chat-container__summary">채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지</p>
-                            </div>
-                            <div class="chat-container__info">
-                                <p class="chat-container__date">2020.10.06</p>
-                                <div class="chat-container__new">N</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#none">
-                            <div class="chat-container__text">
-                                <strong class="chat-container__nick">닉네임</strong>
-                                <p class="chat-container__summary">채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지</p>
-                            </div>
-                            <div class="chat-container__info">
-                                <p class="chat-container__date">2020.10.06</p>
-                                <div class="chat-container__new">N</div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- <div class="chat-container__chat-room">
-                <div class="chat-container__chat-room--header">chat</div>
-                <ul class="chat-container__list">
-                    <li>
-                        <a href="#none">
-                            <div class="chat-container__text">
-                                <strong class="chat-container__nick">닉네임</strong>
-                                <p class="chat-container__summary">채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지</p>
-                            </div>
-                            <div class="chat-container__info">
-                                <p class="chat-container__date">2020.10.06</p>
-                                <div class="chat-container__new">N</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#none">
-                            <div class="chat-container__text">
-                                <strong class="chat-container__nick">닉네임</strong>
-                                <p class="chat-container__summary">채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지채팅창 메세지</p>
-                            </div>
-                            <div class="chat-container__info">
-                                <p class="chat-container__date">2020.10.06</p>
-                                <div class="chat-container__new">N</div>
-                            </div>
-                        </a>
-                    </li>
-                 
                     <li>
                         <a href="#none">
                             <div class="chat-container__text">
@@ -326,6 +273,104 @@
                     </li>
                 </ul>
             </div> -->
+            <div class="chat-container__chat-room">
+                <div class="chat-container__chat-room--header">
+                    <a href="#"><i class="fas fa-arrow-left"></i></a>상대방 닉네임
+                </div>
+                <ul class="chat-container__chat-room__list">
+                    <li class="chat-container__chat-room__received">
+                        <div class="message__img">
+                            <i class="fas fa-carrot"></i>
+                        </div>
+                        <div class="message__container">
+                            <div class="message__author"><a href="../member/userDetail.html">상대방아이디</a><span
+                                    class="message__container--time">16:04</span></div>
+                            <div class="message__content-received">
+                                Congrats XD <br>
+                                Congrats XD <br>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="chat-container__chat-room__sent">
+                        <div class="message__container-sent">
+                            <div class="message__author"><span
+                                    class="message__container--time">16:08</span></div>
+                            <div class="message__content-sent">
+                                Congrats XD <br>
+                                Congrats XD <br>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="chat-container__chat-room__received">
+                        <div class="message__img">
+                            <i class="fas fa-carrot"></i>
+                        </div>
+                        <div class="message__container">
+                            <div class="message__author"><a href="../member/userDetail.html">상대방아이디</a><span
+                                    class="message__container--time">16:04</span></div>
+                            <div class="message__content-received">
+                                Congrats XD <br>
+                                Congrats XD <br>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="chat-container__chat-room__sent">
+                        <div class="message__container-sent">
+                            <div class="message__author"><span
+                                    class="message__container--time">16:08</span></div>
+                            <div class="message__content-sent">
+                                Congrats XD <br>
+                                Congrats XD <br>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="chat-container__chat-room__sent">
+                        <div class="message__container-sent">
+                            <div class="message__author"><span
+                                    class="message__container--time">16:08</span></div>
+                            <div class="message__content-sent">
+                                Congrats XD <br>
+                                Congrats XD <br>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="chat-container__chat-room__sent">
+                        <div class="message__container-sent">
+                            <div class="message__author"><span
+                                    class="message__container--time">16:08</span></div>
+                            <div class="message__content-sent">
+                                Congrats XD <br>
+                                Congrats XD <br>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="chat-container__chat-room__sent">
+                        <div class="message__container-sent">
+                            <div class="message__author"><span
+                                    class="message__container--time">16:08</span></div>
+                            <div class="message__content-sent">
+                                Congrats XD <br>
+                                Congrats XD <br>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="chat-container__chat-room__sent">
+                        <div class="message__container-sent">
+                            <div class="message__author"><span
+                                    class="message__container--time">16:08</span></div>
+                            <div class="message__content-sent">
+                                Congrats XD <br>
+                                Congrats XD <br>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="chat-container__chat-room__footer">
+                    <input class="chat-container__chat-room__footer--input" type="text" placeholder="Send message">
+                </div>
+            </div>
         </div>
     </div>
     <!-- 홈 버튼 -->
