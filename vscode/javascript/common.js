@@ -65,6 +65,7 @@ const saleWriteSubmit = document.querySelector(".sale-board-write__submit");
 const sharingWriteSubmit = document.querySelector(
     ".sharing-board-write__submit"
 );
+
 const buyWriteSubmit = document.querySelector(".buy-board-write__submit");
 
 const noticeUpdateSubmit = document.querySelector(
@@ -104,6 +105,14 @@ const saleReadUpdate = document.querySelector(".sale-board-read__update");
 const sharingReadUpdate = document.querySelector(".sharing-board-read__update");
 const buyReadUpdate = document.querySelector(".buy-board-read__update");
 
+const chat = document.querySelector(".chat-container__icon");
+const chatContainer = document.querySelector(".chat-container__items")
+
+if(chat != null){
+    chat.addEventListener("click", () => {
+        chatAction();
+    })
+}
 if (drop != null) {
     drop.addEventListener("click", () => {
         dropAction();
@@ -758,6 +767,14 @@ function dropAction() {
         dropContainer.classList.remove("active");
     } else {
         dropContainer.classList.add("active");
+    }
+}
+
+function chatAction() {
+    if(chatContainer.classList.contains("active")) {
+        chatContainer.classList.remove("active")
+    } else {
+        chatContainer.classList.add("active")
     }
 }
 
