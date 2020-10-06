@@ -112,6 +112,14 @@ const chatRoom = document.querySelector(".chat-container__chat-room");
 const chatBack = document.querySelector(".chat-container__chat-room--back");
 const chatDelete = document.querySelectorAll(".chat-container__delete");
 
+const boardChat = document.querySelector(".board--chat");
+
+if (boardChat != null) {
+    boardChat.addEventListener("click", () => {
+        chatRoom.classList.add("active");
+    });
+}
+
 if (drop != null) {
     drop.addEventListener("click", () => {
         dropAction();

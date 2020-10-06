@@ -76,6 +76,7 @@
 }
 
 .black-list-board-read__name {
+    display: inline-block;
     font-size: 0.9rem;
     font-weight: 500;
 }

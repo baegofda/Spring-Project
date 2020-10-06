@@ -75,10 +75,13 @@
     padding-bottom: 1rem;
 }
 
+
 .sharing-board-read__name {
+    display: inline-block;
     font-size: 0.9rem;
     font-weight: 500;
 }
+
 
 .sharing-board-read__address {
     color: var(--color-sub-color);
