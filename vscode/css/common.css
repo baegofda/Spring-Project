@@ -115,3 +115,53 @@ li {
     background-color: #ebebeb;
     border-radius: 10% / 50%;
 }
+
+.sweet-rating {
+    display: none;
+    padding-top: 0.3rem;
+}
+
+.sweet-rating a {
+    font-size:20px;
+    display:inline-block;
+    margin-left:5px;
+    color:#ccc;
+}
+
+.sweet-rating a.on {
+    color:var(--color-personal-orange);
+}
+
+.sweet-rating-link{
+    border-radius: 20% / 50%;
+    color: var(--color-personal-orange);
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0.5rem 0 0.5rem 0;
+    transition: 0.2s ease-in-out;
+    padding : 0.1rem 0;
+}
+
+.sweet-rating-link:hover {
+    background-color:var(--color-personal-orange);
+    border-radius: 20% / 50%;
+    color: var(--color-white);
+    padding: 0 0.3rem;
+}
+
+.sweet-rating-btn {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-personal-orange);
+    border-radius: 0.25rem;
+    color: var(--color-personal-orange);
+    cursor: pointer;
+    display: none;
+    float: right;
+    margin-top: 0.7rem;
+    outline: none;
+}
+
+.sweet-rating__container .sweet-rating{
+    text-align: center;
+}
