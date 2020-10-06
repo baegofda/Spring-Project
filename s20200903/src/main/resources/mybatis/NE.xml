@@ -17,6 +17,27 @@
 		WHERE rn BETWEEN #{start} AND #{end}
 	</select>
 	
+	<select id="NEserSaleTotal" parameterType="NEJoin" resultType="int">
+		SELECT COUNT(*)
+		FROM pmcjoin
+		WHERE bid = 1
+		AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
+	</select>
+	
+	<select id="NEserBuyTotal" parameterType="NEJoin" resultType="int">
+		SELECT COUNT(*)
+		FROM pmcjoin
+		WHERE bid = 2
+		AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
+	</select>
+	
+	<select id="NEserShareTotal" parameterType="NEJoin" resultType="int">
+		SELECT COUNT(*)
+		FROM pmcjoin
+		WHERE bid = 3
+		AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
+	</select>
+	
 	<select id="NEsaSList" parameterType="NEJoin" resultType="NEJoin">
 		SELECT * 
 		FROM (SELECT rownum rn, a.* 

@@ -33,4 +33,6 @@ public interface NEService {
 
 	NEJoin buyPostUpdateForm(NEJoin neJoin);
 
+	NEJoin serTotal(NEJoin neJoin);
+
 }

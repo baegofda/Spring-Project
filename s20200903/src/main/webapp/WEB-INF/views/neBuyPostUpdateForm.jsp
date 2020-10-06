@@ -8,7 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>글수정하기 :: 당근나라</title>
         <link rel="stylesheet" href="../../css/common.css" />
-        <script src="../../javascript/common.js" defer></script>
         <script
             src="https://kit.fontawesome.com/797af710b1.js"
             crossorigin="anonymous"
@@ -176,14 +175,12 @@
                         <div class="image--input-container">
                             <label class="image--input-label">
                                 <div class="image--input-button button-1">
-                          		 <c:if test="${bPost.pimg1 != 'null'}">
                                     <img
-                                    	class="update-image image-1"
+                                    	class="update-image1 image-1"
                                         src="/image/${bPost.pimg1}"
                                         alt="이미지1"
                                     />
-                                    <div class="del-btn1"></div>
-                                </c:if>
+                                    <div class="del-btn1 del-btn"></div>
                                 </div>
                                 <input
                                 	name ="img"
@@ -198,11 +195,11 @@
                                 <div class="image--input-button button-2">
                                 <c:if test="${bPost.pimg2 != 'null'}">
                                     <img
-                                    	class="update-image image-2"
+                                    	class="update-image2 image-2"
                                         src="/image/${bPost.pimg2}"
                                         alt="이미지2"
                                     />
-                                    <div class="del-btn2"></div>
+                                    <div class="del-btn2 del-btn"></div>
                                 </c:if>
                                 </div>
                                 <input
@@ -218,11 +215,11 @@
                                 <div class="image--input-button button-3">
                                 <c:if test="${bPost.pimg3 != 'null'}">
                                     <img
-                                    	class="update-image image-3"
+                                    	class="update-image3 image-3"
                                         src="/image/${bPost.pimg3 }"
                                         alt="이미지3"
                                     />
-                                    <div class="del-btn3"></div>
+                                    <div class="del-btn3 del-btn"></div>
                                 </c:if>
                                 </div>
                                 <input
@@ -239,11 +236,11 @@
                                     <div class="image--input-button button-3">
                                     <c:if test="${bPost.pimg4 != 'null'}">
                                         <img
-                                        	class="update-image image-4"
+                                        	class="update-image4 image-4"
                                             src="/image/${bPost.pimg4 }"
                                             alt="이미지4"
                                         />
-                                        <div class="del-btn4"></div>
+                                        <div class="del-btn4 del-btn"></div>
                                     </c:if>
                                     </div>
                                 </div>
@@ -260,11 +257,11 @@
                                 <div class="image--input-button button-5">
                                 <c:if test="${bPost.pimg5 != 'null'}">
                                     <img
-                                    	class="update-image image-5"
+                                    	class="update-image5 image-5"
                                         src="/image/${bPost.pimg5 }"
                                         alt="이미지5"
                                     />
-                                    <div class="del-btn5"></div>
+                                    <div class="del-btn5 del-btn"></div>
                                 </c:if>
                                 </div>
                                 <input

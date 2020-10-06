@@ -47,7 +47,7 @@ public class NEController {
 	
 	// 검색어를 입력받은 후 결과 출력
 	@RequestMapping(value="search", method=RequestMethod.POST)
-	public String search(HttpServletRequest request, Model model, NEJoin neJoin) {
+	public String search(HttpServletRequest request, Model model, String currentPage, NEJoin neJoin) {
 		System.out.println("search start...");
 		/*HttpSession session = request.getSession();
 		if(session.getAttribute("mid") != null) {
@@ -58,6 +58,7 @@ public class NEController {
 		String sword = request.getParameter("sword");
 		System.out.println("sword==>"+sword );
 		neJoin.setSword(sword);
+		//NEJoin totNeJoin = ns.serTotal(neJoin);
 		
 		int swordYN = ns.swordYN(neJoin);
 		if (swordYN == 0) {
@@ -71,7 +72,45 @@ public class NEController {
 		model.addAttribute("saSList", saSList);
 		model.addAttribute("shSList", shSList);
 		model.addAttribute("bSList", bSList);
+		model.addAttribute("sword", sword);
 		return "neSearchList";
+	}
+	
+	// 검색결과 페이지 - 판매게시판
+	@RequestMapping("SearchSaleList")
+	public String SearchSaleList(HttpServletRequest request, Model model) {
+		String sword = request.getParameter("sword");
+		NEJoin neJoin = new NEJoin();
+		neJoin.setSword(sword);
+		
+		List<NEJoin> saSList = ns.saSList(neJoin);
+		model.addAttribute("saSList", saSList);
+		return "neSerSaleBoard";
+	}
+	
+	// 검색결과 페이지 - 나눔게시판
+	@RequestMapping("SearchShareList")
+	public String SearchShareList(HttpServletRequest request, Model model) {
+		String sword = request.getParameter("sword");
+		NEJoin neJoin = new NEJoin();
+		neJoin.setSword(sword);
+		
+		List<NEJoin> shSList = ns.shSList(neJoin);
+		model.addAttribute("shSList", shSList);
+		return "neSerSharingBoard";
+	}
+	
+	// 검색결과 페이지 - 구매게시판
+	@RequestMapping("SearchBuyList")
+	public String SearchBuyList(HttpServletRequest request, Model model) {
+		String sword = request.getParameter("sword");
+		System.out.println("Search===Buy===List sword=> "+ sword);
+		NEJoin neJoin = new NEJoin();
+		neJoin.setSword(sword);
+		
+		List<NEJoin> bSList = ns.bSList(neJoin);
+		model.addAttribute("blist", bSList);
+		return "neSerBuyBoard";
 	}
 	
 	
@@ -194,6 +233,7 @@ public class NEController {
 	public String buyPostUpdate(HttpServletRequest request,@RequestParam("img") MultipartFile[] uploadFile, Model model) throws Exception {
 		NEJoin neJoin = new NEJoin();
 		neJoin.setPnum(Integer.parseInt(request.getParameter("pnum")));
+		NEJoin preNeJ = ns.buyPostDetail(neJoin);
 		
 		System.out.println("buyPostInsert start..." + request.getParameter("img")); 
 		
@@ -210,14 +250,22 @@ public class NEController {
 			MultipartFile img = uploadFile[i];
 			logger.info("upload File Name : " + img.getOriginalFilename());
 			logger.info("upload File Size : " + img.getSize());
-			String savedName = uploadFile(img.getOriginalFilename(), img.getBytes(), uploadPath);
-			if(i==0) {neJoin.setPimg1(savedName); System.out.println(savedName);}
-			if(i==1) neJoin.setPimg2(savedName);
-			if(i==2) neJoin.setPimg3(savedName);
-			if(i==3) neJoin.setPimg4(savedName);
-			if(i==4) neJoin.setPimg5(savedName);			
+			
+			if(img.getSize()!=0) {	//새로 첨부된 파일이 있을 시 새로 set
+				String savedName = uploadFile(img.getOriginalFilename(), img.getBytes(), uploadPath);
+				if(i==0) { neJoin.setPimg1(savedName); System.out.println(savedName);}
+				if(i==1) neJoin.setPimg2(savedName);
+				if(i==2) neJoin.setPimg3(savedName);
+				if(i==3) neJoin.setPimg4(savedName);
+				if(i==4) neJoin.setPimg5(savedName);	
+			} else {				// 새로 첨부된 파일이 없을 시 기존의 img정보 저장
+				if(i==0)neJoin.setPimg1(preNeJ.getPimg1());
+				if(i==1)neJoin.setPimg2(preNeJ.getPimg2());
+				if(i==2)neJoin.setPimg3(preNeJ.getPimg3());
+				if(i==3)neJoin.setPimg4(preNeJ.getPimg4());
+				if(i==4)neJoin.setPimg5(preNeJ.getPimg5());
+			}								
 		}
-		
 		int result = ns.buyPostUpdate(neJoin);
 		model.addAttribute("result", result);
 		return "redirect:buylist.do";

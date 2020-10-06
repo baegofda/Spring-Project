@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ include file="includeJSP.jsp" %>
 <html lang="ko">
     <head>
         <meta charset="UTF-8" />
@@ -34,7 +35,7 @@
         <header class="header">
             <div class="header__fixed-bar">
                 <section class="header__fixed-bar-logo section-logo">
-                    <a href="../main/main.html">
+                    <a href="main.do">
                         <img
                             src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FSQxEt%2FbtqJs5kkQnP%2FhvX1kh8aeqli9J93tF5qV1%2Ftfile.svg"
                             alt="당근나라"
@@ -46,6 +47,7 @@
                         class="header__fixed-bar-search-container"
                         tabindex="4"
                     >
+                    <form action="search.do" method="post">
                         <input
                             class="search-input"
                             type="text"
@@ -56,6 +58,7 @@
                             class="search-icon"
                             src="https://img.icons8.com/ios-glyphs/30/000000/search.png"
                         />
+                    </form>
                     </div>
                     <!-- 검색시 검색창 밑에 뜨는 키워드 추천란 입니다 -->
                     <div class="search-keyword">
@@ -96,7 +99,7 @@
                 <li><a href="badReviewBoard.html">불량거래 후기</a></li>
                 <li><a href="toSaleBoard.html">판매중 이에요.</a></li>
                 <li><a href="toSharingBoard.html">나눔중 이에요.</a></li>
-                <li><a href="toBuyBoard.html">구매합니다 ~!</a></li>
+                <li><a href="buylist.do">구매합니다 ~!</a></li>
             </ul>
         </aside>
         <!-- 섹션 시작 -->
@@ -141,6 +144,7 @@
                             <!-- 불러오는 게시글 갯수불러오기 -->
                             <span class="to-sale__count">120</span>
                         </p>
+                        <!-- 링크 수정 -->
                         <a href="boardWrite.html"
                             ><div class="to-sale__write">글작성</div></a
                         >
@@ -149,467 +153,46 @@
                 <!-- 각 최신글 9 ~ 12개만 띄어주시면 됩니다 -->
                 <div class="to-sale__content">
                     <!-- 태그 안에 있는 더미 데이터들은 틀을 보기 위함이며 실제 작업시엔 해당 데이터를 불러 올 수 있도록 변경 부탁드립니다. -->
+                  <c:forEach var="Post" items="saSList">
                     <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
+                        <a href="toSaleBoardRead.do?pnum=${Post.pnum}"> <!-- 게시글 상세 링크 수정 -->
                             <div class="to-sale__content--thumbnail">
                                 <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/3c06cb158997b8cd4061052c6b457887e4c60496704b6149d4197a6d791ad261.webp?q=82&s=300x300&t=crop"
+                                    src="/image/${Post.pimg1 }"
                                     alt="thumbnail"
                                 />
                             </div>
                             <div class="to-sale__content--text">
                                 <h1 class="to-sale__content--text__title">
-                                    5단 서랍장 입니다
+                                   		${Post.ptitle}
                                 </h1>
                                 <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
+                                    	${Post.maddr}
                                 </p>
                                 <div class="to-sale__content--text__date">
                                     <div class="to-sale__content--date">
-                                        2020.09.26
+                                        ${Post.pdate}
                                     </div>
                                     <div class="to-sale__content--hit">
-                                        조회수 30
+                                        	조회수 ${Post.phit}
                                     </div>
                                 </div>
                                 <div class="to-sale__content--text__price">
                                     <div class="to-sale__content--price">
-                                        15,000원
+                                        ${Post.pprice}원
                                     </div>
                                     <div class="to-sale__content--picks">
                                         <img
                                             src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
                                             alt="picks"
                                         />
-                                        4
+                                         ${Post.ppicks}
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </article>
-                    <!-- 이 아래부턴 삭제 부탁드립니다. -->
-                    <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
-                            <div class="to-sale__content--thumbnail">
-                                <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/74ead2897bfdc979dfdc817ea9c966c5dfd876d7479410549c8ceefc29271ebf.webp?q=82&s=300x300&t=crop"
-                                    alt="thumbnail"
-                                />
-                            </div>
-                            <div class="to-sale__content--text">
-                                <h1 class="to-sale__content--text__title">
-                                    스위스크로스 캠핑체어 팝니다.
-                                </h1>
-                                <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
-                                </p>
-                                <div class="to-sale__content--text__date">
-                                    <div class="to-sale__content--date">
-                                        2020.09.25
-                                    </div>
-                                    <div class="to-sale__content--hit">
-                                        조회수 30
-                                    </div>
-                                </div>
-                                <div class="to-sale__content--text__price">
-                                    <div class="to-sale__content--price">
-                                        20,000원
-                                    </div>
-                                    <div class="to-sale__content--picks">
-                                        <img
-                                            src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
-                                            alt="picks"
-                                        />
-                                        1
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
-                            <div class="to-sale__content--thumbnail">
-                                <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/e109941c1a68f4bef813c0a46f20ab1060b67f92c7510a14c83cdb76ef77ba1d.webp?q=82&s=300x300&t=crop"
-                                    alt="thumbnail"
-                                />
-                            </div>
-                            <div class="to-sale__content--text">
-                                <h1 class="to-sale__content--text__title">
-                                    6단 미니벨로 자전거 짐받이, 싸게팔아요
-                                </h1>
-                                <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
-                                </p>
-                                <div class="to-sale__content--text__date">
-                                    <div class="to-sale__content--date">
-                                        2020.09.22
-                                    </div>
-                                    <div class="to-sale__content--hit">
-                                        조회수 142
-                                    </div>
-                                </div>
-                                <div class="to-sale__content--text__price">
-                                    <div class="to-sale__content--price">
-                                        60,000원
-                                    </div>
-                                    <div class="to-sale__content--picks">
-                                        <img
-                                            src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
-                                            alt="picks"
-                                        />
-                                        25
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
-                            <div class="to-sale__content--thumbnail">
-                                <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/37A0EB6D41B2F67BB10F2FA7AA4DC5CE1104E19B36E4883482C40DF92289656C.jpg?q=82&s=300x300&t=crop"
-                                    alt="thumbnail"
-                                />
-                            </div>
-                            <div class="to-sale__content--text">
-                                <h1 class="to-sale__content--text__title">
-                                    셀린느 빈티지
-                                </h1>
-                                <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
-                                </p>
-                                <div class="to-sale__content--text__date">
-                                    <div class="to-sale__content--date">
-                                        2020.09.20
-                                    </div>
-                                    <div class="to-sale__content--hit">
-                                        조회수 204
-                                    </div>
-                                </div>
-                                <div class="to-sale__content--text__price">
-                                    <div class="to-sale__content--price">
-                                        120,000원
-                                    </div>
-                                    <div class="to-sale__content--picks">
-                                        <img
-                                            src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
-                                            alt="picks"
-                                        />
-                                        6
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
-                            <div class="to-sale__content--thumbnail">
-                                <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/79657119BD11000C91D4BC2CF3836CBB9C4BC992E925A0114AC02BBAE644F808.jpg?q=82&s=300x300&t=crop"
-                                    alt="thumbnail"
-                                />
-                            </div>
-                            <div class="to-sale__content--text">
-                                <h1 class="to-sale__content--text__title">
-                                    아이폰 11 퍼플 128기가 의무통화 후 정상기기
-                                    해지
-                                </h1>
-                                <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
-                                </p>
-                                <div class="to-sale__content--text__date">
-                                    <div class="to-sale__content--date">
-                                        2020.09.20
-                                    </div>
-                                    <div class="to-sale__content--hit">
-                                        조회수 336
-                                    </div>
-                                </div>
-                                <div class="to-sale__content--text__price">
-                                    <div class="to-sale__content--price">
-                                        777,000원
-                                    </div>
-                                    <div class="to-sale__content--picks">
-                                        <img
-                                            src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
-                                            alt="picks"
-                                        />
-                                        10
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
-                            <div class="to-sale__content--thumbnail">
-                                <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/36612051222EE5EDAE877748EB5945CA67EB64059C4AB793CBFE86CCEA5ED042.jpg?q=82&s=300x300&t=crop"
-                                    alt="thumbnail"
-                                />
-                            </div>
-                            <div class="to-sale__content--text">
-                                <h1 class="to-sale__content--text__title">
-                                    레이스 커튼 핀형 새거
-                                </h1>
-                                <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
-                                </p>
-                                <div class="to-sale__content--text__date">
-                                    <div class="to-sale__content--date">
-                                        2020.09.18
-                                    </div>
-                                    <div class="to-sale__content--hit">
-                                        조회수 307
-                                    </div>
-                                </div>
-                                <div class="to-sale__content--text__price">
-                                    <div class="to-sale__content--price">
-                                        18,000원
-                                    </div>
-                                    <div class="to-sale__content--picks">
-                                        <img
-                                            src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
-                                            alt="picks"
-                                        />
-                                        8
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
-                            <div class="to-sale__content--thumbnail">
-                                <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/37A0EB6D41B2F67BB10F2FA7AA4DC5CE1104E19B36E4883482C40DF92289656C.jpg?q=82&s=300x300&t=crop"
-                                    alt="thumbnail"
-                                />
-                            </div>
-                            <div class="to-sale__content--text">
-                                <h1 class="to-sale__content--text__title">
-                                    셀린느 빈티지
-                                </h1>
-                                <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
-                                </p>
-                                <div class="to-sale__content--text__date">
-                                    <div class="to-sale__content--date">
-                                        2020.09.20
-                                    </div>
-                                    <div class="to-sale__content--hit">
-                                        조회수 204
-                                    </div>
-                                </div>
-                                <div class="to-sale__content--text__price">
-                                    <div class="to-sale__content--price">
-                                        120,000원
-                                    </div>
-                                    <div class="to-sale__content--picks">
-                                        <img
-                                            src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
-                                            alt="picks"
-                                        />
-                                        6
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
-                            <div class="to-sale__content--thumbnail">
-                                <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/79657119BD11000C91D4BC2CF3836CBB9C4BC992E925A0114AC02BBAE644F808.jpg?q=82&s=300x300&t=crop"
-                                    alt="thumbnail"
-                                />
-                            </div>
-                            <div class="to-sale__content--text">
-                                <h1 class="to-sale__content--text__title">
-                                    아이폰 11 퍼플 128기가 의무통화 후 정상기기
-                                    해지
-                                </h1>
-                                <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
-                                </p>
-                                <div class="to-sale__content--text__date">
-                                    <div class="to-sale__content--date">
-                                        2020.09.20
-                                    </div>
-                                    <div class="to-sale__content--hit">
-                                        조회수 336
-                                    </div>
-                                </div>
-                                <div class="to-sale__content--text__price">
-                                    <div class="to-sale__content--price">
-                                        777,000원
-                                    </div>
-                                    <div class="to-sale__content--picks">
-                                        <img
-                                            src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
-                                            alt="picks"
-                                        />
-                                        10
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
-                            <div class="to-sale__content--thumbnail">
-                                <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/36612051222EE5EDAE877748EB5945CA67EB64059C4AB793CBFE86CCEA5ED042.jpg?q=82&s=300x300&t=crop"
-                                    alt="thumbnail"
-                                />
-                            </div>
-                            <div class="to-sale__content--text">
-                                <h1 class="to-sale__content--text__title">
-                                    레이스 커튼 핀형 새거
-                                </h1>
-                                <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
-                                </p>
-                                <div class="to-sale__content--text__date">
-                                    <div class="to-sale__content--date">
-                                        2020.09.18
-                                    </div>
-                                    <div class="to-sale__content--hit">
-                                        조회수 307
-                                    </div>
-                                </div>
-                                <div class="to-sale__content--text__price">
-                                    <div class="to-sale__content--price">
-                                        18,000원
-                                    </div>
-                                    <div class="to-sale__content--picks">
-                                        <img
-                                            src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
-                                            alt="picks"
-                                        />
-                                        8
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
-                            <div class="to-sale__content--thumbnail">
-                                <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/37A0EB6D41B2F67BB10F2FA7AA4DC5CE1104E19B36E4883482C40DF92289656C.jpg?q=82&s=300x300&t=crop"
-                                    alt="thumbnail"
-                                />
-                            </div>
-                            <div class="to-sale__content--text">
-                                <h1 class="to-sale__content--text__title">
-                                    셀린느 빈티지
-                                </h1>
-                                <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
-                                </p>
-                                <div class="to-sale__content--text__date">
-                                    <div class="to-sale__content--date">
-                                        2020.09.20
-                                    </div>
-                                    <div class="to-sale__content--hit">
-                                        조회수 204
-                                    </div>
-                                </div>
-                                <div class="to-sale__content--text__price">
-                                    <div class="to-sale__content--price">
-                                        120,000원
-                                    </div>
-                                    <div class="to-sale__content--picks">
-                                        <img
-                                            src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
-                                            alt="picks"
-                                        />
-                                        6
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
-                            <div class="to-sale__content--thumbnail">
-                                <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/79657119BD11000C91D4BC2CF3836CBB9C4BC992E925A0114AC02BBAE644F808.jpg?q=82&s=300x300&t=crop"
-                                    alt="thumbnail"
-                                />
-                            </div>
-                            <div class="to-sale__content--text">
-                                <h1 class="to-sale__content--text__title">
-                                    아이폰 11 퍼플 128기가 의무통화 후 정상기기
-                                    해지
-                                </h1>
-                                <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
-                                </p>
-                                <div class="to-sale__content--text__date">
-                                    <div class="to-sale__content--date">
-                                        2020.09.20
-                                    </div>
-                                    <div class="to-sale__content--hit">
-                                        조회수 336
-                                    </div>
-                                </div>
-                                <div class="to-sale__content--text__price">
-                                    <div class="to-sale__content--price">
-                                        777,000원
-                                    </div>
-                                    <div class="to-sale__content--picks">
-                                        <img
-                                            src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
-                                            alt="picks"
-                                        />
-                                        10
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="to-sale__article">
-                        <a href="toSaleBoardRead.html">
-                            <div class="to-sale__content--thumbnail">
-                                <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/36612051222EE5EDAE877748EB5945CA67EB64059C4AB793CBFE86CCEA5ED042.jpg?q=82&s=300x300&t=crop"
-                                    alt="thumbnail"
-                                />
-                            </div>
-                            <div class="to-sale__content--text">
-                                <h1 class="to-sale__content--text__title">
-                                    레이스 커튼 핀형 새거
-                                </h1>
-                                <p class="to-sale__content--text__address">
-                                    서울 송파구 석촌동
-                                </p>
-                                <div class="to-sale__content--text__date">
-                                    <div class="to-sale__content--date">
-                                        2020.09.18
-                                    </div>
-                                    <div class="to-sale__content--hit">
-                                        조회수 307
-                                    </div>
-                                </div>
-                                <div class="to-sale__content--text__price">
-                                    <div class="to-sale__content--price">
-                                        18,000원
-                                    </div>
-                                    <div class="to-sale__content--picks">
-                                        <img
-                                            src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"
-                                            alt="picks"
-                                        />
-                                        8
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                    <!-- 삭제더미데이터 -->
+                  </c:forEach>
                 </div>
             </div>
             <div class="to-sale__page-num-container">
@@ -624,20 +207,6 @@
                     <a href="#">
                         <li class="page-num-container__num">1</li>
                     </a>
-                    <!-- 더미데이터 -->
-                    <a href="#">
-                        <li class="page-num-container__num">2</li>
-                    </a>
-                    <a href="#">
-                        <li class="page-num-container__num">3</li>
-                    </a>
-                    <a href="#">
-                        <li class="page-num-container__num">4</li>
-                    </a>
-                    <a href="#">
-                        <li class="page-num-container__num">5</li>
-                    </a>
-                    <!-- 더미데이터 -->
                     <a href="#">
                         <li class="page-num__right-btn page-num-container__btn">
                             <i class="fas fa-chevron-right"></i>

@@ -46,6 +46,37 @@ public class NEJoin {
 	private int scnt;
 	private String lsearch;
 	
+	//검색결과 리스트용
+	private int sTotal;
+	private int sSaleTotal;
+	private int sShareTotal;
+	private int sBuyTotal;
+	
+	public int getsTotal() {
+		return sTotal;
+	}
+	public void setsTotal(int sTotal) {
+		this.sTotal = sTotal;
+	}
+	
+	public int getsSaleTotal() {
+		return sSaleTotal;
+	}
+	public void setsSaleTotal(int sSaleTotal) {
+		this.sSaleTotal = sSaleTotal;
+	}
+	public int getsShareTotal() {
+		return sShareTotal;
+	}
+	public void setsShareTotal(int sShareTotal) {
+		this.sShareTotal = sShareTotal;
+	}
+	public int getsBuyTotal() {
+		return sBuyTotal;
+	}
+	public void setsBuyTotal(int sBuyTotal) {
+		this.sBuyTotal = sBuyTotal;
+	}
 	public int getBid() {
 		return bid;
 	}

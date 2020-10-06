@@ -88,5 +88,12 @@ public class NEDaoImpl implements NEDao {
 		return session.update("NEbuyPostUpdate", neJoin);
 	}
 
+	@Override
+	public NEJoin serTotal(NEJoin neJoin) {
+		NEJoin result = new NEJoin();
+		result.setsBuyTotal((session.selectOne("NEserBuyTotal", neJoin)));
+		return result;
+	}
+
 
 }

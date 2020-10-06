@@ -18,12 +18,6 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
 	rel="stylesheet" />
 
-<!-- ajax로 파일 업로드 -->
-<script src="<c:url value="/js/jquery-3.1.0.min.js"/>"></script>
-<script src="<c:url value="/js/jquery.form.min.js"/>"></script>
-<script type="text/javascript">
-</script>
-
 </head>
 
 <body>
@@ -123,7 +117,8 @@
 						<div class="buy-board-write__image--container">
 							<div class="image--input-container">
 								<label class="image--input-label">
-									<div class="image--input-button button-1"></div> <input
+									<div class="image--input-button button-1"></div> 
+									<input
 									name="img" 
 									class="image--input image-1" 
 									type="file"

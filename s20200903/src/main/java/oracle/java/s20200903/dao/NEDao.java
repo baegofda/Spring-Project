@@ -34,4 +34,6 @@ public interface NEDao {
 
 	NEJoin buyPostUpdateForm(NEJoin neJoin);
 
+	NEJoin serTotal(NEJoin neJoin);
+
 }

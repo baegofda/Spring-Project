@@ -96,12 +96,6 @@ const saleReadUpdate = document.querySelector(".sale-board-read__update");
 const sharingReadUpdate = document.querySelector(".sharing-board-read__update");
 const buyReadUpdate = document.querySelector(".buy-board-read__update");
 
-const delbtn1 = document.querySelector(".del-btn1");
-const delbtn2 = document.querySelector(".del-btn2");
-const delbtn3 = document.querySelector(".del-btn3");
-const delbtn4 = document.querySelector(".del-btn4");
-const delbtn5 = document.querySelector(".del-btn5");
-
 
 let i = 0;
 let j = 0;
@@ -933,70 +927,83 @@ function addressSearchFunction() {
 }
 //주소검색
 
-delbtn1.addEventListener("click", () => {
-    delBtn1();
-});
+// buyUpdateForm에서 del-btn을 누르면 기존 이미지 삭제
+const delbtn1 = document.querySelector(".del-btn1");
+const delbtn2 = document.querySelector(".del-btn2");
+const delbtn3 = document.querySelector(".del-btn3");
+const delbtn4 = document.querySelector(".del-btn4");
+const delbtn5 = document.querySelector(".del-btn5");
 
-delbtn2.addEventListener("click", () => {
-    delBtn2();
-});
+if(delbtn1 != null){
+	delbtn1.addEventListener("click", () => {
+		delBtn1();
+	});
+}
 
-delbtn3.addEventListener("click", () => {
-    delBtn3();
-});
+if(delbtn2 != null){
+	delbtn2.addEventListener("click", () => {
+	    delBtn2();
+	});
+}
 
-delbtn4.addEventListener("click", () => {
-    delBtn4();
-});
+if(delbtn3 != null){
+	delbtn3.addEventListener("click", () => {
+		delBtn3();
+	});
+}
 
-delbtn5.addEventListener("click", () => {
-    delBtn5();
-});
+if(delbtn4 != null){
+	delbtn4.addEventListener("click", () => {
+	    delBtn4();
+	});
+}
+
+if(delbtn5 != null){
+	delbtn5.addEventListener("click", () => {
+	    delBtn5();
+	});
+}
+
 
 // x버튼을 누르면 첨부파일 삭제
 function delBtn1() {
-	var img = document.querySelector(".update-image");
-	delbtn.addEventListener("click", (event) => {
-            imageInput1.value = "";
-            img.remove();
-            delbtn.remove();
-        });
+	var img = document.querySelector(".update-image1");
+	var delbtn = document.querySelector(".del-btn1");
+    img.remove();
+    delbtn.remove();
 }
 
 function delBtn2() {
-	var img = document.querySelector(".update-image");
-	delbtn.addEventListener("click", (event) => {
-            imageInput2.value = "";
-            img.remove();
-            delbtn.remove();
-        });
+	var img = document.querySelector(".update-image2");
+	var delbtn = document.querySelector(".del-btn2");
+    imageInput2.value = "";
+    img.remove();
+    delbtn.remove();
 }
 
 function delBtn3() {
-	var img = document.querySelector(".update-image");
-	delbtn.addEventListener("click", (event) => {
-            imageInput3.value = "";
-            img.remove();
-            delbtn.remove();
-        });
+	var img = document.querySelector(".update-image3");
+	var delbtn = document.querySelector(".del-btn3");
+    imageInput3.value = "";
+    img.remove();
+    delbtn.remove();
+
 }
 
 function delBtn4() {
-	var img = document.querySelector(".update-image");
-	delbtn.addEventListener("click", (event) => {
-            imageInput4.value = "";
-            img.remove();
-            delbtn.remove();
-        });
+	var img = document.querySelector(".update-image4");
+	var delbtn = document.querySelector(".del-btn4");
+    imageInput4.value = "";
+    img.remove();
+    delbtn.remove();
 }
 
 function delBtn5() {
-	var img = document.querySelector(".update-image");
-	delbtn.addEventListener("click", (event) => {
-            imageInput5.value = "";
-            img.remove();
-            delbtn.remove();
-        });
+	var img = document.querySelector(".update-image5");
+	var delbtn = document.querySelector(".del-btn5");
+    imageInput5.value = "";
+    img.remove();
+    delbtn.remove();
 }
 
 //파일첨부
@@ -1035,10 +1042,15 @@ function imageThumbnail2() {
             var img = document.createElement("img");
             var btn = document.createElement("div");
             var result1 = event.target.result;
-            btn.setAttribute("class", "del-btn");
+            /*btn.setAttribute("class", "del-btn");
             img.setAttribute("src", result1);
             imageContainer2.appendChild(img);
-            imageContainer2.appendChild(btn);
+            imageContainer2.appendChild(btn);*/
+            imageContainer1.innerHTML = ` <img
+                src="${result1}"
+                alt="이미지1"
+             />
+             <div class="del-btn"></div>`
 
             btn.addEventListener("click", (event) => {
                 imageInput2.value = "";

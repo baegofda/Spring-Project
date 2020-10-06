@@ -80,6 +80,11 @@ public class NEServiceImpl implements NEService {
 		return nd.buyPostUpdate(neJoin);
 	}
 
+	@Override
+	public NEJoin serTotal(NEJoin neJoin) {
+		return nd.serTotal(neJoin);
+	}
+
 
 
 }
