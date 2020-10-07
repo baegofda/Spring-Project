@@ -46,10 +46,11 @@
                         class="header__fixed-bar-search-container"
                         tabindex="4"
                     >
-                    <form action="search.do" method="post">
+                   <form action="search.do" method="post">
                         <input
                             class="search-input"
-                            type="text"
+							type="text"
+							name="sword"
                             placeholder="동네 이름, 물품명 등을 검색해보세요!"
                         />
                         <input

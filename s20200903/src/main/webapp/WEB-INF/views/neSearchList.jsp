@@ -121,12 +121,14 @@
                 <!-- 각 섹션 게시판별 최신글 6개만 띄어주시면 됩니다 -->
                 <div class="search-list__content">
                     <!-- 태그 안에 있는 더미 데이터들은 틀을 보기 위함이며 실제 작업시엔 해당 데이터를 불러 올 수 있도록 변경 부탁드립니다. -->
-                    <c:forEach var="list" items="${saSList }">
+                <c:forEach var="list" items="${saSList }">
+                  <c:choose>
+                  <c:when test="${list.rn < 7 }">
                     <article class="search-list__article">
                         <a href="none"> 
                             <div class="search-list__content--thumbnail">
                                 <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/3c06cb158997b8cd4061052c6b457887e4c60496704b6149d4197a6d791ad261.webp?q=82&s=300x300&t=crop"
+                                    src="/image/${list.pimg1}"
                                     alt="thumbnail"
                                 />
                             </div>
@@ -160,7 +162,9 @@
                             </div>
                         </a>
                     </article>
-                    </c:forEach>
+                    </c:when>
+                  </c:choose>
+                </c:forEach>
                 </div>
             </div>
             
@@ -180,11 +184,13 @@
                 </div>
                 <div class="search-list__content">
                 <c:forEach var="list" items="${shSList }">
+                 <c:choose>
+                  <c:when test="${list.rn < 7 }">
                     <article class="search-list__article">
                         <a href="#none">
                             <div class="search-list__content--thumbnail">
                                 <img
-                                    src="https://dnvefa72aowie.cloudfront.net/origin/article/202009/3c06cb158997b8cd4061052c6b457887e4c60496704b6149d4197a6d791ad261.webp?q=82&s=300x300&t=crop"
+                                    src="/image/${list.pimg1}"
                                     alt="thumbnail"
                                 />
                             </div>
@@ -218,7 +224,9 @@
                             </div>
                         </a>
                     </article>
-                    </c:forEach>
+                   </c:when>
+                  </c:choose>    
+                </c:forEach>
                 </div>
             </div>
             <!-- 구매게시판 시작 -->
@@ -238,7 +246,9 @@
                 <div class="search-list__content">
                     <ul class="to-buy__content">
                         <!-- 링크수정하기 -->
-                        <c:forEach var="list" items="${bSList }">
+                    <c:forEach var="list" items="${bSList }">
+                      <c:choose>
+                  		<c:when test="${list.rn < 5 }">
                         <a href="#">
                             <li>
                                 <article class="board__content">
@@ -266,18 +276,18 @@
                                         <!-- 해당 게시글의 썸네일을 불러올 수 있도록 하기 -->
                                         <img
                                             class="thumbnail"
-                                            src="https://dnvefa72aowie.cloudfront.net/origin/article/202008/881bb464c1c1ed69f59df65d9e25b56d2714b920f81c8e72512664e503b43902.webp?q=95&s=1440x1440&t=inside"
+                                            src="/image/${list.pimg1 }"
                                             alt="img-thumbnail"
                                         />
                                     </div>
                                 </article>
                             </li>
                         </a>
-                        </c:forEach>
+                      </c:when>
+                     </c:choose>
+                    </c:forEach>
                     </ul>
-                    <!-- 이 아래부턴 삭제 부탁드립니다. -->
-
-                    <!-- 삭제더미데이터 -->
+                   
                 </div>
             </div>
         </div>

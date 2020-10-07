@@ -21,6 +21,7 @@ import oracle.java.s20200903.model.NEJoin;
 import oracle.java.s20200903.model.NEPost;
 import oracle.java.s20200903.service.NEService;
 import oracle.java.s20200903.service.Paging;
+import oracle.java.s20200903.service.SearchPaging;
 
 @MultipartConfig(
 	//location="" 상대경로"/../.."불가. 절대경로를 적어야 함. 절대경로는 리눅스/윈도우에 차이가 있으므로 차라리 설정하지 않고 자바 지정 임시 디렉토리 사용
@@ -58,6 +59,8 @@ public class NEController {
 		String sword = request.getParameter("sword");
 		System.out.println("sword==>"+sword );
 		neJoin.setSword(sword);
+		NEJoin totne = ns.serTotal(neJoin);
+		
 		//NEJoin totNeJoin = ns.serTotal(neJoin);
 		
 		int swordYN = ns.swordYN(neJoin);
@@ -65,8 +68,23 @@ public class NEController {
 			ns.searchInsert(neJoin);
 		}	ns.searchUpdate(neJoin);
 		
+		// 검색결과 - 판매게시판
+		int saTotal = totne.getsSaleTotal();
+		SearchPaging pg = new SearchPaging(saTotal, currentPage);
+		neJoin.setStart(pg.getStart());
+		neJoin.setEnd(pg.getEnd());
 		List<NEJoin> saSList = ns.saSList(neJoin);
+		
+		// 검색결과 - 나눔게시판
+		int shTotal = totne.getsShareTotal();
+		pg = new SearchPaging(shTotal, currentPage);
 		List<NEJoin> shSList = ns.shSList(neJoin);
+		
+		// 검색결과 - 구매게시판
+		int BTotal = totne.getsBuyTotal();
+		pg = new SearchPaging(BTotal, currentPage);
+		neJoin.setStart(pg.getStart());
+		neJoin.setEnd(pg.getEnd());
 		List<NEJoin> bSList = ns.bSList(neJoin);
 		
 		model.addAttribute("saSList", saSList);
@@ -76,40 +94,67 @@ public class NEController {
 		return "neSearchList";
 	}
 	
+	
 	// 검색결과 페이지 - 판매게시판
 	@RequestMapping("SearchSaleList")
-	public String SearchSaleList(HttpServletRequest request, Model model) {
+	public String SearchSaleList(HttpServletRequest request, Model model, String currentPage) {
 		String sword = request.getParameter("sword");
 		NEJoin neJoin = new NEJoin();
 		neJoin.setSword(sword);
 		
+		NEJoin totne = ns.serTotal(neJoin);
+		int total = totne.getsSaleTotal();
+		SearchPaging pg = new SearchPaging(total, currentPage);
+		neJoin.setStart(pg.getStart());
+		neJoin.setEnd(pg.getEnd());
+		
 		List<NEJoin> saSList = ns.saSList(neJoin);
+		
 		model.addAttribute("saSList", saSList);
+		model.addAttribute("pg", pg);
 		return "neSerSaleBoard";
 	}
 	
+	
 	// 검색결과 페이지 - 나눔게시판
 	@RequestMapping("SearchShareList")
-	public String SearchShareList(HttpServletRequest request, Model model) {
+	public String SearchShareList(HttpServletRequest request, Model model, String currentPage) {
 		String sword = request.getParameter("sword");
 		NEJoin neJoin = new NEJoin();
 		neJoin.setSword(sword);
 		
+		NEJoin totne = ns.serTotal(neJoin);
+		int total = totne.getsShareTotal();
+		SearchPaging pg = new SearchPaging(total, currentPage);
+		neJoin.setStart(pg.getStart());
+		neJoin.setEnd(pg.getEnd());
+		
 		List<NEJoin> shSList = ns.shSList(neJoin);
+		System.out.println("SearchShareList pimg1===>"+ shSList.get(0).getPimg1());
+		
 		model.addAttribute("shSList", shSList);
+		model.addAttribute("pg", pg);
 		return "neSerSharingBoard";
 	}
 	
 	// 검색결과 페이지 - 구매게시판
 	@RequestMapping("SearchBuyList")
-	public String SearchBuyList(HttpServletRequest request, Model model) {
+	public String SearchBuyList(HttpServletRequest request, Model model, String currentPage) {
 		String sword = request.getParameter("sword");
 		System.out.println("Search===Buy===List sword=> "+ sword);
 		NEJoin neJoin = new NEJoin();
 		neJoin.setSword(sword);
 		
+		NEJoin totne = ns.serTotal(neJoin);
+		int total = totne.getsBuyTotal();
+		SearchPaging pg = new SearchPaging(total, currentPage);
+		neJoin.setStart(pg.getStart());
+		neJoin.setEnd(pg.getEnd());
+		
 		List<NEJoin> bSList = ns.bSList(neJoin);
+		
 		model.addAttribute("blist", bSList);
+		model.addAttribute("pg", pg);
 		return "neSerBuyBoard";
 	}
 	

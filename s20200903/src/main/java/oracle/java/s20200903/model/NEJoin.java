@@ -41,7 +41,9 @@ public class NEJoin {
 	private String pageNum;  
 	private int start; 		 
 	private int end;
+	private int rn;
 	
+
 	private String sword;
 	private int scnt;
 	private String lsearch;
@@ -246,7 +248,12 @@ public class NEJoin {
 		this.lsearch = lsearch;
 	}
 	
-	
+	public int getRn() {
+		return rn;
+	}
+	public void setRn(int rn) {
+		this.rn = rn;
+	}
 	
 	
 	

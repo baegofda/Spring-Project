@@ -33,8 +33,12 @@
 			<section class="header__fixed-bar-search section-search">
 				<div class="header__fixed-bar-search-container" tabindex="4">
 					<form action="search.do" method="post">
-						<input class="search-input" type="text" name="sword"
-							placeholder="동네 이름, 물품명 등을 검색해보세요!" /> 
+                        <input
+                            class="search-input"
+							type="text"
+							name="sword"
+                            placeholder="동네 이름, 물품명 등을 검색해보세요!"
+                        />
 						<input type="image"
 							class="search-icon"
 							src="https://img.icons8.com/ios-glyphs/30/000000/search.png" />

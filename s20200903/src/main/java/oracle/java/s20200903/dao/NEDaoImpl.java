@@ -91,9 +91,12 @@ public class NEDaoImpl implements NEDao {
 	@Override
 	public NEJoin serTotal(NEJoin neJoin) {
 		NEJoin result = new NEJoin();
+		result.setsSaleTotal((session.selectOne("NEserSaleTotal", neJoin)));
+		result.setsShareTotal((session.selectOne("NEserShareTotal", neJoin)));
 		result.setsBuyTotal((session.selectOne("NEserBuyTotal", neJoin)));
 		return result;
 	}
+	
 
 
 }

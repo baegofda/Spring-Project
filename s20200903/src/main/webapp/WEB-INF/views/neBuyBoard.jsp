@@ -49,7 +49,8 @@
                     <form action="search.do" method="post">
                         <input
                             class="search-input"
-                            type="text"
+							type="text"
+							name="sword"
                             placeholder="동네 이름, 물품명 등을 검색해보세요!"
                         />
                         <input
@@ -93,25 +94,22 @@
             <div class="to-buy">
                 <div class="to-buy__head-container">
                     <div class="to-buy__sort">
-                        <select
-                            class="to-buy__category"
-                            name="to-buy__category"
-                        >
-                            <option value="all" selected>전체</option>
-                            <option value="digital">디지털/가전</option>
-                            <option value="furniture">가구/인테리어</option>
-                            <option value="children">유아동/유아도서</option>
-                            <option value="life">생활/가공식품</option>
-                            <option value="sports">스포츠/레저</option>
-                            <option value="women-acc">여성잡화</option>
-                            <option value="women-cloth">여성의류</option>
-                            <option value="men-acc">남성패션/잡화</option>
-                            <option value="game">게임/취미</option>
-                            <option value="beauty">뷰티/미용</option>
-                            <option value="pet">반려동물용품</option>
-                            <option value="culture">도서/티켓/음반</option>
-                            <option value="other">기타중고물품</option>
-                        </select>
+                        <select class="buy-board-write__category" name="ctcode" required>
+						<option value="" disabled selected hidden>카테고리</option>
+						<option value="1">디지털/가전</option>
+						<option value="2">가구/인테리어</option>
+						<option value="3">유아동/유아도서</option>
+						<option value="4">생활/가공식품</option>
+						<option value="5">스포츠/레저</option>
+						<option value="6">여성잡화</option>
+						<option value="7">여성의류</option>
+						<option value="8">남성패션/잡화</option>
+						<option value="9">게임/취미</option>
+						<option value="10">뷰티/미용</option>
+						<option value="11">반려동물용품</option>
+						<option value="12">도서/티켓/음반</option>
+						<option value="13">기타중고물품</option>
+					</select>
                     </div>
                     <div class="to-buy__head">
                         <h1 class="to-buy__title">구매합니다 ~!</h1>
@@ -129,7 +127,8 @@
                 <ul class="to-buy__content">
                     <!-- 링크수정하기 -->
                    <c:forEach var="bPost" items="${blist }">
-                    <a href="buyPostDetail.do?pnum=${bPost.pnum}">
+                    <a href="#">
+                    <!-- .do?pnum=${bPost.pnum} -->
                         <li>
                             <article class="board__content">
                                 <div class="board__content--text">
@@ -184,17 +183,13 @@
                             		<li class="page-num-container__num">${i}</li>
                         		</a>
                         	</c:forEach>
-                        	<a href="#">
+                        	<a href="buylist.do?currentPage=${i+1}">
                             <li
                                 class="page-num__right-btn page-num-container__btn"
                             >
                                 <i class="fas fa-chevron-right"></i>
                             </li>
-                       		</a>
-                    <%--     </c:if> --%>
-                        <!-- 더미데이터 -->
-                        <!-- 더미데이터 -->
-                        
+                       		</a>                    
                     </ul>
                 </div>
             </div>

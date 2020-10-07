@@ -24,17 +24,17 @@
 		AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
 	</select>
 	
-	<select id="NEserBuyTotal" parameterType="NEJoin" resultType="int">
-		SELECT COUNT(*)
-		FROM pmcjoin
-		WHERE bid = 2
-		AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
-	</select>
-	
 	<select id="NEserShareTotal" parameterType="NEJoin" resultType="int">
 		SELECT COUNT(*)
 		FROM pmcjoin
 		WHERE bid = 3
+		AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
+	</select>
+	
+	<select id="NEserBuyTotal" parameterType="NEJoin" resultType="int">
+		SELECT COUNT(*)
+		FROM pmcjoin
+		WHERE bid = 2
 		AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
 	</select>
 	
@@ -46,7 +46,7 @@
 				WHERE bid = 1
 				AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
 				ORDER BY pnum DESC) a)
-		WHERE rn BETWEEN 1 AND 6
+		WHERE rn BETWEEN #{start} AND #{end}
 	</select>
 	
 	<select id="NEshSList" parameterType="NEJoin" resultType="NEJoin">
@@ -57,7 +57,7 @@
 				WHERE bid = 3
 				AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
 				ORDER BY pnum DESC) a)
-		WHERE rn BETWEEN 1 AND 6
+		WHERE rn BETWEEN #{start} AND #{end}
 	</select>
 	
 	<select id="NEbSList" parameterType="NEJoin" resultType="NEJoin">
@@ -68,7 +68,7 @@
 				WHERE bid = 2
 				AND (ptitle LIKE '%'||#{sword}||'%' OR pcontent LIKE '%'||#{sword}||'%' OR maddr LIKE '%'||#{sword}||'%')
 				ORDER BY pnum DESC) a)
-		WHERE rn BETWEEN 1 AND 4
+		WHERE rn BETWEEN #{start} AND #{end}
 	</select>
 	
  	<select id="NEswordYN" parameterType="NEJoin" resultType="int">
@@ -79,7 +79,7 @@
 	
 	<insert id="NEsearchInsert" parameterType="NEJoin">
 		INSERT INTO search
-		VALUES(#{sword}, 1)
+		VALUES(#{sword}, 1, sysdate)
 	</insert>
 	
 	<update id="NEsearchUpdate" parameterType="NEJoin">
