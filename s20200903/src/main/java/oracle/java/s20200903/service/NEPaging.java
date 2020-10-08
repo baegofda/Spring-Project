@@ -1,12 +1,12 @@
 package oracle.java.s20200903.service;
-public class Paging {
+public class NEPaging {
 	private int currentPage = 1;	private int rowPage   = 5;
 	private int pageBlock = 5;		
 	private int start;		private int end;
 	private int startPage;	private int endPage;
 	private int total;		private int totalPage;
 	
-	public Paging(int total, String currentPage1) {
+	public NEPaging(int total, String currentPage1) {
 		this.total = total;
 		if (currentPage1 != null) {
 			this.currentPage = Integer.parseInt(currentPage1);			

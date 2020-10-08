@@ -63,7 +63,7 @@
                                 <a href="login.html">로그인</a>
                             </li>
                             <li class="nav-list-content">
-                                <a href="#">지도로 보기</a>
+                                <a href="mapSearch.do">지도로 보기</a>
                             </li>
                         </ul>
                     </nav>

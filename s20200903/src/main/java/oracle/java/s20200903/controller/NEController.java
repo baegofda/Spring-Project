@@ -20,8 +20,9 @@ import org.springframework.web.multipart.MultipartFile;
 import oracle.java.s20200903.model.NEJoin;
 import oracle.java.s20200903.model.NEPost;
 import oracle.java.s20200903.service.NEService;
-import oracle.java.s20200903.service.Paging;
+import oracle.java.s20200903.service.NEPaging;
 import oracle.java.s20200903.service.SearchPaging;
+
 
 @MultipartConfig(
 	//location="" 상대경로"/../.."불가. 절대경로를 적어야 함. 절대경로는 리눅스/윈도우에 차이가 있으므로 차라리 설정하지 않고 자바 지정 임시 디렉토리 사용
@@ -166,7 +167,7 @@ public class NEController {
 		int total = ns.bTotal();
 		System.out.println("total============="+total);
 		
-		Paging pg = new Paging(total, currentPage);
+		NEPaging pg = new NEPaging(total, currentPage);
 		npost.setStart(pg.getStart());
 		npost.setEnd(pg.getEnd());
 		List<NEPost> list = ns.bList(npost);
@@ -314,6 +315,12 @@ public class NEController {
 		int result = ns.buyPostUpdate(neJoin);
 		model.addAttribute("result", result);
 		return "redirect:buylist.do";
+	}
+	
+	// 지도 검색
+	@RequestMapping("mapSearch")
+	public String mapSearch(HttpServletRequest request, Model model) {
+		return "neMapSearch";
 	}
 	
 	

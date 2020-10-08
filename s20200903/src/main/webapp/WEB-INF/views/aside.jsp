@@ -35,7 +35,7 @@
                 <li><a href="#">불량거래 후기</a></li>
                 <li><a href="#">판매중 이에요.</a></li>
                 <li><a href="#">나눔중 이에요.</a></li>
-                <li><a href="#">구매합니다 ~!</a></li>
+                <li><a href="buylist.do">구매합니다 ~!</a></li>
             </ul>
         </aside>
 </body>

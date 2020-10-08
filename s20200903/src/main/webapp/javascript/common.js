@@ -927,85 +927,6 @@ function addressSearchFunction() {
 }
 //주소검색
 
-// buyUpdateForm에서 del-btn을 누르면 기존 이미지 삭제
-const delbtn1 = document.querySelector(".del-btn1");
-const delbtn2 = document.querySelector(".del-btn2");
-const delbtn3 = document.querySelector(".del-btn3");
-const delbtn4 = document.querySelector(".del-btn4");
-const delbtn5 = document.querySelector(".del-btn5");
-
-if(delbtn1 != null){
-	delbtn1.addEventListener("click", () => {
-		delBtn1();
-	});
-}
-
-if(delbtn2 != null){
-	delbtn2.addEventListener("click", () => {
-	    delBtn2();
-	});
-}
-
-if(delbtn3 != null){
-	delbtn3.addEventListener("click", () => {
-		delBtn3();
-	});
-}
-
-if(delbtn4 != null){
-	delbtn4.addEventListener("click", () => {
-	    delBtn4();
-	});
-}
-
-if(delbtn5 != null){
-	delbtn5.addEventListener("click", () => {
-	    delBtn5();
-	});
-}
-
-
-// x버튼을 누르면 첨부파일 삭제
-function delBtn1() {
-	var img = document.querySelector(".update-image1");
-	var delbtn = document.querySelector(".del-btn1");
-    img.remove();
-    delbtn.remove();
-}
-
-function delBtn2() {
-	var img = document.querySelector(".update-image2");
-	var delbtn = document.querySelector(".del-btn2");
-    imageInput2.value = "";
-    img.remove();
-    delbtn.remove();
-}
-
-function delBtn3() {
-	var img = document.querySelector(".update-image3");
-	var delbtn = document.querySelector(".del-btn3");
-    imageInput3.value = "";
-    img.remove();
-    delbtn.remove();
-
-}
-
-function delBtn4() {
-	var img = document.querySelector(".update-image4");
-	var delbtn = document.querySelector(".del-btn4");
-    imageInput4.value = "";
-    img.remove();
-    delbtn.remove();
-}
-
-function delBtn5() {
-	var img = document.querySelector(".update-image5");
-	var delbtn = document.querySelector(".del-btn5");
-    imageInput5.value = "";
-    img.remove();
-    delbtn.remove();
-}
-
 //파일첨부
 function imageThumbnail1() {
     for (var image of event.target.files) {
@@ -1032,6 +953,31 @@ function imageThumbnail1() {
     }
 }
 
+/*function imageThumbnail2() {
+    for (var image of event.target.files) {
+        var reader = new FileReader();
+        while (imageContainer2.firstChild) {
+            imageContainer2.removeChild(imageContainer2.firstChild);
+        }
+        reader.onload = function (event) {
+            var img = document.createElement("img");
+            var btn = document.createElement("div");
+            var result1 = event.target.result;
+            btn.setAttribute("class", "del-btn");
+            img.setAttribute("src", result1);
+            imageContainer2.appendChild(img);
+            imageContainer2.appendChild(btn);
+
+            btn.addEventListener("click", (event) => {
+                imageInput2.value = "";
+                img.remove();
+                btn.remove();
+            });
+        };
+        reader.readAsDataURL(image);
+    }
+}*/
+
 function imageThumbnail2() {
     for (var image of event.target.files) {
         var reader = new FileReader();
@@ -1042,15 +988,10 @@ function imageThumbnail2() {
             var img = document.createElement("img");
             var btn = document.createElement("div");
             var result1 = event.target.result;
-            /*btn.setAttribute("class", "del-btn");
+            btn.setAttribute("class", "del-btn");
             img.setAttribute("src", result1);
             imageContainer2.appendChild(img);
-            imageContainer2.appendChild(btn);*/
-            imageContainer1.innerHTML = ` <img
-                src="${result1}"
-                alt="이미지1"
-             />
-             <div class="del-btn"></div>`
+            imageContainer2.appendChild(btn);
 
             btn.addEventListener("click", (event) => {
                 imageInput2.value = "";
@@ -1136,6 +1077,87 @@ function imageThumbnail5() {
     }
 }
 // 파일첨부
+
+// buyUpdateForm에서 del-btn을 누르면 기존 이미지 삭제
+const delbtn1 = document.querySelector(".del-btn1");
+const delbtn2 = document.querySelector(".del-btn2");
+const delbtn3 = document.querySelector(".del-btn3");
+const delbtn4 = document.querySelector(".del-btn4");
+const delbtn5 = document.querySelector(".del-btn5");
+
+if(delbtn1 != null){
+	delbtn1.addEventListener("click", () => {
+		delBtn1();
+	});
+}
+
+if(delbtn2 != null){
+	delbtn2.addEventListener("click", () => {
+	    delBtn2();
+	});
+}
+
+if(delbtn3 != null){
+	delbtn3.addEventListener("click", () => {
+		delBtn3();
+	});
+}
+
+if(delbtn4 != null){
+	delbtn4.addEventListener("click", () => {
+	    delBtn4();
+	});
+}
+
+if(delbtn5 != null){
+	delbtn5.addEventListener("click", () => {
+	    delBtn5();
+	});
+}
+
+
+// x버튼을 누르면 첨부파일 삭제
+function delBtn1() {
+	var img = document.querySelector(".update-image1");
+	var delbtn = document.querySelector(".del-btn1");
+    img.remove();
+    delbtn.remove();
+}
+
+function delBtn2() {
+	var img = document.querySelector(".update-image2");
+	var delbtn = document.querySelector(".del-btn2");
+    imageInput2.value = "";
+    img.remove();
+    delbtn.remove();
+}
+
+function delBtn3() {
+	var img = document.querySelector(".update-image3");
+	var delbtn = document.querySelector(".del-btn3");
+    imageInput3.value = "";
+    img.remove();
+    delbtn.remove();
+
+}
+
+function delBtn4() {
+	var img = document.querySelector(".update-image4");
+	var delbtn = document.querySelector(".del-btn4");
+    imageInput4.value = "";
+    img.remove();
+    delbtn.remove();
+}
+
+function delBtn5() {
+	var img = document.querySelector(".update-image5");
+	var delbtn = document.querySelector(".del-btn5");
+    imageInput5.value = "";
+    img.remove();
+    delbtn.remove();
+}
+
+
 
 // 슬라이드
 const showing_class = "showing";

@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>제목 불러오기:: 당근나라</title>
+        <title>${bPost.ptitle }:: 당근나라</title>
         <link rel="stylesheet" href="../../css/common.css" />
         <script src="../../javascript/common.js" defer></script>
         <script
@@ -28,89 +28,18 @@
             rel="stylesheet"
         />
         
-        <style type="text/css">
+       <!--  <style type="text/css">
         	.buy-board-read__content--article {
         		width: 800px;
         		margin-top: 20px;
         		margin-bottom: 40px;
         	}
-		</style>
+		</style> -->
     </head>
 
     <body>
         <!-- 게시글 보기는 위 head에 title도 글제목으로 불러와주세요 -->
-        <!-- 메뉴 고정바 -->
-        <header class="header">
-            <div class="header__fixed-bar">
-                <section class="header__fixed-bar-logo section-logo">
-                    <a href="main.do">
-                        <img
-                            src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FSQxEt%2FbtqJs5kkQnP%2FhvX1kh8aeqli9J93tF5qV1%2Ftfile.svg"
-                            alt="당근나라"
-                        />
-                    </a>
-                </section>
-                <section class="header__fixed-bar-search section-search">
-                    <div
-                        class="header__fixed-bar-search-container"
-                        tabindex="4"
-                    >
-                    <form action="search.do" method="post">
-                        <input
-                            class="search-input"
-							type="text"
-							name="sword"
-                            placeholder="동네 이름, 물품명 등을 검색해보세요!"
-                        />
-                        <input
-                            type="image"
-                            class="search-icon"
-                            src="https://img.icons8.com/ios-glyphs/30/000000/search.png"
-                        />
-                    </form>
-                    </div>
-                    <!-- 검색시 검색창 밑에 뜨는 키워드 추천란 입니다 -->
-                    <div class="search-keyword">
-                        <span class="keyword-title">추천</span>
-                        <span class="keyword-contnet">
-                            <a href="#none">분당 유모차</a>
-                            <a href="#none">키즈카페</a>
-                            <a href="#none">화분</a>
-                            <a href="#none">강남 명품가방</a>
-                            <a href="#none">잠실 냉장고</a>
-                            <a href="#none">인천 마우스</a>
-                        </span>
-                    </div>
-                    <!-- 5~6개 정도 표시해주면 될듯합니다 -->
-                </section>
-                <section class="header__fixed-bar-nav section-nav">
-                    <nav class="header__fixed-bar-nav-container">
-                        <ul class="header__fixed-bar-nav-list nav-list">
-                            <li class="nav-list-content">
-                                <a href="../member/join.html">회원가입</a>
-                            </li>
-                            <li class="nav-list-content">
-                                <a href="../member/login.html">로그인</a>
-                            </li>
-                            <li class="nav-list-content">
-                                <a href="#">지도로 보기</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </section>
-            </div>
-        </header>
-        <!-- 메뉴 목록 리스트 -->
-        <aside class="fixed__list">
-            <ul>
-                <li><a href="noticeBoard.html">공지사항</a></li>
-                <li><a href="blackListBoard.html">검거완료 !</a></li>
-                <li><a href="badReviewBoard.html">불량거래 후기</a></li>
-                <li><a href="toSaleBoard.html">판매중 이에요.</a></li>
-                <li><a href="toSharingBoard.html">나눔중 이에요.</a></li>
-                <li><a href="buylist.do">구매합니다 ~!</a></li>
-            </ul>
-        </aside>
+        
         <!-- 섹션 시작 -->
         <article class="article">
             <div class="article__buy-board-read">
@@ -194,9 +123,10 @@
                         </span>
                     </div>
                     <div class="buy-board-read__content--price">${bPost.pprice }원</div>
-                    <div class="buy-board-read__content--article">
-                       ${bPost.pcontent }
-                    </div>
+                   <!--  <div class="buy-board-read__content--article"> -->
+                    	<textarea rows="8" cols="60" readonly><c:out value="${bPost.pcontent }" />
+                    	</textarea>
+                    <!-- </div> -->
                     <div class="buy-board-read__content--hits">
                         ${bPost.pdate } · 조회수 ${bPost.phit }
                     </div>

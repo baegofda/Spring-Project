@@ -21,65 +21,7 @@
     </head>
 
     <body>
-        <!-- 메뉴 고정바 -->
-        <header class="header">
-            <div class="header__fixed-bar">
-                <section class="header__fixed-bar-logo section-logo">
-                    <a href="main.do">
-                        <img
-                            src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FSQxEt%2FbtqJs5kkQnP%2FhvX1kh8aeqli9J93tF5qV1%2Ftfile.svg"
-                            alt="당근나라"
-                        />
-                    </a>
-                </section>
-                <section class="header__fixed-bar-search section-search">
-                    <div class="header__fixed-bar-search-container"
-                    	 tabindex="4">
-                    <form action="search.do" method="post">
-                        <input
-                            class="search-input"
-							type="text"
-							name="sword"
-                            placeholder="동네 이름, 물품명 등을 검색해보세요!"
-                        />
-                        <input
-                            type="image"
-                            class="search-icon"
-                            src="https://img.icons8.com/ios-glyphs/30/000000/search.png"
-                        />
-                    </form>
-                    </div>
-                </section>
-                <section class="header__fixed-bar-nav section-nav">
-                    <nav class="header__fixed-bar-nav-container">
-                        <ul class="header__fixed-bar-nav-list nav-list">
-                            <li class="nav-list-content">
-                                <a href="../member/join.html">회원가입</a>
-                            </li>
-                            <li class="nav-list-content">
-                                <a href="../member/login.html">로그인</a>
-                            </li>
-                            <li class="nav-list-content">
-                                <a href="#">지도로 보기</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </section>
-            </div>
-        </header>
-        <!-- 메뉴 목록 리스트 -->
-        <aside class="fixed__list">
-            <ul>
-                <li><a href="../board/noticeBoard.html">공지사항</a></li>
-                <li><a href="../board/blackListBoard.html">검거완료 !</a></li>
-                <li>
-                    <a href="../board/badReviewBoard.html">불량거래 후기</a>
-                </li>
-                <li><a href="#">판매중 이에요.</a></li>
-                <li><a href="#">나눔중 이에요.</a></li>
-                <li><a href="buylist.do">구매합니다 ~!</a></li>
-            </ul>
-        </aside>
+        
         <!-- 섹션 시작 -->
         <section class="main__section section-1">
             <div class="main__section-container">
