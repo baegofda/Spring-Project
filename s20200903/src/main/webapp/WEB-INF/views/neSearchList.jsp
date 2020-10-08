@@ -55,7 +55,7 @@
                   <c:choose>
                   <c:when test="${list.rn < 7 }">
                     <article class="search-list__article">
-                        <a href="none"> 
+                        <a href="SearchSaleList.do?sword=${sword }"> 
                             <div class="search-list__content--thumbnail">
                                 <img
                                     src="/image/${list.pimg1}"
@@ -179,7 +179,7 @@
                     <c:forEach var="list" items="${bSList }">
                       <c:choose>
                   		<c:when test="${list.rn < 5 }">
-                        <a href="#">
+                        <a href="buyPostDetail.do?pnum=${list.pnum}">
                             <li>
                                 <article class="board__content">
                                     <div class="board__content--text">

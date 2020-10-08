@@ -154,7 +154,7 @@ public class NEController {
 		
 		List<NEJoin> bSList = ns.bSList(neJoin);
 		
-		model.addAttribute("blist", bSList);
+		model.addAttribute("bSList", bSList);
 		model.addAttribute("pg", pg);
 		return "neSerBuyBoard";
 	}

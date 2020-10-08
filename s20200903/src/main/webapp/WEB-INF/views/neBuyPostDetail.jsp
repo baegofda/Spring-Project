@@ -124,7 +124,7 @@
                     </div>
                     <div class="buy-board-read__content--price">${bPost.pprice }원</div>
                    <!--  <div class="buy-board-read__content--article"> -->
-                    	<textarea rows="8" cols="60" readonly><c:out value="${bPost.pcontent }" />
+                    	<textarea class="buy-board-read__content--article" rows="8" cols="60" readonly><c:out value="${bPost.pcontent }" />
                     	</textarea>
                     <!-- </div> -->
                     <div class="buy-board-read__content--hits">

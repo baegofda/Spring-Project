@@ -113,26 +113,31 @@
                 </ul>
                 <div class="to-buy__page-num-container">
                     <ul class="page-num-container">
-                    	<%-- <c:if test="${pg.startPage >BblockSize }"> --%>
-                       		<a href="#">
+                    	<c:if test="${pg.startPage > pg.pageBlock }">
+                       		<a href="buylist.do?currentPage=${pg.startPage-pg.pageBlock}">
                             	<li
                                 class="page-num-container__left-btn page-num-container__btn"
                             	>
                                	 <i class="fas fa-chevron-left"></i>
                            		</li>
                         	</a>
+                        </c:if>
+                        
                         	<c:forEach var="i" begin="${pg.startPage}" end="${pg.endPage}">
                         		<a href="buylist.do?currentPage=${i}">
                             		<li class="page-num-container__num">${i}</li>
                         		</a>
                         	</c:forEach>
-                        	<a href="buylist.do?currentPage=${i+1}">
+                        
+                        <c:if test="${pg.endPage < pg.totalPage }">
+                        	<a href="buylist.do?currentPage=${pg.startPage+pg.pageBlock}">
                             <li
                                 class="page-num__right-btn page-num-container__btn"
                             >
                                 <i class="fas fa-chevron-right"></i>
                             </li>
-                       		</a>                    
+                       		</a>
+                       	</c:if>                   
                     </ul>
                 </div>
             </div>
