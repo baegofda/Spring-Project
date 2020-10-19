@@ -123,10 +123,9 @@
                         </span>
                     </div>
                     <div class="buy-board-read__content--price">${bPost.pprice }원</div>
-                   <!--  <div class="buy-board-read__content--article"> -->
-                    	<textarea class="buy-board-read__content--article" rows="8" cols="60" readonly><c:out value="${bPost.pcontent }" />
-                    	</textarea>
-                    <!-- </div> -->
+                   <div class="buy-board-read__content--article"> 
+                    	${bPost.pcontent }
+                    </div>
                     <div class="buy-board-read__content--hits">
                         ${bPost.pdate } · 조회수 ${bPost.phit }
                     </div>

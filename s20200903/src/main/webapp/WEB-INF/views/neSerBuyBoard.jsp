@@ -67,7 +67,7 @@
                 </div>
                 <!-- 태그 안에 있는 더미 데이터들은 틀을 보기 위함이며 실제 작업시엔 해당 데이터를 불러 올 수 있도록 변경 부탁드립니다. -->
                 <ul class="to-buy__content">
-                   <c:forEach var="bPost" items="${blist }">
+                   <c:forEach var="bPost" items="${bSList }">
                     <a href="buyPostDetail.do?pnum=${bPost.pnum}">
                         <li>
                             <article class="board__content">
